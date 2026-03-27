@@ -1,0 +1,66 @@
+import { TooltipProvider } from "@/components/ui/tooltip";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Renewably UK - Powering Renewable",
+  description:
+    "Bringing a Greener Future to the United Kingdom One Service at a Time",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Renewably UK - Powering Renewable",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang='en'
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <head>
+        <link rel='apple-touch-icon' href='/icons/icon-512x512.png' />
+        <meta name='theme-color' content='#ffffff' />
+      </head>
+      <body className='min-h-full flex flex-col'>
+        <TooltipProvider>{children}</TooltipProvider>
+        <Script id='register-sw' strategy='afterInteractive'>
+          {`
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(function(registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                  })
+                  .catch(function(error) {
+                    console.log('Service Worker registration failed:', error);
+                  });
+              });
+            }
+          `}
+        </Script>
+      </body>
+    </html>
+  );
+}
