@@ -14,6 +14,8 @@ export interface InfoCardProps {
   description?: string;
   learnMoreHref?: string;
   points?: InfoCardPoint[];
+  footer?: React.ReactNode;
+  footerClassName?: string;
 
   // Layout
   align?: "start" | "center";
@@ -52,6 +54,8 @@ export function InfoCard({
   pointIconClassName,
   learnMoreClassName,
   iconWrapperClassName,
+  footer,
+  footerClassName,
 }: InfoCardProps) {
   const isCenter = align === "center";
 
@@ -163,7 +167,7 @@ export function InfoCard({
                 {point.icon ? (
                   <span
                     className={cn(
-                      "shrink-0 [&>svg]:w-4 [&>svg]:h-4 ",
+                      "shrink-0 [&>svg]:w-5 [&>svg]:h-5",
                       inverted ? "text-blue-200" : "text-blue-500",
                       pointIconClassName,
                     )}>
@@ -210,6 +214,20 @@ export function InfoCard({
               className='w-4 h-4 text-(--text-primary)'
             />
           </Link>
+        )}
+
+        {/* Footer */}
+        {footer && (
+          <div
+            className={cn(
+              "pt-3 mt-auto border-t text-sm leading-relaxed",
+              inverted
+                ? "border-white/20 text-blue-100"
+                : "border-slate-200 text-slate-500",
+              footerClassName,
+            )}>
+            {footer}
+          </div>
         )}
       </CardContent>
     </Card>

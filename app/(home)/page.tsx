@@ -10,7 +10,7 @@ import Professionalism from "@/components/home/professionalism";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HomeBanner />
       <BannerPartner />
       <Professionalism />
@@ -20,6 +20,6 @@ export default function Home() {
       <Confidence />
       <JoinInstaller />
       <Commitment />
-    </div>
+    </>
   );
 }

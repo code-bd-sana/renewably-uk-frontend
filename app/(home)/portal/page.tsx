@@ -1,31 +1,25 @@
+import CommonTools from "@/components/portal/common-tools";
+import CorePlatform from "@/components/portal/core-platform";
+import GetCompliant from "@/components/portal/get-compliant";
+import HowPlatformWorks from "@/components/portal/how-platform-works";
 import ICOBreach from "@/components/portal/ico-breach";
 import ICORegulations from "@/components/portal/ico-regulations";
 import InstallationCompanies from "@/components/portal/installation-companies";
-import SectionHeader from "@/components/shared/section-header";
+import PortalBanner from "@/components/portal/portal-banner";
+import RenewablyCompliant from "@/components/portal/renewably-compliant";
 
 export default function PortalPage() {
   return (
-    <section>
-      <div className='bg-background pt-48 lg:pt-70 px-6 lg:px-25 py-15 '>
-        <SectionHeader
-          title='Secure Installer Platform'
-          titleClassName='text-start text-white text-[48px] !lg:text-[64px]'
-        />
-        <div className='flex flex-col gap-y-6 text-base font-medium max-w-189'>
-          <p className='text-(--text-muted-foreground) text-[18px] lg:text-[21px]'>
-            ICO-Compliant Document Management, Instant IBG Generation &
-            Centralized Compliance Workflows
-          </p>
-          <p className='text-(--text-muted-foreground) text-[18px] lg:text-[21px]'>
-            A centralized, audit-ready system that transforms chaotic paperwork
-            into structured, compliant project records — accessible anytime,
-            from anywhere.
-          </p>
-        </div>
-      </div>
+    <>
+      <PortalBanner />
       <InstallationCompanies />
       <ICORegulations />
       <ICOBreach />
-    </section>
+      <CommonTools />
+      <RenewablyCompliant />
+      <GetCompliant />
+      <CorePlatform />
+      <HowPlatformWorks />
+    </>
   );
 }
