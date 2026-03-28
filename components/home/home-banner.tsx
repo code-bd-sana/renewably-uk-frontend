@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 const HomeBanner = () => {
   return (
@@ -65,6 +66,14 @@ const HomeBanner = () => {
               In this environment, professionalism is no longer optional — it’s
               a competitive advantage.
             </p>
+          </div>
+          <div className='flex gap-x-4 md:mt-9 mt-3 text-base'>
+            <Button className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
+              Get Started Today
+            </Button>
+            <Button className='bg-white text-(--text-primary) rounded-[6px] px-6 py-5 cursor-pointer'>
+              How It Works
+            </Button>
           </div>
         </div>
       </div>
