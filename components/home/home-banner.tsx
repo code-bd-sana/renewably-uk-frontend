@@ -67,7 +67,7 @@ const HomeBanner = () => {
               a competitive advantage.
             </p>
           </div>
-          <div className='flex gap-x-4 md:mt-9 mt-3 text-base'>
+          <div className='flex gap-x-4 md:my-9 my-3 text-base '>
             <Button className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
               Get Started Today
             </Button>

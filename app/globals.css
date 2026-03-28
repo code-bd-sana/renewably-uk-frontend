@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -23,7 +21,7 @@
   --text-accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.5771 0.2152 27.33);
   --destructive-foreground: oklch(46.318% 0.18181 28.276);
-  --border: oklch(1 0 0 / 10%);
+  --border: oklch(0.8717 0.0093 258.34);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.87 0 0);

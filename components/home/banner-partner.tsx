@@ -10,7 +10,7 @@ export default function BannerPartner() {
   ];
 
   return (
-    <div className='w-full'>
+    <div className='w-full border-b border-border'>
       <div className='bg-background'>
         <p className='text-white text-center py-3'>
           Accredited Partners & Industry Standards
