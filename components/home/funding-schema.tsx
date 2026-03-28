@@ -41,7 +41,7 @@ export default function FundingSchema() {
         ))}
       </div>
       <div className='flex items-center justify-center pt-6'>
-        <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary)'>
+        <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) cursor-pointer'>
           <Search color='#0F47A8' /> Search Funding Schemes{" "}
           <ArrowRight color='#0F47A8' className='ml-2' />
         </Button>
