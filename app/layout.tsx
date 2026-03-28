@@ -1,6 +1,6 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Geist, Geist_Mono, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -11,6 +11,16 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const interFont = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
@@ -38,12 +48,17 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      className={`${geistSans.variable} ${geistMono.variable} ${interFont.variable} ${dmSans.variable} h-full antialiased`}>
       <head>
         <link rel='apple-touch-icon' href='/icons/icon-512x512.png' />
         <meta name='theme-color' content='#ffffff' />
       </head>
-      <body className='min-h-full flex flex-col'>
+      <body
+        className='min-h-full flex flex-col'
+        style={{
+          fontFamily:
+            '"SF Pro Display", "SF Pro Text", "SF Pro", var(--font-dm-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+        }}>
         <TooltipProvider>{children}</TooltipProvider>
         <Script id='register-sw' strategy='afterInteractive'>
           {`
