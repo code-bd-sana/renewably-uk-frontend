@@ -7,7 +7,7 @@ export default function ICOBreach() {
       <div className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] rounded-[10px]'>
         <div className='p-5'>
           <div>
-            <div className='flex justify-start items-center gap-4'>
+            <div className='flex justify-start items-center gap-x-4'>
               <Info
                 className='w-14 h-14 rotate-180 bg-[#B4CDF7] rounded-[10px] p-3'
                 color='#0F47A8'

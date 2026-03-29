@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 export default function Confidence() {
   return (
-    <section className='mx-6 lg:mx-25 px-4 py-15'>
+    <section className='mx-6 lg:mx-30 px-4 py-15'>
       <SectionHeader
         title='Confidence That Continues — Even If You Can’t'
         align='start'

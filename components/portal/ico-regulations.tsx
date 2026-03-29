@@ -2,7 +2,7 @@ import SectionHeader from "../shared/section-header";
 
 export default function ICORegulations() {
   return (
-    <section className='mx-6 lg:mx-25 px-4 py-15'>
+    <section className='mx-6 lg:mx-25 px-4 pt-8 md:pt-15'>
       <SectionHeader
         title='Are You Accidentally Breaking ICO Regulations?'
         subTitle='Most installers unknowingly breach UK data protection laws by storing customer data on overseas platforms'
