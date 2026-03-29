@@ -28,7 +28,7 @@ export default function BluedropService() {
   ];
 
   return (
-    <section className='mx-6 lg:mx-35 px-4 pt-15'>
+    <section className='mx-6 lg:mx-35 px-4 pt-15 mb-12'>
       <div className='flex justify-center'>
         <Image
           src={Bluedrop}

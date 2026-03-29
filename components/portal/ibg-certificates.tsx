@@ -140,7 +140,7 @@ export default function IBGCertificates() {
       </div>
       <div className='flex items-center justify-center pt-6'>
         <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
-          <Tablet color='#FFFFFF' /> Search Funding Schemes{" "}
+          <Tablet color='#FFFFFF' /> Learn About Upcoming Mobile App Features{" "}
           <ArrowRight color='#FFFFFF' className='ml-2' />
         </Button>
       </div>
