@@ -36,7 +36,7 @@ export default function WhoWeAre() {
     },
   ];
   return (
-    <section className='mx-6 lg:mx-25 px-4 py-15'>
+    <section className='mx-6 lg:mx-25 px-4 pt-15'>
       <SectionHeader title='Who We Are' titleClassName='text-[#030712]' />
       <div className='flex flex-col gap-y-6 text-base font-medium max-w-395 pt-4'>
         <p className='text-(--text-muted) text-[16px]'>
@@ -55,7 +55,7 @@ export default function WhoWeAre() {
           MCS standards.
         </p>
       </div>
-      <div className='mx-6 lg:mx-69 px-4'>
+      <div className='xl:mx-69 px-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 pt-15'>
           {aboutData.map((cardData, index) => (
             <InfoCard

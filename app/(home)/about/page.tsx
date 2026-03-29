@@ -1,4 +1,6 @@
 import AboutBanner from "@/components/about/about-banner";
+import BenefitsForHomeowners from "@/components/about/benefits-for-homeowners";
+import OurCommitment from "@/components/about/our-commitment";
 import OurMission from "@/components/about/our-mission";
 import OurValues from "@/components/about/our-values";
 import WhatWeDo from "@/components/about/what-we-do";
@@ -14,6 +16,8 @@ export default function AboutPage() {
       <OurMission />
       <WhatWeDo />
       <OurValues />
+      <BenefitsForHomeowners />
+      <OurCommitment />
     </>
   );
 }

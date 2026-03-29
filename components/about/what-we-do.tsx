@@ -28,7 +28,7 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section className='mx-6 lg:mx-25 px-4 py-15'>
+    <section className='mx-6 lg:mx-25 px-4 pt-15'>
       <SectionHeader
         title='What We Do'
         titleClassName='max-w-[800px] mx-auto text-[#030712]'

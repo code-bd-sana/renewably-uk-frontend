@@ -31,7 +31,7 @@ export default function OurValues() {
   ];
 
   return (
-    <section className='pt-12 mb-12 mx-6 lg:mx-25 px-4 py-15'>
+    <section className='mx-6 lg:mx-25 px-4 py-15'>
       <SectionHeader title='Our Values' />
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10'>
