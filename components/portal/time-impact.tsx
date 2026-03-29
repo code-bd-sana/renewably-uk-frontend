@@ -23,6 +23,11 @@ export default function TimeAndImpact() {
       description: "No scrambling for documentation",
       icon: "100%",
     },
+    {
+      title: "Document Access",
+      description: "Never wait for office hours",
+      icon: "24/7",
+    },
   ];
 
   const impactData = [
@@ -104,7 +109,7 @@ export default function TimeAndImpact() {
           subTitleClassName='text-(--text-muted) font-medium text-[16px] max-w-120 mx-auto text-center'
         />
 
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 pt-12'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 pt-12'>
           {timeData.map((card, index) => (
             <InfoCard
               key={index}
@@ -119,7 +124,7 @@ export default function TimeAndImpact() {
               cardBg='bg-transparent text-[#1e293b]'
               iconBgClassName='bg-transparent'
               iconWrapperClassName='w-auto h-auto p-0'
-              className="relative shadow-none py-2 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-px after:w-0 after:bg-background after:transition-all after:duration-300 hover:after:w-14 bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]!"
+              className='py-2 bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]!'
               titleClassName='text-xl text-center'
               descriptionClassName='text-base text-[#64748B] text-center max-w-60'
             />
