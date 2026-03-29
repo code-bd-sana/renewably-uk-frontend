@@ -1,4 +1,4 @@
-import { Check, ArrowRight, Tablet, CircleCheckBig } from "lucide-react";
+import { ArrowRight, Tablet, CircleCheckBig } from "lucide-react";
 import Image from "next/image";
 import { InfoCard } from "../shared/info-card";
 import Mobile from "../../public/portal/mobile.png";

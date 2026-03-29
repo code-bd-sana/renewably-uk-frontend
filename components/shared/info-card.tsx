@@ -263,7 +263,7 @@ export function InfoCard({
         {footer && (
           <div
             className={cn(
-              "pt-3 mt-auto border-t text-sm leading-relaxed",
+              "pt-3 mt-auto  text-sm leading-relaxed",
               inverted
                 ? "border-white/20 text-blue-100"
                 : "border-slate-200 text-slate-500",
