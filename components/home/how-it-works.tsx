@@ -100,7 +100,7 @@ export default function HowItWorks() {
                   ml-18
                   flex items-center
                 '>
-                <p className='text-[13px] leading-[1.6] text-[#1E3A8A]'>
+                <p className='text-base leading-[1.6] text-[#1E3A8A]'>
                   {step.text}
                 </p>
               </motion.div>

@@ -63,6 +63,7 @@ export default function CorePlatform() {
             title={cardData.title}
             titleClassName='text-xl'
             description={cardData.description}
+            descriptionClassName='text-base'
             icon={cardData.icon}
             iconBgClassName='bg-[#B4CDF7]'
             className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]!'

@@ -89,7 +89,7 @@ export default function CommonTools() {
             title={cardData.title}
             titleClassName='text-[22px]'
             description={cardData.description}
-            descriptionClassName='text-[16px]'
+            descriptionClassName='text-base'
             cardBg='bg-white'
             className='rounded-[10px]! border border-[#E5E7EB] hover:border-[#b0b1b6]'
             iconBgClassName='bg-[#B4CDF7] text-blue-400'

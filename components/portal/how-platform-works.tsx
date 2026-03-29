@@ -97,7 +97,7 @@ export default function HowPlatformWorks() {
                   ml-18
                   flex items-center
                 '>
-                <p className='text-[13px] leading-[1.6] text-white'>
+                <p className='text-base leading-[1.6] text-white'>
                   {step.text}
                 </p>
               </motion.div>

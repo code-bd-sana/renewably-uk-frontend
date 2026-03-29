@@ -1,35 +1,29 @@
-import {
-  Bell,
-  ChartColumn,
-  CircleCheckBig,
-  TrendingUp,
-  Zap,
-} from "lucide-react";
+import { CircleCheckBig, Database, FileCheck, Key, Lock } from "lucide-react";
 import { InfoCard } from "../shared/info-card";
 import SectionHeader from "../shared/section-header";
 
-export default function PlatformCapabilities() {
+export default function SecurityProtection() {
   const compliantData = [
     {
-      title: "Live Project Overview",
+      title: "256-Bit Encryption",
       description:
-        "See all active projects at a glance. Status indicators show which need attention, which are awaiting documents, which have pending IBG generation.",
-      icon: <TrendingUp color='#0F47A8' />,
+        "All data encrypted in transit and at rest using industry-standard AES-256 encryption. Same technology used by major banks and financial institutions.",
+      icon: <Lock color='#0F47A8' />,
       points: [
         {
-          label: "Real-time project status updates",
+          label: "SSL/TLS encryption for all data transfers",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "Filter by status, date or customer",
+          label: "Encrypted backups stored in multiple UK locations",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "One-click access to project folders",
+          label: "Zero-knowledge architecture options available",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
@@ -37,25 +31,25 @@ export default function PlatformCapabilities() {
       ],
     },
     {
-      title: "Smart Notifications",
+      title: "Access Control & Authentication",
       description:
-        "Never miss a compliance deadline or document expiry. Automated alerts keep you informed of upcoming renewals, missing documents, pending submissions.",
-      icon: <Bell color='#0F47A8' />,
+        "Multi-factor authentication, role-based permissions, and granular access controls ensure only authorised personnel access sensitive data.",
+      icon: <Key color='#0F47A8' />,
       points: [
         {
-          label: "Accreditation renewal reminders",
+          label: "Two-factor authentication (2FA) available",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "IBG expiry warnings",
+          label: "Role-based access permissions",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "Compliance deadline tracking",
+          label: "IP whitelisting for sensitive accounts",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
@@ -63,25 +57,25 @@ export default function PlatformCapabilities() {
       ],
     },
     {
-      title: "Analytics & Reporting",
+      title: "UK Data Residency",
       description:
-        "Track your installation volume, IBG coverage, document compliance rates. Export reports for funders, auditors or internal review.",
-      icon: <ChartColumn color='#0F47A8' />,
+        "All data stored exclusively on UK servers with redundant backups. Full compliance with UK GDPR and Data Protection Act 2018.",
+      icon: <Database color='#0F47A8' />,
       points: [
         {
-          label: "Monthly project volume reports",
+          label: "Data never leaves UK jurisdiction",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "IBG coverage statistics",
+          label: "ICO registered (ZC077762)",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "Export data for audits",
+          label: "Subject Access Request (SAR) tools built-in",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
@@ -89,25 +83,25 @@ export default function PlatformCapabilities() {
       ],
     },
     {
-      title: "Quick Actions",
+      title: "Complete Audit Trail",
       description:
-        "Frequently used tasks accessible with one click. New project submission, IBG generation, document search — everything designed for speed.",
-      icon: <Zap color='#0F47A8' />,
+        "Every action logged with timestamp, user ID, and IP address. Immutable audit logs provide evidence for compliance reviews and regulatory audits.",
+      icon: <FileCheck color='#0F47A8' />,
       points: [
         {
-          label: "Submit new project in under 2 minutes",
+          label: "Document access logs",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "Generate IBG with one click",
+          label: "Change history for all records",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "Bulk document upload",
+          label: "Export audit reports for regulators",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
@@ -117,25 +111,26 @@ export default function PlatformCapabilities() {
   ];
 
   return (
-    <section className='pt-12 mb-12 mx-6 lg:mx-35 px-4 py-20'>
+    <section className='mx-6 lg:mx-35 px-4 pt-20'>
       <SectionHeader
-        title='Your Installer Dashboard'
-        subTitle='Everything you need at a glance'
+        title='Security & Data Protection'
+        subTitle='Bank-level encryption, ICO registration, and full GDPR compliance as standard'
         subTitleClassName='text-(--text-muted) font-medium text-[16px] max-w-160 mx-auto text-center'
       />
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 py-15'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 pt-15'>
         {compliantData.map((cardData, index) => (
           <InfoCard
             key={index}
             title={cardData.title}
             titleClassName='text-xl'
             description={cardData.description}
+            descriptionClassName='max-w-170 text-base pb-4'
             icon={cardData.icon}
             iconBgClassName='bg-[#B4CDF7]'
             className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]!'
             points={cardData.points}
-            pointClassName='text-[#6B7280] text-sm font-medium'
+            pointClassName='text-[#6B7280] text-base font-medium'
           />
         ))}
       </div>
