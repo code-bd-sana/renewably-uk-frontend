@@ -2,7 +2,7 @@ import { InfoCard } from "../shared/info-card";
 import SectionHeader from "../shared/section-header";
 
 export default function DocumentTypes() {
-  const compliantData = [
+  const typeData = [
     {
       title: "Certificates & Compliance",
       description:
@@ -35,14 +35,14 @@ export default function DocumentTypes() {
       />
       <div className='mx-6 lg:mx-35 px-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10 py-15'>
-          {compliantData.map((cardData, index) => (
+          {typeData.map((cardData, index) => (
             <InfoCard
               key={index}
               title={cardData.title}
               titleClassName='text-xl text-white'
               description={cardData.description}
               descriptionClassName='text-white text-base max-w-150'
-              className='bg-[#FFFFFF33]  border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]!'
+              className='bg-[#FFFFFF33]  border border-[#E5E7EB] hover:border-[#6e6eaf] rounded-[10px]!'
             />
           ))}
         </div>
