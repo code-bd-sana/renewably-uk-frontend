@@ -30,39 +30,53 @@ export default function CommonTools() {
     },
   ];
 
-  const commonPoints= [{
-    icon: (<CircleCheckBig
-      className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-      color='#FFFFFF'
-    />),
-    label: "Submit projects in seconds",
-  },
-  {
-    icon: (<CircleCheckBig
-      className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-      color='#FFFFFF'    />),
-    label: "Manage your customer data",
-  },
-  {
-    icon: (<CircleCheckBig
-      className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-      color='#FFFFFF'    />),
-    label: "Track your submissions",
-  },
-  {
-    icon: (<CircleCheckBig
-      className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-      color='#FFFFFF'    />),
-    label: "Manage your onboarding",
-  },
-  {
-    icon: (<CircleCheckBig
-      className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-      color='#FFFFFF'    />),
-    label: "Fully aligned and compliant with Industry Standards",
-
-  }
-  ]
+  const commonPoints = [
+    {
+      icon: (
+        <CircleCheckBig
+          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+          color='#FFFFFF'
+        />
+      ),
+      label: "Submit projects in seconds",
+    },
+    {
+      icon: (
+        <CircleCheckBig
+          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+          color='#FFFFFF'
+        />
+      ),
+      label: "Manage your customer data",
+    },
+    {
+      icon: (
+        <CircleCheckBig
+          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+          color='#FFFFFF'
+        />
+      ),
+      label: "Track your submissions",
+    },
+    {
+      icon: (
+        <CircleCheckBig
+          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+          color='#FFFFFF'
+        />
+      ),
+      label: "Manage your onboarding",
+    },
+    {
+      icon: (
+        <CircleCheckBig
+          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+          color='#FFFFFF'
+        />
+      ),
+      label: "Fully aligned and compliant with Industry Standards",
+    },
+  ];
 
   return (
     <section className='bg-[#EAF1FD] pt-12 mb-12 py-12'>
@@ -75,9 +89,9 @@ export default function CommonTools() {
             title={cardData.title}
             titleClassName='text-[22px]'
             description={cardData.description}
-            descriptionClassName='text-[16px]'
+            descriptionClassName='text-base'
             cardBg='bg-white'
-            className='rounded-[10px]! border border-[#E5E7EB]'
+            className='rounded-[10px]! border border-[#E5E7EB] hover:border-[#b0b1b6]'
             iconBgClassName='bg-[#B4CDF7] text-blue-400'
           />
         ))}
@@ -87,11 +101,11 @@ export default function CommonTools() {
         title='What You Need To Be Compliant'
         titleClassName='text-[22px] text-white font-medium'
         cardBg='bg-white'
-        className='rounded-[10px]! border border-[#E5E7EB] mx-6 lg:mx-55 p-4 bg-background'
+        className='rounded-[10px]! border border-[#E5E7EB] hover:border-[#b0b1b6] mx-6 lg:mx-55 p-4 bg-background'
         icon={<Shield color='#0F47A8' />}
         iconBgClassName='bg-white w-10 h-10'
         points={commonPoints}
-        pointClassName='text-white font-medium text-base '
+        pointClassName='text-white font-medium text-base'
       />
     </section>
   );

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { FileCheck, FileText, TrendingUp, Upload } from "lucide-react";
 import SectionHeader from "../shared/section-header";
-import { Button } from "../ui/button";
 
 const steps = [
   {
@@ -35,7 +34,7 @@ const steps = [
 export default function HowPlatformWorks() {
   return (
     <section className='w-full bg-[#EAF1FD] py-15'>
-      <div className='max-w-388 mx-auto px-4'>
+      <div className='mx-auto w-full max-w-380 px-6 lg:px-10'>
         {/* Heading (UNCHANGED) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,9 +50,9 @@ export default function HowPlatformWorks() {
         </motion.div>
 
         {/* ================= DESKTOP ================= */}
-        <div className='relative hidden xl:grid grid-cols-[1fr_80px_1fr] gap-y-16'>
+        <div className='relative hidden xl:grid grid-cols-[minmax(0,1fr)_80px_minmax(0,1fr)] gap-y-16'>
           {/* Vertical dotted line */}
-          <div className='absolute left-1/2 top-0 -translate-x-1/2 h-full border-l-2 border-dashed border-[#0F47A8]/60' />
+          <div className='absolute left-1/2 top-0 -translate-x-1/2 h-full border-l-2 border-dashed border-[#0F47A8]/60 pointer-events-none' />
 
           {steps.map((step, i) => (
             <div key={step.id} className='contents'>
@@ -64,11 +63,11 @@ export default function HowPlatformWorks() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className='flex items-center justify-end pr-6'>
+                className='flex min-w-0 items-center justify-start '>
                 <p className='bg-background p-3 rounded-full mr-4'>
                   {step.icon}
                 </p>
-                <h3 className='text-[28px]  mr-30 text-[#0F47A8] w-100 leading-tight'>
+                <h3 className='text-[28px] text-[#0F47A8] max-w-100 text-left leading-tight'>
                   {step.title}
                 </h3>
               </motion.div>
@@ -87,17 +86,18 @@ export default function HowPlatformWorks() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className='
-                  w-125
-                  
+                  w-full
+                  max-w-130
                   rounded-[12px]
                   border
                   border-[#0F47A8]
+                  hover:border-[#b0b1b6]
                   bg-background
                   p-6
-                  ml-10
+                  ml-18
                   flex items-center
                 '>
-                <p className='text-[13px] leading-[1.6] text-white'>
+                <p className='text-base leading-[1.6] text-white'>
                   {step.text}
                 </p>
               </motion.div>

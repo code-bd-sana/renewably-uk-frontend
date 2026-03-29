@@ -51,8 +51,8 @@ export default function CorePlatform() {
   return (
     <section className='pt-12 py-12'>
       <SectionHeader
-        title='How Renewably UK Platform Keeps You Compliant'
-        subTitle='Purpose-built for UK installers with ICO compliance as a core design principle'
+        title='Core Platform Capabilities'
+        subTitle='Everything you need to manage installation projects professionally from a single, secure platform'
         subTitleClassName='text-(--text-muted) font-medium text-[16px] max-w-160 mx-auto text-center'
       />
 
@@ -63,9 +63,10 @@ export default function CorePlatform() {
             title={cardData.title}
             titleClassName='text-xl'
             description={cardData.description}
+            descriptionClassName='text-base'
             icon={cardData.icon}
             iconBgClassName='bg-[#B4CDF7]'
-            className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] rounded-[10px]!'
+            className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]!'
           />
         ))}
       </div>
