@@ -19,6 +19,7 @@ export interface InfoCardProps {
 
   // Layout
   align?: "start" | "center";
+  contentLayout?: "stacked" | "row";
   inverted?: boolean;
   className?: string;
 
@@ -43,6 +44,7 @@ export function InfoCard({
   learnMoreHref,
   points,
   align = "start",
+  contentLayout = "stacked",
   inverted = false,
   className,
   cardBg,
@@ -58,6 +60,7 @@ export function InfoCard({
   footerClassName,
 }: InfoCardProps) {
   const isCenter = align === "center";
+  const isRowLayout = contentLayout === "row" && !isCenter;
 
   const defaultIconBg: string =
     iconBgClassName ??
@@ -87,6 +90,46 @@ export function InfoCard({
           "p-5 space-y-3 flex flex-col h-full",
           isCenter && "items-center text-center",
         )}>
+        {/* Row layout (icon + title + description in one row group) */}
+        {isRowLayout && (icon || title || description) && (
+          <div className='flex items-start gap-3'>
+            {icon && (
+              <span
+                className={cn(
+                  "flex items-center justify-center rounded-[10px] w-10 h-10 shrink-0 [&>svg]:w-5 [&>svg]:h-5",
+                  defaultIconBg,
+                  iconWrapperClassName,
+                )}>
+                {icon}
+              </span>
+            )}
+
+            <div className='space-y-1'>
+              {title && (
+                <h3
+                  className={cn(
+                    "font-semibold text-base leading-snug",
+                    inverted ? "text-white" : "text-[#1e293b]",
+                    titleClassName,
+                  )}>
+                  {title}
+                </h3>
+              )}
+
+              {description && (
+                <p
+                  className={cn(
+                    "text-sm leading-relaxed",
+                    inverted ? "text-blue-100" : "text-slate-500",
+                    descriptionClassName,
+                  )}>
+                  {description}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* Icon (center layout — icon above title, not inline) */}
         {isCenter && icon && (
           <div
@@ -100,7 +143,7 @@ export function InfoCard({
         )}
 
         {/* Header row (start layout — icon inline with title) */}
-        {!isCenter && (icon || title) && (
+        {!isCenter && !isRowLayout && (icon || title) && (
           <div className='flex items-center gap-3'>
             {icon && (
               <span
@@ -138,7 +181,7 @@ export function InfoCard({
         )}
 
         {/* Description */}
-        {description && (
+        {!isRowLayout && description && (
           <p
             className={cn(
               "text-sm leading-relaxed",
@@ -220,7 +263,7 @@ export function InfoCard({
         {footer && (
           <div
             className={cn(
-              "pt-3 mt-auto border-t text-sm leading-relaxed",
+              "pt-3 mt-auto  text-sm leading-relaxed",
               inverted
                 ? "border-white/20 text-blue-100"
                 : "border-slate-200 text-slate-500",

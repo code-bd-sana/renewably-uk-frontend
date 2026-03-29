@@ -33,7 +33,7 @@ export default function SecurityProtection() {
     {
       title: "Access Control & Authentication",
       description:
-        "Multi-factor authentication, role-based permissions, and granular access controls ensure only authorised personnel access sensitive data.",
+        "Multi-factor authentication, role-based permissions, and granular access controls ensure only authorized personnel access sensitive data.",
       icon: <Key color='#0F47A8' />,
       points: [
         {
