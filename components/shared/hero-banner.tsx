@@ -25,7 +25,7 @@ export default function HeroBanner({
   return (
     <section
       className={cn(
-        "bg-background pt-48 lg:pt-70 px-6 lg:px-25 py-15",
+        "bg-background pt-48! md:pt-52 lg:pt-70 px-6 lg:px-25 py-15",
         sectionClassName,
       )}>
       <div className={cn(contentWrapperClassName)}>

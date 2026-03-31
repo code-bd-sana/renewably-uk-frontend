@@ -7,6 +7,7 @@ import WhatWeDo from "@/components/about/what-we-do";
 import WhoWeAre from "@/components/about/who-we-are";
 import WhyWeExist from "@/components/about/why-we-exist";
 
+
 export default function AboutPage() {
   return (
     <>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Wind,
   Gauge,
@@ -9,7 +11,8 @@ import {
 } from "lucide-react";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
-
+import { MeasuresTableModal } from "./measures-table-modal";
+import { useState } from "react";
 const measures = [
   {
     icon: Wind,
@@ -39,6 +42,8 @@ const measures = [
 ];
 
 export default function ApprovedMeasures() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section className=''>
       <div className='bg-[#DDE8F8]'>
@@ -87,7 +92,9 @@ export default function ApprovedMeasures() {
           {/* CTA Button */}
           <div className='flex flex-col items-center mt-12 gap-3'>
             <div className='flex items-center justify-center pt-6'>
-              <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
+              <Button
+                className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'
+                onClick={() => setModalOpen(true)}>
                 <FileCheck color='#FFFFFF' /> View All 40 Covered Measures{" "}
                 <ArrowRight color='#FFFFFF' className='ml-2' />
               </Button>
@@ -97,6 +104,9 @@ export default function ApprovedMeasures() {
               measures
             </p>
           </div>
+
+          {/* Measures modal — controlled, no trigger button rendered */}
+          <MeasuresTableModal open={modalOpen} onOpenChange={setModalOpen} />
         </div>
       </div>
       <div className='flex flex-col gap-y-6 text-base font-medium max-w-395 pt-12 mx-6 lg:mx-35 px-4 py-16'>

@@ -191,7 +191,10 @@ const Footer = () => {
           <p className=' text-(--text-muted-foreground) pt-3 md:pt-0 lg:pt-0'>
             ICO Registration No: ZC077762 Registered with the Information
             Commissioner’s Office under the Data Protection Act 2018 and UK
-            GDPR. Privacy Policy
+            GDPR.{" "}
+            <span className='underline text-white cursor-pointer'>
+              Privacy Policy
+            </span>
           </p>
         </div>
       </div>

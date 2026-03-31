@@ -113,8 +113,8 @@ export default function SecurityProtection() {
   return (
     <section className='mx-6 lg:mx-35 px-4 pt-20'>
       <SectionHeader
-        title='Security & Data Protection'
-        subTitle='Bank-level encryption, ICO registration, and full GDPR compliance as standard'
+        title='Regulatory Compliance & Standards'
+        subTitle='Bluedrop Services insurance backed guarantees meet the highest industry standards and regulatory requirements'
         subTitleClassName='text-(--text-muted) font-medium text-[16px] max-w-160 mx-auto text-center'
       />
 
