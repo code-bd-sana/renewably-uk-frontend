@@ -2,7 +2,7 @@ import HeroBanner from "../shared/hero-banner";
 
 export default function FundingBanner() {
   return (
-    <div>
+    <section>
       <HeroBanner
         title='Renewable Project Funding'
         titleWrapperClassName='max-w-200 pb-2'
@@ -12,6 +12,6 @@ export default function FundingBanner() {
           "Access comprehensive funding solutions across government schemes, customer finance, and business growth initiatives",
         ]}
       />
-    </div>
+    </section>
   );
 }
