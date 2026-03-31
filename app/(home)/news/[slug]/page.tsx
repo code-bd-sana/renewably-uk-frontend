@@ -8,9 +8,9 @@ const page = async ({ params }: PageProps) => {
   const resolvedParams = await params;
 
   return (
-    <div>
-      <NewsDetails id={resolvedParams.slug} />
-    </div>
+    <section>
+      <NewsDetails slug={resolvedParams.slug} />
+    </section>
   );
 };
 

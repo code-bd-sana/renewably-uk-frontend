@@ -117,7 +117,7 @@ export default function NewsCard({
       <CardFooter className='pb-5 pt-2 border-0 mt-auto flex flex-col items-start'>
         {/* Content grows */}
         {excerpt && (
-          <CardContent className='pb-3 pt-0 flex-grow px-0'>
+          <CardContent className='pb-3 pt-0 grow px-0'>
             <p className='line-clamp-3 text-sm text-(--text-muted)'>
               {excerpt}
             </p>

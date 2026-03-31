@@ -15,10 +15,10 @@ import {
 } from "lucide-react";
 
 type NewsDetailsProps = {
-  id: string;
+  slug: string;
 };
 
-export default function NewsDetails({ id }: NewsDetailsProps) {
+export default function NewsDetails({ slug }: NewsDetailsProps) {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -33,7 +33,7 @@ export default function NewsDetails({ id }: NewsDetailsProps) {
     }, 50);
 
     return () => clearTimeout(timer);
-  }, [id]);
+  }, [slug]);
 
   // Close share menu when clicking outside
   useEffect(() => {
@@ -50,10 +50,10 @@ export default function NewsDetails({ id }: NewsDetailsProps) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const normalizedId = id.replace(/^\/+news\//, "");
+  const normalizedSlug = slug.replace(/^\/+news\//, "");
 
   // Resolve by slug (route id name)
-  const newsOrBlog = newsItems.find((item) => item.slug === normalizedId);
+  const newsOrBlog = newsItems.find((item) => item.slug === normalizedSlug);
 
   if (!newsOrBlog) {
     return (
@@ -198,7 +198,7 @@ export default function NewsDetails({ id }: NewsDetailsProps) {
 
           {/* Hero Image */}
           <div
-            className={`relative w-full md:w-375 mx-auto mt-4 mb-6 md:m-7 rounded-2xl overflow-hidden ${
+            className={`relative w-full md:w-375 my-8 rounded-2xl overflow-hidden ${
               newsOrBlog.imageFit === "contain"
                 ? "h-64 sm:h-96 md:h-140"
                 : "h-56 sm:h-96 md:h-220"
