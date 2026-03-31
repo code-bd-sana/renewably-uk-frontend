@@ -596,31 +596,14 @@ export function MeasuresTableModal({
               {/* Category filter */}
               <div className='w-full sm:w-56 sm:ml-auto'>
                 <Select
-                 value={selectedCategory}
-                   onValueChange={setSelectedCategory}
+                  value={selectedCategory}
+                  onValueChange={setSelectedCategory}
                 >
                   <SelectTrigger className="w-full max-w-48 bg-white">
-                    <SelectValue placeholder="Select a fruit" />
+                    <SelectValue placeholder="Browse all Category" />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Fruits</SelectLabel>
-                      <SelectItem value="apple">Apple</SelectItem>
-                      <SelectItem value="banana">Banana</SelectItem>
-                      <SelectItem value="blueberry">Blueberry</SelectItem>
-                      <SelectItem value="grapes">Grapes</SelectItem>
-                      <SelectItem value="pineapple">Pineapple</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-                <Select
-                  value={selectedCategory}
-                  onValueChange={setSelectedCategory}>
-                  <SelectTrigger className='w-full bg-white'>
-                    <SelectValue placeholder='Browse all Category' />
-                  </SelectTrigger>
-                  <SelectContent className='bg-white'>
-                    <SelectItem value='all'>Browse all Category</SelectItem>
+                  <SelectContent className="bg-white">
+                    <SelectItem value="all">Browse all Category</SelectItem>
                     {CATEGORIES.map((c) => (
                       <SelectItem key={c.id} value={c.id}>
                         {c.label}

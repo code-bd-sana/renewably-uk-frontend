@@ -1,6 +1,7 @@
-import { Check, CircleCheckBig, Lightbulb, Star } from "lucide-react";
+import { Check, CircleCheckBig, Lightbulb, Star, Zap } from "lucide-react";
 import { InfoCard } from "../shared/info-card";
 import SectionHeader from "../shared/section-header";
+import { Button } from "../ui/button";
 
 export default function PassAudits() {
   const essentialData = [
@@ -92,6 +93,11 @@ export default function PassAudits() {
         iconWrapperClassName='hidden md:flex'
         className='bg-white md:-m-5'
       />
+      <div className='flex items-center justify-center pt-6'>
+        <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
+          <Zap color='#FFFFFF' /> Learn More About Mobile IBG Generation
+        </Button>
+      </div>
     </section>
   );
 }
