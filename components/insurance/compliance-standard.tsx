@@ -32,9 +32,14 @@ export default function ComplianceAndStandard() {
         {
           label: (
             <>
-             Verification available via {<span className="text-(--text-primary) cursor-pointer">FCA Register</span>}
+              Verification available via{" "}
+              {
+                <span className='text-(--text-primary) cursor-pointer'>
+                  FCA Register
+                </span>
+              }
             </>
-            ),
+          ),
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
@@ -90,8 +95,12 @@ export default function ComplianceAndStandard() {
         {
           label: (
             <>
-              Framework details at <span className="text-(--text-primary) cursor-pointer">trustmark.org.uk</span>
-            </>),
+              Framework details at{" "}
+              <span className='text-(--text-primary) cursor-pointer'>
+                trustmark.org.uk
+              </span>
+            </>
+          ),
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
@@ -108,7 +117,8 @@ export default function ComplianceAndStandard() {
         {
           label: (
             <>
-              <span className="text-bold text-black ">MCS Certification:</span> Microgeneration Certification Scheme compliance
+              <span className='text-bold text-black '>MCS Certification:</span>{" "}
+              Microgeneration Certification Scheme compliance
             </>
           ),
           icon: (
@@ -118,7 +128,8 @@ export default function ComplianceAndStandard() {
         {
           label: (
             <>
-              <span className="text-bold text-black ">PAS 2030:</span> Installation standards for energy efficiency measures
+              <span className='text-bold text-black '>PAS 2030:</span>{" "}
+              Installation standards for energy efficiency measures
             </>
           ),
           icon: (
@@ -128,8 +139,10 @@ export default function ComplianceAndStandard() {
         {
           label: (
             <>
-              <span className="text-bold text-black ">PAS 2035:</span> Retrofit design and installation standards
-            </>),
+              <span className='text-bold text-black '>PAS 2035:</span> Retrofit
+              design and installation standards
+            </>
+          ),
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
@@ -141,8 +154,8 @@ export default function ComplianceAndStandard() {
   return (
     <section className='mx-6 lg:mx-35 px-4 pt-20'>
       <SectionHeader
-        title='Security & Data Protection'
-        subTitle='Bank-level encryption, ICO registration, and full GDPR compliance as standard'
+        title='Regulatory Compliance & Standards'
+        subTitle='Bluedrop Services insurance backed guarantees meet the highest industry standards and regulatory requirements'
         subTitleClassName='text-(--text-muted) font-medium text-[16px] max-w-160 mx-auto text-center'
       />
 
@@ -153,7 +166,7 @@ export default function ComplianceAndStandard() {
             title={cardData.title}
             titleClassName='text-xl'
             subtitle={cardData.subtitle}
-            subtitleClassName="text-(--text-primary)"
+            subtitleClassName='text-(--text-primary)'
             description={cardData.description}
             descriptionClassName='max-w-170 text-base pb-4'
             icon={cardData.icon}

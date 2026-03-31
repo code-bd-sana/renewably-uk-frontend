@@ -109,7 +109,7 @@ export default function ApprovedMeasures() {
           <MeasuresTableModal open={modalOpen} onOpenChange={setModalOpen} />
         </div>
       </div>
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-395 pt-12 mx-6 lg:mx-35 px-4 py-16'>
+      <div className='flex flex-col gap-y-6 text-base font-medium pt-12 mx-6 lg:mx-35 px-4 py-16'>
         <p className='text-(--text-muted) text-[16px]'>
           As delivery standards across the renewable and retrofit sector
           continue to evolve, consumer protection and financial safeguards have

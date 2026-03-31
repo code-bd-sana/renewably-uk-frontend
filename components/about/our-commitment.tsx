@@ -8,7 +8,7 @@ export default function OurCommitment() {
         title='Our Commitment to You'
         titleClassName='text-[#030712]'
       />
-      <div className='flex flex-col gap-y-3 text-base font-medium max-w-375 pt-9'>
+      <div className='flex flex-col gap-y-3 text-base font-medium pt-9'>
         <p className='text-(--text-muted)'>
           We understand that renewable energy installers operate in a demanding,
           fast-moving environment where administrative burden can undermine

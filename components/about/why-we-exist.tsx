@@ -4,7 +4,7 @@ export default function WhyWeExist() {
   return (
     <section className='mx-6 lg:mx-25 px-4 py-10'>
       <SectionHeader title='Why We Exist' titleClassName='text-[#030712]' />
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-375 pt-4'>
+      <div className='flex flex-col gap-y-6 text-base font-medium pt-4'>
         <p className='text-(--text-muted) text-[16px]'>
           The renewable energy sector is experiencing unprecedented growth—but
           growth without structure creates risk. Consumer protection frameworks
