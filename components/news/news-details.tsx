@@ -196,9 +196,9 @@ export default function NewsDetails({ slug }: NewsDetailsProps) {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Image of News */}
           <div
-            className={`relative w-full md:w-375 my-8 rounded-2xl overflow-hidden ${
+            className={`relative w-full my-8 rounded-2xl overflow-hidden ${
               newsOrBlog.imageFit === "contain"
                 ? "h-64 sm:h-96 md:h-140"
                 : "h-56 sm:h-96 md:h-220"
@@ -220,7 +220,7 @@ export default function NewsDetails({ slug }: NewsDetailsProps) {
           {/* Meta + Body */}
           <div ref={contentRef} className='pt-5 pb-8 flex flex-col gap-5'>
             {/* Category + Date row */}
-            <div className='flex items-center gap-3'>
+            <div className='flex items-center justify-between gap-3'>
               <span className='text-[11px] font-medium bg-[#EAF2FF] text-[#2563EB] px-3 py-1 rounded-full'>
                 {newsOrBlog.category}
               </span>
