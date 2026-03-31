@@ -237,28 +237,16 @@ export default function Navbar() {
             {/* MOBILE TOGGLE */}
             <Button
               onClick={() => setOpen(!open)}
-              className='ml-auto lg:hidden text-(--text-accent)'
+              className='ml-auto lg:hidden text-(--text-accent) bg-transparent'
               aria-label='Toggle menu'>
-              {open ? <X size={26} /> : <Menu size={26} />}
+              {open ? <X /> : <Menu />}
             </Button>
           </div>
 
           {/* MOBILE MENU */}
           {open && (
             <div
-              className='
-                absolute
-                left-4
-                right-4
-                top-[calc(100%+12px)]
-                z-50
-                bg-white
-                rounded-[18px]
-                shadow-[0_10px_30px_rgba(0,0,0,0.12)]
-                px-6
-                py-6
-                lg:hidden
-              '>
+              className='absolute left-4 right-4 top-[calc(100%+12px)] z-50 bg-white rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.12)] px-6 py-6 lg:hidden'>
               <nav className='flex flex-col gap-5'>
                 {navItems.map((item) => {
                   const isActive = pathname === item.href;
@@ -318,7 +306,7 @@ export default function Navbar() {
                         Logout
                       </Button>
                     </>
-                  ) : (
+                  ) : ( 
                     <>
                       <Link
                         href='/login'

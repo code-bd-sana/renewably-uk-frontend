@@ -4,13 +4,15 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 
 export interface InfoCardPoint {
-  label: string;
+  label: string | React.ReactNode;
   icon?: React.ReactNode;
 }
 
 export interface InfoCardProps {
   icon?: React.ReactNode;
   title?: string;
+  /** Coloured subheading rendered below the title (e.g. "Financial Conduct Authority") */
+  subtitle?: string;
   description?: string;
   learnMoreHref?: string;
   points?: InfoCardPoint[];
@@ -28,6 +30,8 @@ export interface InfoCardProps {
   iconVariant?: "negative" | "positive" | "neutral";
   iconBgClassName?: string;
   titleClassName?: string;
+  /** Override subtitle color — defaults to blue */
+  subtitleClassName?: string;
   descriptionClassName?: string;
   pointClassName?: string;
   pointIconClassName?: string;
@@ -40,6 +44,7 @@ export interface InfoCardProps {
 export function InfoCard({
   icon,
   title,
+  subtitle,
   description,
   learnMoreHref,
   points,
@@ -51,6 +56,7 @@ export function InfoCard({
   iconVariant = "neutral",
   iconBgClassName,
   titleClassName,
+  subtitleClassName,
   descriptionClassName,
   pointClassName,
   pointIconClassName,
@@ -78,6 +84,19 @@ export function InfoCard({
     cardBg ??
     (inverted ? "bg-[#1E3A8A] text-white" : "bg-[#EEF3FB] text-[#1e293b]");
 
+  /** Subtitle element — reused across layout variants */
+  const subtitleEl = subtitle ? (
+    <p
+      className={cn(
+        "text-sm font-medium leading-snug",
+        inverted ? "text-blue-200" : "text-blue-600",
+        subtitleClassName
+      )}
+    >
+      {subtitle}
+    </p>
+  ) : null;
+
   return (
     <Card
       className={cn(
@@ -90,7 +109,8 @@ export function InfoCard({
           "p-5 space-y-3 flex flex-col h-full",
           isCenter && "items-center text-center",
         )}>
-        {/* Row layout (icon + title + description in one row group) */}
+
+        {/* ── ROW LAYOUT: icon + title + subtitle + description in one row group ── */}
         {isRowLayout && (icon || title || description) && (
           <div className='flex items-start gap-3'>
             {icon && (
@@ -115,7 +135,7 @@ export function InfoCard({
                   {title}
                 </h3>
               )}
-
+              {subtitleEl}
               {description && (
                 <p
                   className={cn(
@@ -130,11 +150,11 @@ export function InfoCard({
           </div>
         )}
 
-        {/* Icon (center layout — icon above title, not inline) */}
+        {/* ── CENTER LAYOUT: icon above title ── */}
         {isCenter && icon && (
           <div
             className={cn(
-              "flex items-center justify-center rounded-xl w-12 h-12 shrink-0 [&>svg]:w-6 [&>svg]:h-6 ",
+              "flex items-center justify-center rounded-xl w-12 h-12 shrink-0 [&>svg]:w-6 [&>svg]:h-6",
               defaultIconBg,
               iconWrapperClassName,
             )}>
@@ -142,7 +162,7 @@ export function InfoCard({
           </div>
         )}
 
-        {/* Header row (start layout — icon inline with title) */}
+        {/* ── START LAYOUT (default): icon inline with title ── */}
         {!isCenter && !isRowLayout && (icon || title) && (
           <div className='flex items-center gap-3'>
             {icon && (
@@ -156,6 +176,7 @@ export function InfoCard({
               </span>
             )}
             {title && (
+              <div className="flex flex-col">
               <h3
                 className={cn(
                   "font-semibold text-base leading-snug",
@@ -164,11 +185,15 @@ export function InfoCard({
                 )}>
                 {title}
               </h3>
+            {/* Subtitle — rendered after the header row in start/center layouts */}
+            {!isRowLayout && subtitleEl}
+            </div>
             )}
           </div>
         )}
 
-        {/* Title for center layout */}
+
+        {/* Title for center layout (rendered after icon) */}
         {isCenter && title && (
           <h3
             className={cn(
@@ -196,14 +221,14 @@ export function InfoCard({
         {points && points.length > 0 && (
           <ul
             className={cn(
-              "flex flex-col gap-2 pt-1 ",
+              "flex flex-col gap-2 pt-1",
               isCenter && "items-center",
             )}>
             {points.map((point, i) => (
               <li
                 key={i}
                 className={cn(
-                  "flex items-center gap-2 text-sm ",
+                  "flex items-center gap-2 text-sm",
                   inverted ? "text-blue-100" : "text-slate-600",
                   pointClassName,
                 )}>
@@ -217,7 +242,6 @@ export function InfoCard({
                     {point.icon}
                   </span>
                 ) : (
-                  // Default checkmark icon
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className={cn(
@@ -263,7 +287,7 @@ export function InfoCard({
         {footer && (
           <div
             className={cn(
-              "pt-3 mt-auto  text-sm leading-relaxed",
+              "pt-3 mt-auto text-sm leading-relaxed",
               inverted
                 ? "border-white/20 text-blue-100"
                 : "border-slate-200 text-slate-500",
