@@ -8,7 +8,7 @@ export default function InstallationCompanies() {
         align='start'
         titleClassName='text-[#030712]'
       />
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-345'>
+      <div className='flex flex-col gap-y-6 text-base font-medium'>
         <p className='text-(--text-muted) text-[16px]'>
           Up to 30% of retrofit projects require compliance corrections due to
           documentation failures. Structured governance and audit-ready

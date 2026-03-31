@@ -11,33 +11,28 @@ export interface InfoCardPoint {
 export interface InfoCardProps {
   icon?: React.ReactNode;
   title?: string;
-  /** Coloured subheading rendered below the title (e.g. "Financial Conduct Authority") */
   subtitle?: string;
-  description?: string;
+  description?: string | React.ReactNode;
   learnMoreHref?: string;
   points?: InfoCardPoint[];
   footer?: React.ReactNode;
   footerClassName?: string;
 
-  // Layout
   align?: "start" | "center";
   contentLayout?: "stacked" | "row";
   inverted?: boolean;
   className?: string;
 
-  // Colors
   cardBg?: string;
   iconVariant?: "negative" | "positive" | "neutral";
   iconBgClassName?: string;
   titleClassName?: string;
-  /** Override subtitle color — defaults to blue */
   subtitleClassName?: string;
   descriptionClassName?: string;
   pointClassName?: string;
   pointIconClassName?: string;
   learnMoreClassName?: string;
 
-  // Icon wrapper
   iconWrapperClassName?: string;
 }
 
@@ -67,6 +62,7 @@ export function InfoCard({
 }: InfoCardProps) {
   const isCenter = align === "center";
   const isRowLayout = contentLayout === "row" && !isCenter;
+  const isStringDesc = typeof description === "string";
 
   const defaultIconBg: string =
     iconBgClassName ??
@@ -84,18 +80,43 @@ export function InfoCard({
     cardBg ??
     (inverted ? "bg-[#1E3A8A] text-white" : "bg-[#EEF3FB] text-[#1e293b]");
 
-  /** Subtitle element — reused across layout variants */
   const subtitleEl = subtitle ? (
     <p
       className={cn(
         "text-sm font-medium leading-snug",
         inverted ? "text-blue-200" : "text-blue-600",
-        subtitleClassName
-      )}
-    >
+        subtitleClassName,
+      )}>
       {subtitle}
     </p>
   ) : null;
+
+  const renderDescription = () => {
+    if (!description) return null;
+
+    if (isStringDesc) {
+      return (
+        <p
+          className={cn(
+            "text-sm leading-relaxed",
+            inverted ? "text-blue-100" : "text-slate-500",
+            descriptionClassName,
+          )}>
+          {description}
+        </p>
+      );
+    }
+
+    return (
+      <div
+        className={cn(
+          inverted ? "text-blue-100" : "text-slate-500",
+          descriptionClassName,
+        )}>
+        {description}
+      </div>
+    );
+  };
 
   return (
     <Card
@@ -109,8 +130,7 @@ export function InfoCard({
           "p-5 space-y-3 flex flex-col h-full",
           isCenter && "items-center text-center",
         )}>
-
-        {/* ── ROW LAYOUT: icon + title + subtitle + description in one row group ── */}
+        {/* ROW LAYOUT */}
         {isRowLayout && (icon || title || description) && (
           <div className='flex items-start gap-3'>
             {icon && (
@@ -136,21 +156,12 @@ export function InfoCard({
                 </h3>
               )}
               {subtitleEl}
-              {description && (
-                <p
-                  className={cn(
-                    "text-sm leading-relaxed",
-                    inverted ? "text-blue-100" : "text-slate-500",
-                    descriptionClassName,
-                  )}>
-                  {description}
-                </p>
-              )}
+              {renderDescription()}
             </div>
           </div>
         )}
 
-        {/* ── CENTER LAYOUT: icon above title ── */}
+        {/* CENTER LAYOUT */}
         {isCenter && icon && (
           <div
             className={cn(
@@ -162,7 +173,7 @@ export function InfoCard({
           </div>
         )}
 
-        {/* ── START LAYOUT (default): icon inline with title ── */}
+        {/* START LAYOUT */}
         {!isCenter && !isRowLayout && (icon || title) && (
           <div className='flex items-center gap-3'>
             {icon && (
@@ -176,24 +187,22 @@ export function InfoCard({
               </span>
             )}
             {title && (
-              <div className="flex flex-col">
-              <h3
-                className={cn(
-                  "font-semibold text-base leading-snug",
-                  inverted ? "text-white" : "text-[#1e293b]",
-                  titleClassName,
-                )}>
-                {title}
-              </h3>
-            {/* Subtitle — rendered after the header row in start/center layouts */}
-            {!isRowLayout && subtitleEl}
-            </div>
+              <div className='flex flex-col'>
+                <h3
+                  className={cn(
+                    "font-semibold text-base leading-snug",
+                    inverted ? "text-white" : "text-[#1e293b]",
+                    titleClassName,
+                  )}>
+                  {title}
+                </h3>
+                {subtitleEl}
+              </div>
             )}
           </div>
         )}
 
-
-        {/* Title for center layout (rendered after icon) */}
+        {/* Center Title */}
         {isCenter && title && (
           <h3
             className={cn(
@@ -205,17 +214,8 @@ export function InfoCard({
           </h3>
         )}
 
-        {/* Description */}
-        {!isRowLayout && description && (
-          <p
-            className={cn(
-              "text-sm leading-relaxed",
-              inverted ? "text-blue-100" : "text-slate-500",
-              descriptionClassName,
-            )}>
-            {description}
-          </p>
-        )}
+        {/* Description (stacked layout) */}
+        {!isRowLayout && renderDescription()}
 
         {/* Points */}
         {points && points.length > 0 && (
@@ -243,7 +243,6 @@ export function InfoCard({
                   </span>
                 ) : (
                   <svg
-                    xmlns='http://www.w3.org/2000/svg'
                     className={cn(
                       "w-4 h-4 shrink-0",
                       inverted ? "text-blue-200" : "text-blue-500",
@@ -253,11 +252,7 @@ export function InfoCard({
                     viewBox='0 0 24 24'
                     stroke='currentColor'
                     strokeWidth={2}>
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-                    />
+                    <path d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' />
                   </svg>
                 )}
                 {point.label}
@@ -276,10 +271,7 @@ export function InfoCard({
               learnMoreClassName,
             )}>
             Learn More
-            <ArrowRight
-              color='#0F47A8'
-              className='w-4 h-4 text-(--text-primary)'
-            />
+            <ArrowRight className='w-4 h-4' />
           </Link>
         )}
 
