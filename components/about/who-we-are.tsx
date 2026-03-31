@@ -38,7 +38,7 @@ export default function WhoWeAre() {
   return (
     <section className='mx-6 lg:mx-25 px-4 pt-15'>
       <SectionHeader title='Who We Are' titleClassName='text-[#030712]' />
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-395 pt-4'>
+      <div className='flex flex-col gap-y-6 text-base font-medium pt-4'>
         <p className='text-(--text-muted) text-[16px]'>
           Renewably UK is a compliance and insurance infrastructure provider
           dedicated to the renewable energy installation sector. With over a

@@ -5,7 +5,7 @@ export default function OurMission() {
     <section className='bg-background'>
       <div className='mx-6 lg:mx-25 px-4 py-15'>
         <SectionHeader title='Our Mission' titleClassName='text-[#FFFFFF]' />
-        <div className='flex flex-col gap-y-6 text-base max-w-375 pt-4'>
+        <div className='flex flex-col gap-y-6 text-base pt-4'>
           <p className='text-white text-[16px]'>
             Our mission is simple: To position installers as leaders in the
             renewable energy sector by embedding professional compliance,

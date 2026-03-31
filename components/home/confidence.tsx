@@ -10,7 +10,7 @@ export default function Confidence() {
         align='start'
         titleClassName='text-[#030712]'
       />
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-315'>
+      <div className='flex flex-col gap-y-6 text-base font-medium'>
         <p className='text-(--text-muted)'>
           Insurance Backed Guarantees Hosted by Renewably UK
         </p>

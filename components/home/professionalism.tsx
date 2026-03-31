@@ -8,7 +8,7 @@ export default function Professionalism() {
         align='start'
         titleClassName='text-[#030712]'
       />
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-315'>
+      <div className='flex flex-col gap-y-6 text-base font-medium'>
         <p className='text-(--text-muted)'>
           Growth without structure creates risk. Growth with protection builds
           trust.

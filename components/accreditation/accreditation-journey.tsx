@@ -26,13 +26,11 @@ export default function AccreditationJourney() {
   return (
     <section className='bg-background py-15'>
       <SectionHeader
-        title='User Roles & Management'
-        titleClassName='text-white'
-        subTitle='Control who sees what with granular permission settings'
-        subTitleClassName='text-white font-medium text-[16px] max-w-160 mx-auto text-center'
+        title='How Renewably UK Supports Your Accreditation Journey'
+        titleClassName='text-white max-w-200 mx-auto'
       />
       <div className='mx-6 lg:mx-35 px-4'>
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 pt-12'>
+        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 pt-10'>
           {managementData.map((cardData, index) => (
             <InfoCard
               key={index}

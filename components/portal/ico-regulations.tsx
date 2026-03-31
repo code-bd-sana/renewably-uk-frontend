@@ -8,7 +8,7 @@ export default function ICORegulations() {
         subTitle='Most installers unknowingly breach UK data protection laws by storing customer data on overseas platforms'
         subTitleClassName='text-(--text-muted) font-medium text-[16px] max-w-160 mx-auto text-center'
       />
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-345 pt-17'>
+      <div className='flex flex-col gap-y-6 text-base font-medium pt-17'>
         <p className='text-[#030712] text-xl'>The Hidden ICO Compliance Risk</p>
         <p className='text-(--text-muted) -mt-4 text-[16px]'>
           When you store customer names, addresses, contact details, or project
