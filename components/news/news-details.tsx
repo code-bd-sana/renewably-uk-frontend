@@ -196,7 +196,7 @@ export default function NewsDetails({ slug }: NewsDetailsProps) {
             </div>
           </div>
 
-          {/* Hero Image */}
+          {/* Hero Image of News */}
           <div
             className={`relative w-full my-8 rounded-2xl overflow-hidden ${
               newsOrBlog.imageFit === "contain"
