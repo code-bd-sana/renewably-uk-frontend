@@ -1,3 +1,5 @@
+import ContactBanner from "@/components/contact/contact-banner";
+import ContactContent from "@/components/contact/contact-content";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,5 +14,10 @@ export const metadata: Metadata = {
   },
 };
 export default function Contact() {
-  return <div>Contact</div>;
+  return (
+    <>
+      <ContactBanner />
+      <ContactContent />
+    </>
+  );
 }
