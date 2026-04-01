@@ -34,6 +34,8 @@ export interface InfoCardProps {
   learnMoreClassName?: string;
 
   iconWrapperClassName?: string;
+  contentClassName?: string;
+  rowClassName?: string;
 }
 
 export function InfoCard({
@@ -57,6 +59,8 @@ export function InfoCard({
   pointIconClassName,
   learnMoreClassName,
   iconWrapperClassName,
+  contentClassName,
+  rowClassName,
   footer,
   footerClassName,
 }: InfoCardProps) {
@@ -129,10 +133,11 @@ export function InfoCard({
         className={cn(
           "p-5 space-y-3 flex flex-col h-full",
           isCenter && "items-center text-center",
+          contentClassName,
         )}>
         {/* ROW LAYOUT */}
         {isRowLayout && (icon || title || description) && (
-          <div className='flex items-start gap-3'>
+          <div className={cn("flex items-start gap-3", rowClassName)}>
             {icon && (
               <span
                 className={cn(
@@ -144,7 +149,7 @@ export function InfoCard({
               </span>
             )}
 
-            <div className='space-y-1'>
+            <div className='min-w-0 space-y-1'>
               {title && (
                 <h3
                   className={cn(

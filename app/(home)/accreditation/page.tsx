@@ -5,6 +5,19 @@ import EssentialAccreditation from "@/components/accreditation/essential-accredi
 import PassAudits from "@/components/accreditation/pass-audits";
 import ProfessionAccreditation from "@/components/accreditation/professional-accreditation";
 import ProperAccreditation from "@/components/accreditation/proper-accreditation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Renewably UK - Accreditation",
+  description:
+    "Bringing a Greener Future to the United Kingdom One Service at a Time",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Renewably UK - Accreditation",
+  },
+};
 
 export default function Accreditation() {
   return (

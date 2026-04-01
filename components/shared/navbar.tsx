@@ -215,7 +215,7 @@ export default function Navbar() {
                   </Link>
 
                   <Link
-                    href='/signup'
+                    href='/sign-up'
                     className='
                       h-10
                       px-5
@@ -245,8 +245,7 @@ export default function Navbar() {
 
           {/* MOBILE MENU */}
           {open && (
-            <div
-              className='absolute left-4 right-4 top-[calc(100%+12px)] z-50 bg-white rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.12)] px-6 py-6 lg:hidden'>
+            <div className='absolute left-4 right-4 top-[calc(100%+12px)] z-50 bg-white rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.12)] px-6 py-6 lg:hidden'>
               <nav className='flex flex-col gap-5'>
                 {navItems.map((item) => {
                   const isActive = pathname === item.href;
@@ -306,7 +305,7 @@ export default function Navbar() {
                         Logout
                       </Button>
                     </>
-                  ) : ( 
+                  ) : (
                     <>
                       <Link
                         href='/login'
@@ -320,7 +319,7 @@ export default function Navbar() {
                       </Link>
 
                       <Link
-                        href='/signup'
+                        href='/sign-up'
                         onClick={() => setOpen(false)}
                         className='
                           h-11

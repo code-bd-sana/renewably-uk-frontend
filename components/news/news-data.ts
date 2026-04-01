@@ -22,7 +22,7 @@ export const newsItems: NewsItem[] = [
     title: "Introducing Renewably UK Ltd",
     excerpt:
       "A new chapter with the same trusted team and a stronger platform to support installers, homeowners, and funding partners.",
-    category: "Company Update",
+    category: "Company News",
     date: "February 25, 2026",
     image: "/news/blog1.png",
     sections: [
@@ -48,7 +48,7 @@ export const newsItems: NewsItem[] = [
     title: "ECO4 Guidance Update: What Installers Need to Know",
     excerpt:
       "Key compliance clarifications and practical steps to keep projects progressing smoothly under the latest ECO4 rules.",
-    category: "Policy Brief",
+    category: "Government & Policy",
     date: "March 05, 2026",
     image: "/news/blog2.png",
     sections: [
@@ -65,7 +65,7 @@ export const newsItems: NewsItem[] = [
     title: "Finance Pathways Expanded for Heat Pump Projects",
     excerpt:
       "New partner-led funding options are now available, helping customers spread costs while improving project conversion rates.",
-    category: "Funding",
+    category: "Market Insights",
     date: "March 12, 2026",
     image: "/news/blog3.png",
   },
@@ -74,7 +74,7 @@ export const newsItems: NewsItem[] = [
     title: "New Quality Assurance Partnership Announced",
     excerpt:
       "Our latest collaboration strengthens QA monitoring and supports consistent standards from survey through installation.",
-    category: "Partnership",
+    category: "Industry Standards",
     date: "March 19, 2026",
     image: "/news/blog4.png",
   },
@@ -83,7 +83,7 @@ export const newsItems: NewsItem[] = [
     title: "Homeowner Demand Trends for Spring 2026",
     excerpt:
       "Regional demand data highlights where retrofit interest is rising fastest and how teams can prepare for increased enquiries.",
-    category: "Market Insight",
+    category: "Market Insights",
     date: "March 24, 2026",
     image: "/home/banner-partner/cyber.png",
   },
@@ -92,7 +92,7 @@ export const newsItems: NewsItem[] = [
     title: "Document Workflow Improvements Now Live",
     excerpt:
       "Faster document handling and improved status visibility are now available in the portal to reduce admin overhead.",
-    category: "Platform",
+    category: "Company News",
     date: "March 29, 2026",
     image: "/home/banner-partner/ico.png",
   },
