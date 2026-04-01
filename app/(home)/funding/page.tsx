@@ -7,6 +7,19 @@ import GovernmentFunding from "@/components/funding/govt-funding";
 import HowFundingWorks from "@/components/funding/how-funding-works";
 import ReadyToExplore from "@/components/funding/ready-to-explore";
 import SuccessSupport from "@/components/funding/success-support";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Renewably UK - Funding",
+  description:
+    "Bringing a Greener Future to the United Kingdom One Service at a Time",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Renewably UK - Funding",
+  },
+};
 
 export default function Funding() {
   return (
