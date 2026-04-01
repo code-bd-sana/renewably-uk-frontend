@@ -19,6 +19,19 @@ import SecurityCertifications from "@/components/portal/security-certifications"
 import SecurityProtection from "@/components/portal/security-protection";
 import TimeAndImpact from "@/components/portal/time-impact";
 import UserRolesAndManagement from "@/components/portal/user-roles-management";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Renewably UK - Portal",
+  description:
+    "Bringing a Greener Future to the United Kingdom One Service at a Time",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Renewably UK - Portal",
+  },
+};
 
 export default function PortalPage() {
   return (

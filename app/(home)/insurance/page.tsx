@@ -11,6 +11,19 @@ import LegalCompliance from "@/components/insurance/legal-compliance";
 import TrustedPartners from "@/components/insurance/trusted-partners";
 import WhatIsIBG from "@/components/insurance/what-is-ibg";
 import WhyMultilayer from "@/components/insurance/why-multilayer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Renewably UK - Insurance",
+  description:
+    "Bringing a Greener Future to the United Kingdom One Service at a Time",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Renewably UK - Insurance",
+  },
+};
 
 export default function Insurance() {
   return (
