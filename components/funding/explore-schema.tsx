@@ -1,10 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import SectionHeader from "../shared/section-header";
 import { InfoCard } from "../shared/info-card";
 import { Button } from "../ui/button";
 import { ArrowRight, FileText, Search } from "lucide-react";
 import Link from "next/link";
+import { FundingSchemesModal } from "./funding-schemes-modal";
 
 export default function ExploreSchema() {
+  const [schemesModalOpen, setSchemesModalOpen] = useState(false);
+
   const statsCards = [
     {
       title: "£24B+",
@@ -43,7 +49,7 @@ export default function ExploreSchema() {
             allocated to bridge the gap between ECO4 and the implementation of
             the Warm Homes Plan.
           </p>
-          <p className='text-[#F3F4F6] bg-background mt-6 p-4 rounded-[8px]'>
+          <p className='text-[#F3F4F6] bg-background mt-6 p-4 rounded-xl'>
             Ed Miliband: This £1.5 billion investment will help families stay
             warm, cut energy bills and accelerate Britain’s transition to clean
             energy as part of our mission to deliver Net Zero.
@@ -90,7 +96,10 @@ export default function ExploreSchema() {
           ))}
         </div>
         <div className='flex flex-col md:flex-row gap-x-4 gap-y-2 md:my-9 my-3 text-base justify-center items-center'>
-          <Button className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
+          <Button
+            type='button'
+            onClick={() => setSchemesModalOpen(true)}
+            className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
             <FileText color='#FFFFFF' className='ml-2' />
             View All Funding Schemes
             <ArrowRight color='#FFFFFF' className='ml-2' />
@@ -121,6 +130,11 @@ export default function ExploreSchema() {
             />
           ))}
         </div>
+
+        <FundingSchemesModal
+          open={schemesModalOpen}
+          onOpenChange={setSchemesModalOpen}
+        />
       </div>
     </section>
   );
