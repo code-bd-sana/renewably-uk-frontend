@@ -1,3 +1,11 @@
+import {
+  CircleCheckBig,
+  Database,
+  FileText,
+  Lock,
+  MailIcon,
+  Shield,
+} from "lucide-react";
 import { InfoCard } from "./shared/info-card";
 
 const PRIMARY = "#0F47A8";
@@ -53,46 +61,10 @@ const BulletList = ({ items }: { items: React.ReactNode[] }) => (
   </ul>
 );
 
-// ─── Blue highlight card (sections 4, 5, 6) ──────────────────────────────────
-const DatabaseIcon = () => (
-  <svg
-    width='16'
-    height='16'
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth='2'
-    className='shrink-0'>
-    <ellipse cx='12' cy='5' rx='9' ry='3' />
-    <path d='M21 12c0 1.66-4 3-9 3s-9-1.34-9-3' />
-    <path d='M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5' />
-  </svg>
-);
-const ShieldIcon = () => (
-  <svg
-    width='16'
-    height='16'
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth='2'
-    className='shrink-0'>
-    <path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' />
-  </svg>
-);
-const LockIcon = () => (
-  <svg
-    width='16'
-    height='16'
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth='2'
-    className='shrink-0'>
-    <rect x='3' y='11' width='18' height='11' rx='2' ry='2' />
-    <path d='M7 11V7a5 5 0 0 1 10 0v4' />
-  </svg>
-);
+// ─── Blue highlight card ──────────────────────────────────
+const DatabaseIcon = () => <Database color='#0F47A8' />;
+const ShieldIcon = () => <Shield color='#0F47A8' />;
+const LockIcon = () => <Lock color='#0F47A8' />;
 
 const CARD_CLASS =
   "bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] shadow-sm border border-[#E5E7EB] hover:border-[#b0b1b6] rounded";
@@ -251,7 +223,7 @@ export default function PrivacyPolicy() {
             pointClassName='text-[#364153] text-[15px] sm:text-base leading-snug items-center'
           />
         ))}
-        <p className='px-3 sm:px-5 -mt-4 sm:-mt-11 text-[#6B7280] text-[15px] sm:text-base'>
+        <p className='px-3 sm:px-5 -mt-8 text-[#6B7280] text-[15px] sm:text-base'>
           This Privacy Policy describes your choices and rights with respect to
           your Personal Data, including your rights of access and correction.
         </p>
@@ -769,18 +741,8 @@ export default function PrivacyPolicy() {
               text: "Where we process your Personal Data based on consent, you can withdraw your consent at any time.",
             },
           ].map((item, i) => (
-            <li key={i} className='flex gap-2 items-start'>
-              <svg
-                width='18'
-                height='18'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='#364153'
-                strokeWidth='2'
-                className='shrink-0 mt-0.5'>
-                <circle cx='12' cy='12' r='10' />
-                <polyline points='9 12 11 14 15 10' />
-              </svg>
+            <li key={i} className='flex gap-2 items-center'>
+              <CircleCheckBig color='#0F47A8' size={18} />
               <span className='text-[15px] sm:text-base text-[#364153] leading-snug'>
                 <strong className='text-[#111827]'>{item.title}</strong>
                 <br />
@@ -892,55 +854,33 @@ export default function PrivacyPolicy() {
         </Body>
 
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 mx-3 sm:mx-5 my-3'>
-          <div className={`${CARD_CLASS} p-4 flex flex-col gap-2`}>
-            <div className='flex gap-2 items-center'>
-              <span className='text-[#0F47A8]'>
-                <svg
-                  width='16'
-                  height='16'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'>
-                  <rect x='2' y='4' width='20' height='16' rx='2' />
-                  <polyline points='2,4 12,13 22,4' />
-                </svg>
-              </span>
-              <p className='text-[#0F47A8] font-semibold text-[15px] sm:text-base'>
-                Email
-              </p>
-            </div>
-            <p className='text-[#364153] text-[15px] sm:text-base leading-snug'>
-              privacy@renewably.energy
-            </p>
-          </div>
+          <InfoCard
+            icon={<MailIcon size={16} color='#0F47A8' />}
+            title='Email'
+            titleClassName='text-[16px]'
+            description='privacy@renewably.energy'
+            descriptionClassName='text-[15px] sm:text-base pb-4 text-[#364153]'
+            iconBgClassName='bg-[#B4CDF7]'
+            className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] cursor-pointer'
+          />
 
-          <div className={`${CARD_CLASS} p-4 flex flex-col gap-2`}>
-            <div className='flex gap-2 items-center'>
-              <span className='text-[#0F47A8]'>
-                <svg
-                  width='16'
-                  height='16'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'>
-                  <path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z' />
-                  <polyline points='14 2 14 8 20 8' />
-                </svg>
-              </span>
-              <p className='text-[#0F47A8] font-semibold text-[15px] sm:text-base'>
-                Post
-              </p>
-            </div>
-            <div className='text-[#364153] text-[15px] sm:text-base leading-snug space-y-0.5'>
-              <p>Data Protection Officer</p>
-              <p>Renewably UK Limited</p>
-              <p>Luneside House, Blythe Gate</p>
-              <p>Blythe Valley Park, Solihull</p>
-              <p>West Midlands, B90 8AH</p>
-            </div>
-          </div>
+          <InfoCard
+            icon={<FileText size={16} color='#0F47A8' />}
+            title='Post'
+            titleClassName='text-[16px]'
+            description={
+              <div className='flex flex-col gap-0.5 '>
+                <p>Data Protection Officer</p>
+                <p>Renewably UK Limited</p>
+                <p>Luneside House, Blythe Gate</p>
+                <p>Blythe Valley Park, Solihull</p>
+                <p>West Midlands, B90 8AH</p>
+              </div>
+            }
+            descriptionClassName='text-[15px] sm:text-base pb-4 text-[#364153]'
+            iconBgClassName='bg-[#B4CDF7]'
+            className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] cursor-pointer'
+          />
         </div>
 
         <div className='bg-[#0F47A8] rounded p-4 mx-3 sm:mx-5 mt-3'>
