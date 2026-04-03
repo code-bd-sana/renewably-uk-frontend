@@ -4,6 +4,7 @@ import type { MouseEvent } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePrivacyPolicyModal } from "@/components/shared/privacy-policy-modal-provider";
 
 const companyLinks = [
   { label: "Home", href: "/" },
@@ -47,6 +48,8 @@ const connectItems = [
 ];
 
 const Footer = () => {
+  const { openPrivacyPolicy } = usePrivacyPolicyModal();
+
   // Function to handle service click
   const handleServiceClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -192,9 +195,12 @@ const Footer = () => {
             ICO Registration No: ZC077762 Registered with the Information
             Commissioner’s Office under the Data Protection Act 2018 and UK
             GDPR.{" "}
-            <span className='underline text-white cursor-pointer'>
+            <button
+              type='button'
+              onClick={openPrivacyPolicy}
+              className='underline text-white cursor-pointer'>
               Privacy Policy
-            </span>
+            </button>
           </p>
         </div>
       </div>

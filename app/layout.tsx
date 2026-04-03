@@ -1,4 +1,5 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { PrivacyPolicyModalProvider } from "@/components/shared/privacy-policy-modal-provider";
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Geist, Geist_Mono, Inter } from "next/font/google";
 import Script from "next/script";
@@ -59,7 +60,9 @@ export default function RootLayout({
           fontFamily:
             '"SF Pro Display", "SF Pro Text", "SF Pro", var(--font-dm-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
         }}>
-        <TooltipProvider>{children}</TooltipProvider>
+        <TooltipProvider>
+          <PrivacyPolicyModalProvider>{children}</PrivacyPolicyModalProvider>
+        </TooltipProvider>
         <Script id='register-sw' strategy='afterInteractive'>
           {`
             if ('serviceWorker' in navigator) {
