@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { usePrivacyPolicyModal } from "@/components/shared/privacy-policy-modal-provider";
 
 export default function ContactMessage() {
   const [agreed, setAgreed] = useState(false);
+  const { openPrivacyPolicy } = usePrivacyPolicyModal();
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -155,11 +156,12 @@ export default function ContactMessage() {
             htmlFor='agree'
             className='text-sm text-gray-600 leading-snug  max-w-140'>
             I agree to the{" "}
-            <Link
-              href='/privacy-policy'
+            <button
+              type='button'
+              onClick={openPrivacyPolicy}
               className='text-(--text-primary) underline'>
               Privacy Policy
-            </Link>{" "}
+            </button>{" "}
             and consent to Renewably UK contacting me about my inquiry.
           </label>
         </div>

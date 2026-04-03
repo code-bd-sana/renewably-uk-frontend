@@ -29,7 +29,7 @@ import {
 import { InfoCard } from "@/components/shared/info-card";
 import SectionHeader from "@/components/shared/section-header";
 import Link from "next/link";
-import PrivacyPolicy from "@/components/privacy-policy";
+import { usePrivacyPolicyModal } from "@/components/shared/privacy-policy-modal-provider";
 import Image from "next/image";
 
 const userTypes = [
@@ -206,7 +206,7 @@ export default function SignUp() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [consent, setConsent] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const [showPrivacy, setShowPrivacy] = useState(false);
+  const { openPrivacyPolicy } = usePrivacyPolicyModal();
   const siteKey = process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY || "";
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const innerRef = useRef<HTMLDivElement | null>(null);
@@ -371,26 +371,6 @@ export default function SignUp() {
                 />
               </div>
             </div>
-            {showPrivacy && (
-              <div className='fixed inset-0 z-50 flex items-center justify-center'>
-                <div
-                  className='fixed inset-0 bg-black/50'
-                  onClick={() => setShowPrivacy(false)}
-                />
-                <div className='bg-white rounded-lg max-w-3xl w-full mx-4 z-50 p-6 overflow-auto max-h-[90vh]'>
-                  <div className='flex justify-end'>
-                    <button
-                      type='button'
-                      onClick={() => setShowPrivacy(false)}
-                      className='text-gray-500 hover:text-gray-700'>
-                      Close
-                    </button>
-                  </div>
-                  <PrivacyPolicy />
-                </div>
-              </div>
-            )}
-
             {/* User Type */}
             <div>
               <div className='flex items-center gap-2 mb-1'>
@@ -468,7 +448,7 @@ export default function SignUp() {
                   I agree to the{" "}
                   <button
                     type='button'
-                    onClick={() => setShowPrivacy(true)}
+                    onClick={openPrivacyPolicy}
                     className='text-(--text-primary) hover:underline font-medium'>
                     Privacy Policy
                   </button>{" "}

@@ -125,7 +125,7 @@ export function InfoCard({
   return (
     <Card
       className={cn(
-        "rounded-2xl border-0 shadow-sm h-full",
+        "rounded border-0 shadow-sm h-full",
         defaultCardBg,
         className,
       )}>
