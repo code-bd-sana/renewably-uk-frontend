@@ -101,21 +101,21 @@ export function FundingSchemesModal({
         open={schemesDialogOpen}
         onOpenChange={handleSchemesDialogOpenChange}>
         <DialogContent
-          className='w-[186vw] sm:w-[min(1400px,96vw)] max-w-none! sm:max-w-none! h-[92vh] rounded-[10px] p-0 overflow-hidden bg-white'
+          className='w-[calc(100vw-1rem)] sm:w-[min(1400px,96vw)] max-w-none! sm:max-w-none! max-h-[calc(100vh-1rem)] sm:max-h-[92vh] rounded-[10px] p-0 overflow-hidden bg-white'
           showCloseButton>
-          <div className='bg-[#0F47A8] px-5 py-4'>
+          <div className='bg-[#0F47A8] px-4 sm:px-5 py-4'>
             <DialogHeader className='gap-1'>
-              <DialogTitle className='text-white text-xl'>
+              <DialogTitle className='text-white text-lg sm:text-xl pr-10'>
                 All Funding Schemes
               </DialogTitle>
-              <DialogDescription className='text-white/85 text-sm'>
+              <DialogDescription className='text-white/85 text-xs sm:text-sm'>
                 Explore available schemes and open full details for each card.
               </DialogDescription>
             </DialogHeader>
           </div>
 
-          <div className='p-4 sm:p-5 overflow-y-auto h-[calc(88vh-86px)] bg-white'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-7'>
+          <div className='p-4 sm:p-5 overflow-y-auto max-h-[calc(100vh-8rem)] sm:max-h-[calc(92vh-86px)] bg-white'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-7'>
               {statsCards.map((card, index) => (
                 <InfoCard
                   key={index}
@@ -131,7 +131,7 @@ export function FundingSchemesModal({
                 />
               ))}
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6'>
               {SCHEMES.map((scheme) => (
                 <SchemeCard
                   key={scheme.id}
