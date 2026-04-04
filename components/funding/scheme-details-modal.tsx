@@ -60,7 +60,7 @@ const SectionHeader = ({
     <div>
       <p
         className={cn(
-          "text-[22px] font-medium text-[#030712]",
+          "text-lg sm:text-[22px] font-medium text-[#030712]",
           titleClassName,
         )}>
         {title}
@@ -68,7 +68,7 @@ const SectionHeader = ({
       {subtitle && (
         <p
           className={cn(
-            "text-[10px]! text-[#030712] mt-0.5",
+            "text-xs sm:text-[10px]! text-[#030712] mt-0.5",
             subtitleClassName,
           )}>
           {subtitle}
@@ -151,15 +151,15 @@ export function SchemeDetailsModal({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className='w-[186vw] sm:w-[min(1400px,96vw)] max-w-none! sm:max-w-none! h-[92vh] rounded-[10px] p-0 overflow-hidden bg-white'
+        className='w-[calc(100vw-1rem)] sm:w-[min(1400px,96vw)] max-w-none! sm:max-w-none! max-h-[calc(100vh-1rem)] sm:max-h-[92vh] rounded-[10px] p-0 overflow-hidden bg-white'
         showCloseButton>
         {/* Header */}
-        <div className='bg-[#0F47A8] px-5 py-4'>
+        <div className='bg-[#0F47A8] px-4 sm:px-5 py-4'>
           <DialogHeader className='gap-1'>
-            <DialogTitle className='text-white text-lg'>
+            <DialogTitle className='text-white text-base sm:text-lg pr-10'>
               {scheme.headerTitle}
             </DialogTitle>
-            <DialogDescription className='text-white/85 text-sm flex items-center gap-2'>
+            <DialogDescription className='text-white/85 text-xs sm:text-sm flex flex-wrap items-center gap-x-2 gap-y-1'>
               <Award size={14} color='#FFFFFF' />
               <span className='text-white'>{scheme.regulatorName}</span>
               <Clock size={14} color='#FFFFFF' />
@@ -169,9 +169,9 @@ export function SchemeDetailsModal({
         </div>
 
         {/* Scrollable body */}
-        <div className='p-5 sm:p-6 space-y-5 overflow-y-auto max-h-[calc(92vh-220px)]'>
+        <div className='p-4 sm:p-5 md:p-6 space-y-4 sm:space-y-5 overflow-y-auto max-h-[calc(100vh-9rem)] sm:max-h-[calc(92vh-220px)]'>
           {/* Top stats row */}
-          <div className='grid grid-cols-3 gap-3 mt-3'>
+          <div className='grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3'>
             <InfoCard
               icon={<Euro size={18} color='#0F47A8' />}
               title='Total Funding'
@@ -210,17 +210,17 @@ export function SchemeDetailsModal({
             />
           </div>
           {/* Scheme Overview */}
-          <div className=' bg-white py-4'>
+          <div className='bg-white py-3 sm:py-4'>
             <SectionHeader
               icon={<FileText size={24} color='#0F47A8' />}
-              iconBgClassName='bg-[#E0E7FF] w-10 h-10 rounded-[6px]'
+              iconBgClassName='bg-[#E0E7FF] w-8 h-8 sm:w-10 sm:h-10 rounded-[6px]'
               title='Scheme Overview'
             />
-            <p className='text-[#030712] text-base leading-relaxed'>
+            <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               {scheme.description}
             </p>
             <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
-              <p className='text-white text-base'>
+              <p className='text-white text-sm sm:text-base'>
                 <span className='font-medium text-white'>
                   Net Zero Contribution:
                 </span>{" "}
@@ -230,7 +230,7 @@ export function SchemeDetailsModal({
           </div>
 
           {/* Funding Value & Duration */}
-          <div className='grid grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
             <InfoCard
               icon={<Euro size={18} color='#0F47A8' />}
               title='Total Funding'
@@ -258,36 +258,38 @@ export function SchemeDetailsModal({
           </div>
 
           {/* Eligibility Criteria */}
-          <div className=' bg-white py-4'>
+          <div className='bg-white py-3 sm:py-4'>
             <SectionHeader
               icon={<Users size={24} color='#0F47A8' />}
-              iconBgClassName='bg-[#E0E7FF] w-10 h-10 rounded-[6px]'
+              iconBgClassName='bg-[#E0E7FF] w-8 h-8 sm:w-10 sm:h-10 rounded-[6px]'
               title='Eligibility Criteria'
             />
-            <p className='text-[#030712] text-base leading-relaxed'>
+            <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               Who can benefit from this scheme
             </p>
             <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
-              <p className='text-white text-base'>
+              <p className='text-white text-sm sm:text-base'>
                 {scheme.eligibilityCriteria}
               </p>
             </div>
           </div>
 
           {/* Delivery Structure */}
-          <div className=' bg-white py-4'>
+          <div className='bg-white py-3 sm:py-4'>
             <SectionHeader
               icon={<FileText size={24} color='#0F47A8' />}
-              iconBgClassName='bg-[#E0E7FF] w-10 h-10 rounded-[6px]'
+              iconBgClassName='bg-[#E0E7FF] w-8 h-8 sm:w-10 sm:h-10 rounded-[6px]'
               title='Delivery Structure'
             />
-            <p className='text-[#030712] text-base leading-relaxed'>
+            <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               How the scheme operates and who delivers it
             </p>
             <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
-              <p className='text-white text-base'>{scheme.deliveryStructure}</p>
+              <p className='text-white text-sm sm:text-base'>
+                {scheme.deliveryStructure}
+              </p>
             </div>
-            <div className='grid grid-cols-2 gap-3 mt-3'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3'>
               <InfoCard
                 title='Total Funding'
                 description={scheme.installerRole}
@@ -312,17 +314,19 @@ export function SchemeDetailsModal({
           </div>
 
           {/* Approved Measures & Technologies */}
-          <div className=' bg-white py-4'>
+          <div className='bg-white py-3 sm:py-4'>
             <SectionHeader
               icon={<Zap size={24} color='#0F47A8' />}
-              iconBgClassName='bg-[#E0E7FF] w-10 h-10 rounded-[6px]'
+              iconBgClassName='bg-[#E0E7FF] w-8 h-8 sm:w-10 sm:h-10 rounded-[6px]'
               title='Approved Measures & Technologies'
             />
-            <p className='text-[#030712] text-base leading-relaxed'>
+            <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               What can be installed under this scheme
             </p>
             <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
-              <p className='text-white text-base'>{scheme.approvedMeasures}</p>
+              <p className='text-white text-sm sm:text-base'>
+                {scheme.approvedMeasures}
+              </p>
             </div>
             <div className='flex flex-wrap gap-2 mt-2'>
               {scheme.approvedMeasureTags.map((tag) => {
@@ -340,17 +344,17 @@ export function SchemeDetailsModal({
           </div>
 
           {/* Compliance & Accreditation */}
-          <div className=' bg-white py-4'>
+          <div className='bg-white py-3 sm:py-4'>
             <SectionHeader
               icon={<Shield size={24} color='#0F47A8' />}
-              iconBgClassName='bg-[#E0E7FF] w-10 h-10 rounded-[6px]'
+              iconBgClassName='bg-[#E0E7FF] w-8 h-8 sm:w-10 sm:h-10 rounded-[6px]'
               title='Compliance & Accreditation Requirements'
             />
-            <p className='text-[#030712] text-base leading-relaxed'>
+            <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               Standards and certifications required for installers
             </p>
             <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
-              <p className='text-white text-base'>
+              <p className='text-white text-sm sm:text-base'>
                 <span className='font-medium text-white'>
                   RenewablyUk Support:
                 </span>{" "}
@@ -358,7 +362,7 @@ export function SchemeDetailsModal({
               </p>
             </div>
             {/* Certifications grid */}
-            <div className='grid grid-cols-1 sm:grid-cols-3 gap-5 mt-3'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-5 mt-3'>
               {scheme.certifications.map((cert) => (
                 <InfoCard
                   key={cert.name}
@@ -432,30 +436,30 @@ export function SchemeDetailsModal({
             </div>
           </div>
 
-          <div className=' bg-white py-4'>
+          <div className='bg-white py-3 sm:py-4'>
             <SectionHeader
               icon={<TrendingUp size={24} color='#0F47A8' />}
-              iconBgClassName='bg-[#E0E7FF] w-10 h-10 rounded-[6px]'
+              iconBgClassName='bg-[#E0E7FF] w-8 h-8 sm:w-10 sm:h-10 rounded-[6px]'
               title='Business Opportunity Assessment'
             />
-            <p className='text-[#030712] text-base leading-relaxed'>
+            <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               Market potential and growth opportunities for installers
             </p>
             <div className='mt-3 bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] px-3 py-2 border-[#E5E7EB] rounded-lg border'>
-              <p className='text-[#030712] text-base pt-2'>
+              <p className='text-[#030712] text-sm sm:text-base pt-2'>
                 Market Opportunity Level
               </p>
-              <p className='text-[22px] text-[#0F47A8] pt-2'>
+              <p className='text-lg sm:text-[22px] text-[#0F47A8] pt-2'>
                 Very High – largest retrofit pipeline
               </p>
-              <p className='text-[#6B7280] pt-2'>
+              <p className='text-[#6B7280] text-sm sm:text-base pt-2'>
                 This scheme represents one of the largest market opportunities
                 for installers, with substantial funding, high volume potential,
                 and multi-year commitment.
               </p>
             </div>
             <div className='mt-6'>
-              <p className='text-[#030712] text-[22px] font-medium mb-2'>
+              <p className='text-[#030712] text-lg sm:text-[22px] font-medium mb-2'>
                 Key Business Advantages
               </p>
               <ul className='space-y-2'>
@@ -466,7 +470,7 @@ export function SchemeDetailsModal({
                       color='#0F47A8'
                       className='shrink-0 mt-0.5'
                     />
-                    <span className='text-[#6B7280] text-base! leading-relaxed'>
+                    <span className='text-[#6B7280] text-sm sm:text-base leading-relaxed'>
                       {advantage}
                     </span>
                   </li>
@@ -477,30 +481,30 @@ export function SchemeDetailsModal({
         </div>
 
         {/* Footer navigation */}
-        <div className='border-t border-[#E5E7EB] px-5 py-3 flex items-center justify-between bg-[#F9FBFF]'>
-          <div className='flex gap-2'>
+        <div className='border-t border-[#E5E7EB] px-4 sm:px-5 py-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-[#F9FBFF]'>
+          <div className='flex gap-2 w-full sm:w-auto'>
             <button
               type='button'
               onClick={handlePrevious}
               disabled={!onNavigate || totalSchemes < 2}
-              className='flex items-center gap-1 px-3 py-1.5 rounded-lg border border-[#E5E7EB] bg-white text-[#374151] text-xs font-medium hover:bg-[#F3F4F6] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
+              className='flex-1 sm:flex-none items-center justify-center gap-1 px-3 py-2 rounded-lg border border-[#E5E7EB] bg-white text-[#374151] text-xs font-medium hover:bg-[#F3F4F6] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
               ← Previous
             </button>
             <button
               type='button'
               onClick={handleNext}
               disabled={!onNavigate || totalSchemes < 2}
-              className='flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#0F47A8] text-white text-xs font-medium hover:bg-[#0D3D8F] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
+              className='flex-1 sm:flex-none items-center justify-center gap-1 px-3 py-2 rounded-lg bg-[#0F47A8] text-white text-xs font-medium hover:bg-[#0D3D8F] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
               Next →
             </button>
           </div>
-          <p className='text-[#6B7280] text-xs'>
+          <p className='text-[#6B7280] text-xs text-center sm:text-left'>
             Browse through all funding schemes
           </p>
           <button
             type='button'
             onClick={() => onOpenChange(false)}
-            className='px-3 py-1.5 rounded-lg bg-[#EF4444] text-white text-xs font-medium hover:bg-[#DC2626] transition-colors'>
+            className='w-full sm:w-auto px-3 py-2 rounded-lg bg-[#EF4444] text-white text-xs font-medium hover:bg-[#DC2626] transition-colors'>
             Close
           </button>
         </div>
