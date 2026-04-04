@@ -183,7 +183,7 @@ export default function Login() {
               onToggle={() => setShowPassword(!showPassword)}
             />
             {/* Forgot Password */}
-            <div className='flex items-start gap-3'>
+            <div className='flex items-start justify-between gap-3'>
               <label className='flex items-start gap-3 cursor-pointer'>
                 <input
                   type='checkbox'
@@ -193,6 +193,11 @@ export default function Login() {
                 />
                 <span className='text-sm text-[#6B7280]'>Remember Me</span>
               </label>
+              <Link
+                href='/forget-password'
+                className='text-sm font-medium text-[#0284C7] hover:text-blue-800 cursor-pointer'>
+                Forgot Password?
+              </Link>
             </div>
             {/* Submit */}
             <button

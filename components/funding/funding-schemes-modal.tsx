@@ -2,11 +2,12 @@
 
 import { useMemo, useState } from "react";
 import {
+  Award,
   Building2,
   Euro,
   FileText,
+  Home,
   Landmark,
-  ShieldCheck,
   Target,
 } from "lucide-react";
 import { SchemeCard } from "@/components/funding/scheme-card";
@@ -28,12 +29,12 @@ interface FundingSchemesModalProps {
 
 const schemeIcon = (id: string) => {
   if (id.includes("eco4") || id.includes("obligation")) {
-    return <ShieldCheck size={18} color='white' />;
+    return <Home size={18} color='#0F47A8' />;
   }
   if (id.includes("warm-homes") || id.includes("grant")) {
-    return <Landmark size={18} color='white' />;
+    return <Landmark size={18} color='#0F47A8' />;
   }
-  return <Building2 size={18} color='white' />;
+  return <Building2 size={18} color='#0F47A8' />;
 };
 
 export function FundingSchemesModal({
@@ -50,6 +51,11 @@ export function FundingSchemesModal({
   );
 
   const handleViewDetails = (schemeId: string) => {
+    setSelectedSchemeId(schemeId);
+    setDetailsOpen(true);
+  };
+
+  const handleNavigateScheme = (schemeId: string) => {
     setSelectedSchemeId(schemeId);
     setDetailsOpen(true);
   };
@@ -109,7 +115,7 @@ export function FundingSchemesModal({
           </div>
 
           <div className='p-4 sm:p-5 overflow-y-auto h-[calc(88vh-86px)] bg-white'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-7'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-7'>
               {statsCards.map((card, index) => (
                 <InfoCard
                   key={index}
@@ -132,6 +138,7 @@ export function FundingSchemesModal({
                   icon={schemeIcon(scheme.id)}
                   headerTitle={scheme.headerTitle}
                   headerSubtitle={scheme.headerSubtitle}
+                  regulatorIcon={<Award size={18} color='#0F47A8' />}
                   regulatorName={scheme.regulatorName}
                   description={scheme.description}
                   fundingValue={scheme.fundingValue}
@@ -146,7 +153,8 @@ export function FundingSchemesModal({
       <SchemeDetailsModal
         open={detailsOpen}
         onOpenChange={handleDetailsOpenChange}
-        schemeName={selectedScheme?.headerTitle}
+        scheme={selectedScheme}
+        onNavigate={handleNavigateScheme}
       />
     </>
   );
