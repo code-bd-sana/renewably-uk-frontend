@@ -7,7 +7,7 @@ export default function BenefitsForHomeowners() {
     {
       title: "FCA-Regulated Insurance",
       description:
-        "Our Insurance Backed Guarantees are delivered through Bluedrop Services, an FCA-authorised insurance distributor, ensuring full regulatory compliance and customer protection.",
+        "Our hosted Insurance Backed Guarantees are delivered through Bluedrop Services, an FCA-authorized insurance distributor, ensuring full regulatory compliance and customer protection.",
       icon: <Shield color='#0F47A8' />,
     },
     {

@@ -24,8 +24,7 @@ export default function ProperAccreditation() {
     },
     {
       title: "Insurance & Guarantees",
-      description:
-        "Maintain compliant records for regulatory inspecti",
+      description: "Maintain compliant records for regulatory inspection.",
       icon: <CircleCheckBig color='#0F47A8' />,
     },
   ];

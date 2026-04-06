@@ -8,7 +8,7 @@ import { usePrivacyPolicyModal } from "@/components/shared/privacy-policy-modal-
 
 const companyLinks = [
   { label: "Home", href: "/" },
-  { label: "Portal", href: "/portal" },
+  { label: "Platform", href: "/platform" },
   { label: "Insurance", href: "/insurance" },
   { label: "Funding", href: "/funding" },
   { label: "Accreditation", href: "/accreditation" },

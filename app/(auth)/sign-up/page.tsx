@@ -508,7 +508,7 @@ export default function SignUp() {
         </div>
 
         {/* ─── RIGHT: Info Panel ─── */}
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start'>
           {/* <InfoCard
             align='center'
             title='Trusted & Compliant'

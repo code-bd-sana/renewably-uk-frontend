@@ -66,7 +66,7 @@ export default function TimeAndImpact() {
       ],
     },
     {
-      title: "Submit project in portal (2 minutes)",
+      title: "Platform Process",
       icon: <CircleCheckBig color='#FFFFFF' />,
       points: [
         {
@@ -86,15 +86,15 @@ export default function TimeAndImpact() {
           icon: pointBullet,
         },
         {
-          label: "IP whitelisting for sensitive accounts",
+          label: "All records stored in project folder",
           icon: pointBullet,
         },
         {
-          label: "IP whitelisting for sensitive accounts",
+          label: "Documents searchable and accessible",
           icon: pointBullet,
         },
         {
-          label: "IP whitelisting for sensitive accounts",
+          label: "Audit-ready evidence instantly available",
           icon: pointBullet,
         },
       ],

@@ -187,7 +187,7 @@ export function SchemeDetailsModal({
             <InfoCard
               icon={<TrendingUp size={18} color='#0F47A8' />}
               title='Installer Opportunity'
-              description={scheme.schemeDuration}
+              description={scheme.installerOpportunity}
               align='start'
               cardBg='bg-white/10 text-black'
               iconBgClassName='bg-[#B4CDF7]'
@@ -217,9 +217,10 @@ export function SchemeDetailsModal({
               title='Scheme Overview'
             />
             <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
-              {scheme.description}
+              {scheme.schemaDescription}
+              {/* {scheme.description} */}
             </p>
-            <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
+            <div className='mt-3 bg-[#0F47A8] rounded-[4px] px-3 py-2'>
               <p className='text-white text-sm sm:text-base'>
                 <span className='font-medium text-white'>
                   Net Zero Contribution:
@@ -267,7 +268,7 @@ export function SchemeDetailsModal({
             <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               Who can benefit from this scheme
             </p>
-            <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
+            <div className='mt-3 bg-[#0F47A8] rounded-[4px] px-3 py-2'>
               <p className='text-white text-sm sm:text-base'>
                 {scheme.eligibilityCriteria}
               </p>
@@ -284,14 +285,14 @@ export function SchemeDetailsModal({
             <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               How the scheme operates and who delivers it
             </p>
-            <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
+            <div className='mt-3 bg-[#0F47A8] rounded-[4px] px-3 py-2'>
               <p className='text-white text-sm sm:text-base'>
                 {scheme.deliveryStructure}
               </p>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3'>
               <InfoCard
-                title='Total Funding'
+                title='Installer Role'
                 description={scheme.installerRole}
                 align='start'
                 cardBg='bg-white/10 text-black'
@@ -301,7 +302,7 @@ export function SchemeDetailsModal({
                 descriptionClassName='text-[16px] text-[#6B7280] leading-tight mt-3'
               />
               <InfoCard
-                title='Installer Opportunity'
+                title='Payment Structure'
                 description={scheme.paymentStructure}
                 align='start'
                 cardBg='bg-white/10 text-black'
@@ -323,7 +324,7 @@ export function SchemeDetailsModal({
             <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               What can be installed under this scheme
             </p>
-            <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
+            <div className='mt-3 bg-[#0F47A8] rounded-[4px] px-3 py-2'>
               <p className='text-white text-sm sm:text-base'>
                 {scheme.approvedMeasures}
               </p>
@@ -353,7 +354,10 @@ export function SchemeDetailsModal({
             <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               Standards and certifications required for installers
             </p>
-            <div className='mt-3 bg-[#0F47A8] rounded-lg px-3 py-2'>
+            <p className='text-base text-(--text-primary) mt-1 font-medium'>
+              {scheme.complianceRequirements}
+            </p>
+            <div className='mt-3 bg-[#0F47A8] rounded-[4px] px-3 py-2'>
               <p className='text-white text-sm sm:text-base'>
                 <span className='font-medium text-white'>
                   RenewablyUk Support:
@@ -383,59 +387,6 @@ export function SchemeDetailsModal({
           </div>
 
           {/* Business Opportunity Assessment */}
-          <div className='rounded-[10px] border border-[#E5E7EB] bg-white p-4'>
-            <SectionHeader
-              icon={
-                <svg
-                  className='w-4 h-4'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth={2}>
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6'
-                  />
-                </svg>
-              }
-              title='Business Opportunity Assessment'
-              subtitle='Market potential and growth opportunities for installers'
-            />
-            <div className='mb-3'>
-              <p className='text-[#6B7280] text-xs mb-1'>
-                Market Opportunity Level
-              </p>
-              <p className='text-[#111827] font-semibold text-sm'>
-                {scheme.businessOpportunityLevel}
-              </p>
-              <p className='text-[#364153] text-xs leading-relaxed mt-1'>
-                {scheme.businessOpportunityDescription}
-              </p>
-            </div>
-
-            {/* Key Business Advantages */}
-            <div className='mt-3'>
-              <p className='text-[#111827] text-xs font-semibold mb-2'>
-                Key Business Advantages
-              </p>
-              <ul className='space-y-2'>
-                {scheme.keyBusinessAdvantages.map((advantage, i) => (
-                  <li key={i} className='flex items-start gap-2'>
-                    <CircleCheckBig
-                      size={16}
-                      color='#0F47A8'
-                      className='shrink-0 mt-0.5'
-                    />
-                    <span className='text-[#6B7280] text-base! leading-relaxed'>
-                      {advantage}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
           <div className='bg-white py-3 sm:py-4'>
             <SectionHeader
               icon={<TrendingUp size={24} color='#0F47A8' />}
@@ -445,17 +396,15 @@ export function SchemeDetailsModal({
             <p className='text-[#030712] text-sm sm:text-base leading-relaxed'>
               Market potential and growth opportunities for installers
             </p>
-            <div className='mt-3 bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] px-3 py-2 border-[#E5E7EB] rounded-lg border'>
+            <div className='mt-3 bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] px-3 py-2 border-[#E5E7EB] rounded-[4px] border'>
               <p className='text-[#030712] text-sm sm:text-base pt-2'>
                 Market Opportunity Level
               </p>
               <p className='text-lg sm:text-[22px] text-[#0F47A8] pt-2'>
-                Very High – largest retrofit pipeline
+                {scheme.installerOpportunity}
               </p>
               <p className='text-[#6B7280] text-sm sm:text-base pt-2'>
-                This scheme represents one of the largest market opportunities
-                for installers, with substantial funding, high volume potential,
-                and multi-year commitment.
+                {scheme.installerOpportunityDescription}
               </p>
             </div>
             <div className='mt-6'>
@@ -487,14 +436,14 @@ export function SchemeDetailsModal({
               type='button'
               onClick={handlePrevious}
               disabled={!onNavigate || totalSchemes < 2}
-              className='flex-1 sm:flex-none items-center justify-center gap-1 px-3 py-2 rounded-lg border border-[#E5E7EB] bg-white text-[#374151] text-xs font-medium hover:bg-[#F3F4F6] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
+              className='flex-1 sm:flex-none items-center justify-center gap-1 px-3 py-2 rounded-[4px] border border-[#E5E7EB] bg-white text-[#374151] text-xs font-medium hover:bg-[#F3F4F6] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
               ← Previous
             </button>
             <button
               type='button'
               onClick={handleNext}
               disabled={!onNavigate || totalSchemes < 2}
-              className='flex-1 sm:flex-none items-center justify-center gap-1 px-3 py-2 rounded-lg bg-[#0F47A8] text-white text-xs font-medium hover:bg-[#0D3D8F] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
+              className='flex-1 sm:flex-none items-center justify-center gap-1 px-3 py-2 rounded-[4px] bg-[#0F47A8] text-white text-xs font-medium hover:bg-[#0D3D8F] transition-colors disabled:cursor-not-allowed disabled:opacity-50'>
               Next →
             </button>
           </div>
@@ -504,7 +453,7 @@ export function SchemeDetailsModal({
           <button
             type='button'
             onClick={() => onOpenChange(false)}
-            className='w-full sm:w-auto px-3 py-2 rounded-lg bg-[#EF4444] text-white text-xs font-medium hover:bg-[#DC2626] transition-colors'>
+            className='w-full sm:w-auto px-3 py-2 rounded-[4px] bg-[#EF4444] text-white text-xs font-medium hover:bg-[#DC2626] transition-colors'>
             Close
           </button>
         </div>
