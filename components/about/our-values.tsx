@@ -7,7 +7,7 @@ export default function OurValues() {
     {
       title: "Protection First",
       description:
-        "Every decision we make prioritizes the protection of installers and their customers. Our Insurance Backed Guarantees aren't an add-on—they're central to our entire operating model.",
+        "Every decision we make prioritizes the protection of installers and their customers. Our hosted Insurance Backed Guarantees aren't an add-on—they're central to our entire operating model. ",
       icon: <CircleCheckBig color='#0F47A8' />,
     },
     {
