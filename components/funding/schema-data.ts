@@ -4,11 +4,13 @@ export interface FundingSchema {
   headerSubtitle: string;
   regulatorName: string;
   description: string;
+  schemaDescription: string;
   netZeroContribution: string;
   fundingValue: string;
   schemeDuration: string;
   status: string;
   installerOpportunity: string;
+  installerOpportunityDescription?: string;
   eligibilityCriteria: string;
   deliveryStructure: string;
   installerRole: string;
@@ -36,16 +38,20 @@ export const schema: FundingSchema[] = [
   {
     id: "eco4-energy-company-obligation",
     headerTitle: "Energy Company Obligation Phase 4 (ECO4)",
-    headerSubtitle: "Ofgem · 2022–2026",
+    headerSubtitle: "2022–2026",
     regulatorName: "Ofgem",
     description:
-      "ECO4 is the UK's flagship domestic retrofit programme, requiring larger energy suppliers to fund energy efficiency.",
+      "The UK's largest retrofit programme delivering energy efficiency and low-carbon heating to low-income households.",
+    schemaDescription:
+      "ECO4 is the UK's flagship domestic retrofit programme, requiring larger energy suppliers to fund energy efficiency and low-carbon heating installations in low-income and vulnerable households. The scheme prioritises whole-house, fabric-first improvements aligned with PAS 2035 retrofit standards.",
     netZeroContribution:
       "Major reduction in domestic emissions and fuel poverty",
     fundingValue: "~£4 Billion",
     schemeDuration: "2022–2026",
     status: "Active 2022–2026",
     installerOpportunity: "Very High – largest retrofit pipeline",
+    installerOpportunityDescription:
+      "This scheme represents one of the largest market opportunities for installers, with substantial funding, high volume potential, and multi-year commitment.",
     eligibilityCriteria:
       "Low-income households, benefits recipients, EPC D–G homes, local authority flexible eligibility",
     deliveryStructure:
@@ -68,7 +74,7 @@ export const schema: FundingSchema[] = [
     ],
     complianceRequirements: "TrustMark, PAS 2030, PAS 2035",
     renewablyUKSupport:
-      " Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
     certifications: [
       {
         name: "TrustMark Required",
@@ -95,27 +101,33 @@ export const schema: FundingSchema[] = [
   },
   {
     id: "warm-homes-plan-transition-funding",
-    headerTitle: "Warm Homes Plan",
-    headerSubtitle: "UK Government · Transition Funding",
-    regulatorName: "UK Government",
+    headerTitle: "Great British Insulation Scheme (GBIS)",
+    headerSubtitle: "2023–2026",
+    regulatorName: "Ofgem",
     description:
-      "Bridging allocation supporting domestic retrofit while funding transitions from ECO4.",
-    netZeroContribution: "Reduction in domestic emissions through retrofit",
-    fundingValue: "GBP 1.5B",
-    schemeDuration: "2024–2028",
-    status: "Active",
-    installerOpportunity: "High",
+      "Supplier-led insulation programme targeting homes with poor energy performance across all income levels.",
+    schemaDescription:
+      "The Great British Insulation Scheme is a supplier-led programme designed to improve the thermal performance of homes across all income bands. It focuses exclusively on insulation measures and targets properties with Energy Performance Certificate (EPC) ratings of D–G.",
+    netZeroContribution: "Improves thermal efficiency across millions of homes",
+    fundingValue: "~£1 Billion",
+    schemeDuration: "2023–2026",
+    status: "Active 2023–2026",
+    installerOpportunity: "High-volume insulation installations",
+    installerOpportunityDescription:
+      "Significant opportunity for installers with strong growth potential and stable funding pipeline.",
     eligibilityCriteria:
-      "Low-income households transitioning from ECO4 eligibility",
-    deliveryStructure:
-      "Delivered through local authorities and approved installers",
-    installerRole: "Approved installer networks",
-    paymentStructure: "Payment on completion",
-    approvedMeasures: ["Insulation", "Heat Pumps", "Heating Upgrades"],
-    approvedMeasureTags: ["Insulation", "Heat Pumps"],
+      "Households with EPC ratings D–G; both low-income and general households",
+    deliveryStructure: "Supplier obligation delivered via approved installers",
+    installerRole:
+      "Subcontracted through managing agents or obligated suppliers",
+    paymentStructure: "Payment on completion through scheme delivery partners",
+    approvedMeasures: [
+      "Loft insulation, cavity wall insulation, solid wall insulation",
+    ],
+    approvedMeasureTags: ["Insulation"],
     complianceRequirements: "TrustMark, PAS 2030",
     renewablyUKSupport:
-      "Our platform supports compliance tracking and documentation for Warm Homes Plan submissions.",
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
     certifications: [
       {
         name: "TrustMark Required",
@@ -130,73 +142,91 @@ export const schema: FundingSchema[] = [
     businessOpportunityDescription:
       "Bridging funding ensures pipeline continuity between ECO4 and future schemes.",
     keyBusinessAdvantages: [
-      "Continuity of pipeline between major schemes",
-      "Government-backed funding reduces customer cost barriers",
-      "Supports installer workforce planning",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
   {
     id: "la-flex-local-authority-route",
-    headerTitle: "Local Authority Flex",
-    headerSubtitle: "Local Authorities · LA Flex Route",
-    regulatorName: "Local Authorities",
+    headerTitle: "Boiler Upgrade Scheme (BUS)",
+    headerSubtitle: "2022–2028",
+    regulatorName: "Ofgem",
     description:
-      "Enables councils to identify vulnerable homes for energy efficiency support under ECO frameworks.",
-    netZeroContribution:
-      "Targeted reduction in fuel poverty through local delivery",
-    fundingValue: "Regional",
-    schemeDuration: "Ongoing",
-    status: "Active",
-    installerOpportunity: "Medium – regionally variable",
+      "Capital grants for homeowners and small businesses replacing fossil fuel heating with heat pumps.",
+    schemaDescription:
+      "The Boiler Upgrade Scheme provides upfront capital grants to homeowners and small businesses looking to replace fossil fuel heating systems with low-carbon alternatives. The scheme is installer-led, with approved installers managing the application and redemption process.",
+    netZeroContribution: "Accelerates transition to low-carbon heating",
+    fundingValue: "~£450 Million",
+    schemeDuration: "2022–2028",
+    status: "Active 2022–2028",
+    installerOpportunity: "Growing – key route for heat pump installers",
     eligibilityCriteria:
-      "Vulnerable households identified by local authorities",
+      "Homeowners and small businesses replacing fossil fuel heating",
     deliveryStructure:
-      "Councils refer eligible households to obligated suppliers",
-    installerRole: "Subcontracted through supplier networks",
-    paymentStructure: "Scheme-dependent payment terms",
-    approvedMeasures: ["Insulation", "Heating Upgrades"],
-    approvedMeasureTags: ["Insulation"],
-    complianceRequirements: "TrustMark, PAS 2030",
+      "Installer-led grant redeemed through accredited installers",
+    installerRole: "Direct application through MCS-certified installers",
+    paymentStructure: "Upfront grant redeemed by installer on completion",
+    approvedMeasures: [
+      "Air source heat pumps, ground source heat pumps, biomass boilers",
+    ],
+    approvedMeasureTags: ["Heat Pumps", "Biomass"],
+    complianceRequirements: "TrustMark, MCS",
     renewablyUKSupport:
-      "Our platform helps track LA Flex referrals and compliance documentation.",
+      "Renewably UK Support: Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with MCS requirements.",
     certifications: [
       {
         name: "TrustMark Required",
         description: "Government-endorsed quality scheme",
+      },
+      {
+        name: "MCS",
+        description: "Microgeneration installer accreditation",
       },
     ],
     businessOpportunityLevel: "Medium",
     businessOpportunityDescription:
       "Regional opportunity dependent on local authority engagement and referral volumes.",
     keyBusinessAdvantages: [
-      "Access to hard-to-reach vulnerable households",
-      "Council partnerships support community presence",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
   {
     id: "gbis-great-british-insulation-scheme",
-    headerTitle: "Great British Insulation Scheme",
-    headerSubtitle: "Ofgem Regulated · GBIS Delivery",
-    regulatorName: "Ofgem Regulated",
+    headerTitle: "Home Upgrade Grant (HUG)",
+    headerSubtitle: "2023–2025",
+    regulatorName: "Department for Energy Security and Net Zero",
     description:
-      "Targets single insulation measures to improve EPC ratings for eligible households.",
-    netZeroContribution: "Improved EPC ratings and reduced energy consumption",
-    fundingValue: "GBP 1B",
+      "Targeted support for off-gas grid properties in low-income areas requiring whole-house retrofit.",
+    schemaDescription:
+      "HUG2 is a locally-delivered retrofit programme targeting low-income, off-gas grid properties with poor energy performance. Local authorities commission retrofit delivery partners to carry out whole-house improvements in line with PAS 2035 standards.",
+    netZeroContribution: "Decarbonizes rural and hard-to-treat homes",
+    fundingValue: "~£700 Million",
     schemeDuration: "2023–2026",
-    status: "Active",
-    installerOpportunity: "High – focused single-measure pipeline",
-    eligibilityCriteria: "EPC D–G homes, council tax bands A–D",
+    status: "Active 2023–2025",
+    installerOpportunity: "Medium – local authority retrofit programmes",
+    installerOpportunityDescription:
+      "Moderate opportunity with regional or specialist focus. Best suited for established installers with local presence or specific expertise.",
+    eligibilityCriteria:
+      "Low-income households in off-gas grid homes with EPC D–G",
     deliveryStructure:
-      "Obligated suppliers fund measures through approved installer networks",
-    installerRole: "Approved installers under obligated suppliers",
-    paymentStructure: "Payment on completion",
-    approvedMeasures: [
-      "Cavity Wall Insulation",
-      "Loft Insulation",
-      "Solid Wall Insulation",
+      "Local authorities procure retrofit contractors and delivery partners",
+    installerRole:
+      "Procured through local authority or housing provider frameworks",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
+    approvedMeasures: ["Insulation, solar PV, heat pumps, ventilation"],
+    approvedMeasureTags: [
+      "Insulation",
+      "Heat Pumps",
+      "Solar PV",
+      "Ventilation",
     ],
-    approvedMeasureTags: ["Insulation"],
-    complianceRequirements: "TrustMark, PAS 2030",
+    complianceRequirements: "TrustMark, PAS 2035",
     renewablyUKSupport:
       "Our platform streamlines GBIS compliance and submission workflows.",
     certifications: [
@@ -205,52 +235,51 @@ export const schema: FundingSchema[] = [
         description: "Government-endorsed quality scheme",
       },
       {
-        name: "PAS 2030 Installation Standard",
-        description: "Energy efficiency installation quality",
+        name: "PAS 2035 Installation Standard",
+        description: "Whole-house retrofit coordination",
       },
     ],
     businessOpportunityLevel: "High",
     businessOpportunityDescription:
       "Large volume single-measure scheme with straightforward delivery pathway.",
     keyBusinessAdvantages: [
-      "Simplified single-measure delivery reduces project complexity",
-      "High volume pipeline supports business scaling",
-      "Government-backed funding removes affordability barriers",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
   {
-    id: "social-housing-decarbonisation-fund-wave-3",
-    headerTitle: "Social Housing Decarbonisation Fund",
-    headerSubtitle: "DESNZ · Wave 3",
+    id: "social-housing-decarbonization-fund-wave-3",
+    headerTitle: "Social Housing Decarbonization Fund",
+    headerSubtitle: "2020–2030",
     regulatorName: "Department for Energy Security and Net Zero",
     description:
-      "Supports local authorities and housing providers to retrofit social homes at scale.",
-    netZeroContribution: "Large-scale decarbonisation of social housing stock",
-    fundingValue: "GBP 800M",
-    schemeDuration: "2024–2028",
-    status: "Active",
-    installerOpportunity: "Very High – large-scale social housing contracts",
-    eligibilityCriteria: "Social housing with EPC below C",
+      "Multi-billion pound programme to decarbonize council and housing association properties across the UK.",
+    schemaDescription:
+      "The Social Housing Decarbonization Fund provides capital grants to social housing providers to improve the energy performance of their housing stock. The scheme supports comprehensive retrofit programmes that upgrade insulation, heating systems, and renewable energy infrastructure.",
+    netZeroContribution: "Decarbonizes social housing stock",
+    fundingValue: "~£3.8 Billion",
+    schemeDuration: "2024–2030",
+    status: "Active 2020–2030",
+    installerOpportunity: "High – large portfolio retrofit contracts",
+    installerOpportunityDescription:
+      "Significant opportunity for installers with strong growth potential and stable funding pipeline.",
+    eligibilityCriteria:
+      "Social housing owned by councils or housing associations with EPC D–G",
     deliveryStructure:
-      "Local authorities and housing associations lead projects with approved contractors",
-    installerRole: "Subcontracted under housing provider frameworks",
-    paymentStructure: "Milestone-based payments",
+      "Housing providers deliver retrofit programmes via procurement frameworks",
+    installerRole:
+      "Procured through local authority or housing provider frameworks",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
     approvedMeasures: [
-      "Insulation",
-      "Heat Pumps",
-      "Solar PV",
-      "Ventilation",
-      "Heating Upgrades",
+      "Whole-house retrofit including insulation, solar PV and heat pumps",
     ],
-    approvedMeasureTags: [
-      "Insulation",
-      "Heat Pumps",
-      "Solar PV",
-      "Ventilation",
-    ],
-    complianceRequirements: "PAS 2035, TrustMark, PAS 2030",
+    approvedMeasureTags: ["Insulation", "Heat Pumps", "Solar PV"],
+    complianceRequirements: "TrustMark, PAS 2035",
     renewablyUKSupport:
-      "Our platform supports multi-property project management and compliance documentation for SHDF.",
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
     certifications: [
       {
         name: "TrustMark Required",
@@ -260,46 +289,47 @@ export const schema: FundingSchema[] = [
         name: "PAS 2035 Retrofit Standard",
         description: "Whole-house retrofit coordination",
       },
-      {
-        name: "PAS 2030 Installation Standard",
-        description: "Energy efficiency installation quality",
-      },
     ],
     businessOpportunityLevel: "Very High",
     businessOpportunityDescription:
       "Large-scale social housing contracts offer significant volume and long-term pipeline.",
     keyBusinessAdvantages: [
-      "Large multi-property contracts support economies of scale",
-      "Long-term pipeline through housing authority frameworks",
-      "Supports workforce development and training investment",
-      "Diversifies revenue beyond ECO4",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
   {
     id: "home-upgrade-grant-phase-2",
-    headerTitle: "Home Upgrade Grant",
-    headerSubtitle: "Local Authorities · Phase 2",
-    regulatorName: "Local Authorities",
+    headerTitle: "Warm Homes Plan",
+    headerSubtitle: "2025–2030",
+    regulatorName: "Department for Energy Security and Net Zero",
     description:
-      "Funds off-gas-grid, low-income homes with insulation and clean heating improvements.",
-    netZeroContribution: "Decarbonisation of hard-to-treat off-gas-grid homes",
-    fundingValue: "GBP 700M",
-    schemeDuration: "2023–2025",
-    status: "Active",
-    installerOpportunity: "High – off-gas-grid specialist opportunity",
-    eligibilityCriteria: "Off-gas-grid homes, low-income households, EPC D–G",
+      "The government's flagship £13 billion investment to transform domestic heating and tackle fuel poverty.",
+    schemaDescription:
+      "The Warm Homes Plan represents the UK Government's largest-ever investment in domestic energy efficiency. It aims to upgrade millions of homes, reduce fuel poverty, and accelerate the transition to low-carbon heating systems through a coordinated national retrofit strategy.",
+    netZeroContribution:
+      "Major driver of residential decarbonization and fuel poverty reduction",
+    fundingValue: "~£13 Billion",
+    schemeDuration: "2025–2030",
+    status: "Active 2025–2030",
+    installerOpportunity:
+      "Very High – expected to become the UK's largest retrofit programme",
+    installerOpportunityDescription:
+      "This scheme represents one of the largest market opportunities for installers, with substantial funding, high volume potential, and multi-year commitment.",
+    eligibilityCriteria:
+      "Social housing owned by councils or housing associations with EPC D–G",
     deliveryStructure:
-      "Local authorities manage delivery through approved contractors",
-    installerRole: "Approved contractors under local authority frameworks",
-    paymentStructure: "Payment on completion",
+      "Low-income households, fuel-poor homes, and social housing",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
     approvedMeasures: [
-      "Insulation",
-      "Heat Pumps",
-      "Solar PV",
-      "Heating Upgrades",
+      "Insulation, solar PV, heat pumps, energy efficiency upgrades",
     ],
     approvedMeasureTags: ["Insulation", "Heat Pumps", "Solar PV"],
-    complianceRequirements: "TrustMark, PAS 2035, PAS 2030, MCS",
+    complianceRequirements: "TrustMark, PAS 2035,",
     renewablyUKSupport:
       "Our platform supports HUG2 compliance tracking and multi-measure project coordination.",
     certifications: [
@@ -311,52 +341,56 @@ export const schema: FundingSchema[] = [
         name: "PAS 2035 Retrofit Standard",
         description: "Whole-house retrofit coordination",
       },
-      {
-        name: "MCS Certified",
-        description: "Microgeneration certification for renewables",
-      },
     ],
     businessOpportunityLevel: "High",
     businessOpportunityDescription:
       "Off-gas-grid specialist opportunity with premium project values due to heating replacement requirements.",
     keyBusinessAdvantages: [
-      "Higher average project values than ECO4",
-      "Specialist off-gas-grid market with lower competition",
-      "Whole-house retrofit approach supports comprehensive delivery",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
   {
     id: "boiler-upgrade-scheme-clean-heat",
-    headerTitle: "Boiler Upgrade Scheme",
-    headerSubtitle: "MCS and Ofgem · Clean Heat Incentive",
-    regulatorName: "MCS and Ofgem",
+    headerTitle: "Warmer Homes Scheme",
+    headerSubtitle: "Ongoing",
+    regulatorName: "Local Authorities",
     description:
-      "Provides grants for heat pumps and biomass boilers to accelerate low-carbon heating.",
+      "Locally-delivered retrofit programmes tailored to regional needs and managed by local authorities.",
+    schemaDescription:
+      "Warmer Homes programmes are locally-managed initiatives delivered by councils to support vulnerable households with energy efficiency improvements. They typically complement national schemes and are tailored to local housing stock and community needs.",
     netZeroContribution:
-      "Direct displacement of gas boilers with low-carbon alternatives",
-    fundingValue: "Up to GBP 7,500",
-    schemeDuration: "2022–2028",
-    status: "Active",
-    installerOpportunity: "High – consumer-facing heat pump pipeline",
+      "Supports local fuel poverty reduction and emissions targets",
+    fundingValue: "Varies by local authority",
+    schemeDuration: "Ongoing",
+    status: "Active Ongoing",
+    installerOpportunity: "Medium – regional installer opportunities",
+    installerOpportunityDescription:
+      "Moderate opportunity with regional or specialist focus. Best suited for established installers with local presence or specific expertise.",
     eligibilityCriteria:
-      "Any household replacing fossil fuel heating with heat pump or biomass boiler",
+      "Low-income households eligible through local authority referral",
     deliveryStructure:
-      "MCS-certified installers apply directly on behalf of customers",
-    installerRole: "MCS-certified installers submit voucher applications",
-    paymentStructure: "Voucher redeemed at point of installation",
+      "Low-income households, fuel-poor homes, and social housing",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
     approvedMeasures: [
-      "Air Source Heat Pumps",
-      "Ground Source Heat Pumps",
-      "Biomass Boilers",
+      "Insulation, heating upgrades, renewable heating systems",
     ],
-    approvedMeasureTags: ["Heat Pumps"],
-    complianceRequirements: "MCS certification required",
+    approvedMeasureTags: ["Insulation", "Heat Pumps"],
+    complianceRequirements: "TrustMark, PAS 2030, PAS 2035",
     renewablyUKSupport:
       "Our platform manages BUS voucher applications and MCS compliance documentation.",
     certifications: [
       {
         name: "MCS Certified",
         description: "Microgeneration certification for renewables",
+      },
+      {
+        name: "PAS 2035 Retrofit Standard",
+        description: "Whole-house retrofit coordination",
       },
       {
         name: "PAS 2030 Installation Standard",
@@ -367,39 +401,37 @@ export const schema: FundingSchema[] = [
     businessOpportunityDescription:
       "Consumer grant removes cost barrier to heat pump adoption, supporting private market growth alongside funded schemes.",
     keyBusinessAdvantages: [
-      "Opens private market alongside funded scheme work",
-      "Straightforward voucher process with fast payment",
-      "Supports premium heat pump installation business",
-      "Growing demand as boiler replacement market transitions",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
   {
     id: "public-sector-decarbonisation-scheme-phase-4",
-    headerTitle: "Public Sector Decarbonisation Scheme",
-    headerSubtitle: "Salix Finance · Phase 4",
-    regulatorName: "Salix Finance",
+    headerTitle: "Home Energy Scotland Grant and Loan",
+    headerSubtitle: "Ongoing",
+    regulatorName: "Home Energy Scotland",
     description:
-      "Supports schools, hospitals, and public buildings with energy-efficiency and heat decarbonisation works.",
-    netZeroContribution: "Decarbonisation of public sector building stock",
-    fundingValue: "GBP 1.4B",
-    schemeDuration: "2024–2028",
-    status: "Active",
-    installerOpportunity: "Very High – large public sector contracts",
-    eligibilityCriteria:
-      "Public sector organisations: schools, NHS, councils, universities",
+      "Scottish government grants and loans supporting renewable heating and energy efficiency upgrades.",
+    schemaDescription:
+      "Home Energy Scotland provides financial assistance to Scottish homeowners and private landlords to support the installation of renewable heating systems and energy efficiency measures. The scheme includes both grants and interest-free loans.",
+    netZeroContribution: "Supports Scotland's net zero heating transition",
+    fundingValue: "~£60 Million annually",
+    schemeDuration: "Ongoing",
+    status: "Active Ongoing",
+    installerOpportunity: "Medium – Scottish market opportunities",
+    installerOpportunityDescription:
+      "Moderate opportunity with regional or specialist focus. Best suited for established installers with local presence or specific expertise.",
+    eligibilityCriteria: "Scottish homeowners and private landlords",
     deliveryStructure:
-      "Salix administers grants; public bodies procure approved contractors",
-    installerRole: "Contractors procured through public sector frameworks",
-    paymentStructure: "Grant funding disbursed through Salix to public bodies",
-    approvedMeasures: [
-      "Heat Pumps",
-      "Solar PV",
-      "Insulation",
-      "Building Controls",
-      "LED Lighting",
-    ],
-    approvedMeasureTags: ["Heat Pumps", "Solar PV", "Insulation"],
-    complianceRequirements: "TrustMark, PAS 2030, MCS",
+      "Low-income households, fuel-poor homes, and social housing",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
+    approvedMeasures: ["Heat pumps, biomass, solar thermal, insulation"],
+    approvedMeasureTags: ["Insulation", "Heat Pumps", "Solar PV", "Biomass"],
+    complianceRequirements: "MCS, TrustMark",
     renewablyUKSupport:
       "Our platform supports PSDS project compliance, documentation, and multi-site management.",
     certifications: [
@@ -409,107 +441,53 @@ export const schema: FundingSchema[] = [
       },
       {
         name: "MCS Certified",
-        description: "Microgeneration certification for renewables",
+        description: "Microgeneration installer accreditation",
       },
     ],
     businessOpportunityLevel: "Very High",
     businessOpportunityDescription:
       "Large public sector contracts with long lead times but substantial project values and pipeline visibility.",
     keyBusinessAdvantages: [
-      "Large contract values support business investment",
-      "Reliable public sector client base",
-      "Framework agreements provide pipeline visibility",
-      "Supports diversification beyond residential retrofit",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
   {
-    id: "energy-company-obligation-rural-obligation",
-    headerTitle: "ECO Rural Obligation",
-    headerSubtitle: "Ofgem Regulated · Rural Uplift",
-    regulatorName: "Ofgem Regulated",
+    id: "nest-wales",
+    headerTitle: "Nest (Wales)",
+    headerSubtitle: "Ongoing",
+    regulatorName: "Welsh Government",
     description:
-      "Prioritises hard-to-treat and fuel-poor rural properties with enhanced support routes.",
-    netZeroContribution: "Targeted fuel poverty reduction in rural communities",
-    fundingValue: "Targeted Allocation",
-    schemeDuration: "2022–2026",
-    status: "Active",
-    installerOpportunity: "Medium – specialist rural market",
-    eligibilityCriteria: "Rural fuel-poor households, hard-to-treat properties",
-    deliveryStructure:
-      "Delivered through ECO4 framework with rural-specific uplifts",
-    installerRole: "ECO4 approved installers with rural specialism",
-    paymentStructure: "Enhanced payment rates for rural uplift properties",
-    approvedMeasures: [
-      "Insulation",
-      "Heating Upgrades",
-      "Solid Wall Insulation",
-    ],
-    approvedMeasureTags: ["Insulation"],
-    complianceRequirements: "TrustMark, PAS 2030, PAS 2035",
-    renewablyUKSupport:
-      "Our platform supports rural project compliance and documentation under ECO frameworks.",
-    certifications: [
-      {
-        name: "TrustMark Required",
-        description: "Government-endorsed quality scheme",
-      },
-      {
-        name: "PAS 2035 Retrofit Standard",
-        description: "Whole-house retrofit coordination",
-      },
-    ],
-    businessOpportunityLevel: "Medium",
-    businessOpportunityDescription:
-      "Specialist rural market with enhanced payment rates offsetting logistical complexity.",
-    keyBusinessAdvantages: [
-      "Enhanced payment rates compensate for rural logistics",
-      "Lower installer competition in rural areas",
-      "Supports community presence and local reputation",
-    ],
-  },
-  {
-    id: "warm-homes-local-grant-programme",
-    headerTitle: "Warm Homes Local Grant",
-    headerSubtitle: "UK Government · Local Delivery",
-    regulatorName: "UK Government",
-    description:
-      "Place-based retrofit funding delivered through councils to upgrade poor-performing homes.",
-    netZeroContribution:
-      "Place-based decarbonisation of worst-performing housing",
-    fundingValue: "Multi-year",
-    schemeDuration: "2025–2028",
-    status: "Active",
-    installerOpportunity: "High – council-led retrofit programmes",
+      "Welsh Government's fuel poverty programme providing free energy efficiency improvements to eligible households.",
+    schemaDescription:
+      "Nest is the Welsh Government's flagship fuel poverty programme, offering free energy efficiency advice and fully-funded home improvements to eligible households. The scheme targets low-income families and vulnerable residents across Wales.",
+    netZeroContribution: "Reduces fuel poverty and carbon emissions in Wales",
+    fundingValue: "~£30 Million annually",
+    schemeDuration: "Ongoing",
+    status: "Active Ongoing",
+    installerOpportunity: "Medium – Welsh market opportunities",
+    installerOpportunityDescription:
+      "Moderate opportunity with regional or specialist focus. Best suited for established installers with local presence or specific expertise.",
     eligibilityCriteria:
-      "Poor-performing homes (EPC E–G) in priority areas identified by councils",
+      "Welsh households in fuel poverty or on means-tested benefits",
     deliveryStructure:
-      "Councils lead place-based programmes with approved contractors",
-    installerRole: "Contractors approved under council frameworks",
-    paymentStructure: "Grant funding through local authority disbursement",
+      "Free energy efficiency advice and improvements delivered through approved installers",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
     approvedMeasures: [
-      "Insulation",
-      "Heat Pumps",
-      "Solar PV",
-      "Heating Upgrades",
-      "Ventilation",
+      "Insulation, boiler upgrades, heating controls, renewable heating",
     ],
-    approvedMeasureTags: [
-      "Insulation",
-      "Heat Pumps",
-      "Solar PV",
-      "Ventilation",
-    ],
-    complianceRequirements: "TrustMark, PAS 2035, PAS 2030",
+    approvedMeasureTags: ["Insulation", "Heating Systems"],
+    complianceRequirements: "TrustMark, PAS 2030",
     renewablyUKSupport:
-      "Our platform supports council-led programme compliance and multi-measure project tracking.",
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
     certifications: [
       {
         name: "TrustMark Required",
         description: "Government-endorsed quality scheme",
-      },
-      {
-        name: "PAS 2035 Retrofit Standard",
-        description: "Whole-house retrofit coordination",
       },
       {
         name: "PAS 2030 Installation Standard",
@@ -520,10 +498,185 @@ export const schema: FundingSchema[] = [
     businessOpportunityDescription:
       "Place-based council programmes offer concentrated local pipeline and community partnership opportunities.",
     keyBusinessAdvantages: [
-      "Concentrated local pipeline reduces travel and logistics costs",
-      "Council partnerships build long-term local market presence",
-      "Whole-house approach supports comprehensive project delivery",
-      "Multi-year programme provides forward pipeline visibility",
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
+    ],
+  },
+  {
+    id: "public-sector-decarbonisation-scheme",
+    headerTitle: "Public Sector Decarbonisation Scheme ",
+    headerSubtitle: "2020–2025",
+    regulatorName: "Department for Energy Security and Net Zero",
+    description:
+      "Competitive funding for public buildings including schools, hospitals, and local authority estates.",
+    schemaDescription:
+      "The Public Sector Decarbonisation Scheme funds capital improvements to public buildings including schools, hospitals, leisure centres, and council offices. It supports the public sector's commitment to achieving net zero carbon emissions ahead of the 2050 national target.",
+    netZeroContribution: "Reduces fuel poverty and carbon emissions in Wales",
+    fundingValue: "~£1.8 Billion",
+    schemeDuration: "2020–2025",
+    status: "2020–2025",
+    installerOpportunity: "Medium – Welsh market opportunities",
+    installerOpportunityDescription:
+      "Significant opportunity for installers with strong growth potential and stable funding pipeline.",
+    eligibilityCriteria:
+      "Public sector buildings including local authorities, NHS, schools",
+    deliveryStructure:
+      "Competitive grant funding delivered through public sector procurement",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
+    approvedMeasures: [
+      "Heat pumps, solar PV, LED lighting, insulation, building management systems",
+    ],
+    approvedMeasureTags: ["Insulation", "Heat Pumps", "Solar PV", "Biomass"],
+    complianceRequirements:
+      "Building Regulations, public procurement standards",
+    renewablyUKSupport:
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
+    certifications: [
+      {
+        name: "TrustMark Required",
+        description: "Government-endorsed quality scheme",
+      },
+      {
+        name: "PAS 2030 Installation Standard",
+        description: "Energy efficiency installation quality",
+      },
+    ],
+    businessOpportunityLevel: "High",
+    businessOpportunityDescription:
+      "Place-based council programmes offer concentrated local pipeline and community partnership opportunities.",
+    keyBusinessAdvantages: [
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
+    ],
+  },
+  {
+    id: "green-heat-network-fund",
+    headerTitle: "Green Heat Network Fund (GHNF)",
+    headerSubtitle: "2022–2025",
+    regulatorName: "Department for Energy Security and Net Zero",
+    description:
+      "Capital investment in new low-carbon district heating infrastructure across the UK.",
+    schemaDescription:
+      "The Green Heat Network Fund supports the development of new low-carbon heat networks across the UK. It provides capital grants for infrastructure including centralised heat pumps, waste heat recovery systems, and thermal storage.",
+    netZeroContribution: "Develops low-carbon district heating infrastructure",
+    fundingValue: "~£288 Million",
+    schemeDuration: "2022–2025",
+    status: "2022–2025",
+    installerOpportunity: "Specialist – requires heat network expertise",
+    installerOpportunityDescription:
+      "Requires specific technical expertise or market positioning. Best suited for installers with relevant accreditation and experience.",
+    eligibilityCriteria:
+      "Heat network developers, local authorities, housing associations",
+    deliveryStructure: "Capital grants for new low-carbon heat networks",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
+    approvedMeasures: [
+      "District heating infrastructure, heat pumps, waste heat recovery, thermal storage",
+    ],
+    approvedMeasureTags: ["Heat Pumps"],
+    complianceRequirements:
+      "Heat Network Code of Practice, Building Regulations",
+    renewablyUKSupport:
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
+    certifications: [],
+    businessOpportunityLevel: "High",
+    businessOpportunityDescription:
+      "Place-based council programmes offer concentrated local pipeline and community partnership opportunities.",
+    keyBusinessAdvantages: [
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
+    ],
+  },
+  {
+    id: "heat-network-efficiency-scheme",
+    headerTitle: "Heat Network Efficiency Scheme (HNES)",
+    headerSubtitle: "2022–2025",
+    regulatorName: "Welsh Government",
+    description:
+      "Grants to improve the performance and reduce emissions of existing heat networks.",
+    schemaDescription:
+      "HNES provides capital funding to improve the efficiency of existing heat networks. It supports upgrades to network insulation, control systems, metering infrastructure, and heat interface units to reduce energy waste and carbon emissions.",
+    netZeroContribution:
+      "Improves efficiency and reduces emissions from existing networks",
+    fundingValue: "~£32 Million",
+    schemeDuration: "2022–2025",
+    status: "2022–2025",
+    installerOpportunity: "Specialist – existing heat network operators",
+    installerOpportunityDescription:
+      "Requires specific technical expertise or market positioning. Best suited for installers with relevant accreditation and experience.",
+    eligibilityCriteria: "Existing heat network operators",
+    deliveryStructure:
+      "Capital grants for improving efficiency of existing heat networks",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
+    approvedMeasures: [
+      "Network insulation, controls upgrades, heat interface units, metering",
+    ],
+    approvedMeasureTags: ["Insulation"],
+    complianceRequirements: "Heat Network Code of Practice",
+    renewablyUKSupport:
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
+    certifications: [],
+    businessOpportunityLevel: "High",
+    businessOpportunityDescription:
+      "Place-based council programmes offer concentrated local pipeline and community partnership opportunities.",
+    keyBusinessAdvantages: [
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
+    ],
+  },
+  {
+    id: "warm-homes-local-grant-programme",
+    headerTitle: "Net Zero Innovation Portfolio (NZIP)",
+    headerSubtitle: "2020–2025",
+    regulatorName: "UK Research and Innovation (UKRI)",
+    description:
+      "R&D funding for breakthrough technologies including hydrogen, carbon capture, and advanced heating systems.",
+    schemaDescription:
+      "The Net Zero Innovation Portfolio funds research, development, and demonstration of breakthrough technologies essential for achieving the UK's climate targets. It supports innovation in areas including hydrogen, carbon capture, energy storage, and next-generation heating systems.",
+    netZeroContribution:
+      "Accelerates development of next-generation net zero technologies",
+    fundingValue: "~£1 Billion",
+    schemeDuration: "2021–2025",
+    status: "2021–2025",
+    installerOpportunity: "Specialist – innovation and R&D focused",
+    installerOpportunityDescription:
+      "Requires specific technical expertise or market positioning. Best suited for installers with relevant accreditation and experience.",
+    eligibilityCriteria:
+      "Businesses, research institutions, innovation consortia",
+    deliveryStructure:
+      "Competitive R&D funding for low-carbon technology innovation",
+    installerRole: "Varies by scheme structure and procurement route",
+    paymentStructure:
+      "Typically staged payments aligned with project milestones",
+    approvedMeasures: [
+      "Emerging technologies including hydrogen, carbon capture, energy storage, advanced heat pumps",
+    ],
+    approvedMeasureTags: ["Heat Pumps"],
+    complianceRequirements: "Project-specific R&D compliance",
+    renewablyUKSupport:
+      "Our platform provides integrated compliance management, documentation storage, and automated submissions aligned with TrustMark requirements.",
+    certifications: [],
+    businessOpportunityLevel: "High",
+    businessOpportunityDescription:
+      "Place-based council programmes offer concentrated local pipeline and community partnership opportunities.",
+    keyBusinessAdvantages: [
+      "Access to government-backed funding removes customer affordability barriers",
+      "Structured payment terms and reduced financial risk compared to private market",
+      "Long-term market visibility supports business planning and workforce development",
+      "Supports business diversification and revenue stream expansion",
     ],
   },
 ];

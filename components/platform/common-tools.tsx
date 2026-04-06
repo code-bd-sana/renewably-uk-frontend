@@ -30,56 +30,56 @@ export default function CommonTools() {
     },
   ];
 
-  const commonPoints = [
-    {
-      icon: (
-        <CircleCheckBig
-          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-          color='#FFFFFF'
-        />
-      ),
-      label: "Submit projects in seconds",
-    },
-    {
-      icon: (
-        <CircleCheckBig
-          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-          color='#FFFFFF'
-        />
-      ),
-      label: "Manage your customer data",
-    },
-    {
-      icon: (
-        <CircleCheckBig
-          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-          color='#FFFFFF'
-        />
-      ),
-      label: "Track your submissions",
-    },
-    {
-      icon: (
-        <CircleCheckBig
-          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-          color='#FFFFFF'
-        />
-      ),
-      label: "Manage your onboarding",
-    },
-    {
-      icon: (
-        <CircleCheckBig
-          className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
-          color='#FFFFFF'
-        />
-      ),
-      label: "Fully aligned and compliant with Industry Standards",
-    },
-  ];
+  // const commonPoints = [
+  //   {
+  //     icon: (
+  //       <CircleCheckBig
+  //         className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+  //         color='#FFFFFF'
+  //       />
+  //     ),
+  //     label: "Submit projects in seconds",
+  //   },
+  //   {
+  //     icon: (
+  //       <CircleCheckBig
+  //         className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+  //         color='#FFFFFF'
+  //       />
+  //     ),
+  //     label: "Manage your customer data",
+  //   },
+  //   {
+  //     icon: (
+  //       <CircleCheckBig
+  //         className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+  //         color='#FFFFFF'
+  //       />
+  //     ),
+  //     label: "Track your submissions",
+  //   },
+  //   {
+  //     icon: (
+  //       <CircleCheckBig
+  //         className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+  //         color='#FFFFFF'
+  //       />
+  //     ),
+  //     label: "Manage your onboarding",
+  //   },
+  //   {
+  //     icon: (
+  //       <CircleCheckBig
+  //         className='w-5 h-5 text-(--text-primary) shrink-0 mr-3'
+  //         color='#FFFFFF'
+  //       />
+  //     ),
+  //     label: "Fully aligned and compliant with Industry Standards",
+  //   },
+  // ];
 
   return (
-    <section className='bg-[#EAF1FD] pt-12 mb-12 py-12'>
+    <section className='bg-[#EAF1FD] mb-12 py-12'>
       <SectionHeader title='Common Tools That Store Data Overseas:' />
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 mt-10 px-6 lg:px-25 py-15'>
         {commonToolsData.map((cardData, index) => (
@@ -97,7 +97,7 @@ export default function CommonTools() {
         ))}
       </div>
 
-      <InfoCard
+      {/* <InfoCard
         title='What You Need To Be Compliant'
         titleClassName='text-[22px] text-white font-medium'
         cardBg='bg-white'
@@ -106,7 +106,7 @@ export default function CommonTools() {
         iconBgClassName='bg-white w-10 h-10'
         points={commonPoints}
         pointClassName='text-white font-medium text-base'
-      />
+      /> */}
     </section>
   );
 }

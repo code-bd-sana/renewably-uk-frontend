@@ -7,7 +7,7 @@ export default function WhatWeDo() {
     {
       title: "Insurance Distribution",
       description:
-        "We provide FCA-regulated Insurance Backed Guarantees in partnership with Bluedrop Services, ensuring customers are protected even if the original installer ceases trading.",
+        "We host FCA-regulated Insurance Backed Guarantees in partnership with Bluedrop Services, ensuring customers are protected even if the original installer ceases trading",
       icon: <Shield color='#0F47A8' />,
       learnMoreHref: "/insurance-backed-guarantees",
     },
@@ -40,7 +40,7 @@ export default function WhatWeDo() {
             title={cardData.title}
             titleClassName='text-xl'
             description={cardData.description}
-            descriptionClassName='max-w-[330px] text-base'
+            descriptionClassName='max-w-[400px] text-base'
             icon={cardData.icon}
             iconBgClassName='bg-[#B4CDF7]'
             className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6]'

@@ -78,22 +78,4 @@ export const newsItems: NewsItem[] = [
     date: "March 19, 2026",
     image: "/news/blog4.png",
   },
-  {
-    slug: "spring-2026-demand-trends",
-    title: "Homeowner Demand Trends for Spring 2026",
-    excerpt:
-      "Regional demand data highlights where retrofit interest is rising fastest and how teams can prepare for increased enquiries.",
-    category: "Market Insights",
-    date: "March 24, 2026",
-    image: "/home/banner-partner/cyber.png",
-  },
-  {
-    slug: "document-workflow-improvements",
-    title: "Document Workflow Improvements Now Live",
-    excerpt:
-      "Faster document handling and improved status visibility are now available in the portal to reduce admin overhead.",
-    category: "Company News",
-    date: "March 29, 2026",
-    image: "/home/banner-partner/ico.png",
-  },
 ];

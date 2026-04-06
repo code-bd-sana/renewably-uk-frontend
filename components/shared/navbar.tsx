@@ -14,7 +14,7 @@ interface User {
 }
 
 const navItems = [
-  { label: "Portal", href: "/portal" },
+  { label: "Platform", href: "/platform" },
   { label: "About", href: "/about" },
   { label: "Insurance", href: "/insurance" },
   { label: "Accreditation", href: "/accreditation" },
