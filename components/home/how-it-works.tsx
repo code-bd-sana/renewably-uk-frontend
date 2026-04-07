@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Award, FileText, TrendingUp, UserPlus } from "lucide-react";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const steps = [
   {
@@ -34,7 +35,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className='w-full bg-white py-15'>
+    <section className='w-full bg-white py-15' id='how-it-works'>
       <div className='mx-auto w-full max-w-350 px-6 lg:px-10'>
         {/* Heading (UNCHANGED) */}
         <motion.div
@@ -152,9 +153,11 @@ export default function HowItWorks() {
         <p className=' text-[#9CA3AF] font-interFont font-medium pb-4'>
           Ready to strengthen your professional infrastructure?
         </p>
-        <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer'>
-          Start Your Onboarding
-        </Button>
+        <Link href='/sign-up'>
+          <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer'>
+            Start Your Onboarding
+          </Button>
+        </Link>
       </div>
     </section>
   );

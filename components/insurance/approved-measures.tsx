@@ -106,7 +106,14 @@ export default function ApprovedMeasures() {
           </div>
 
           {/* Measures modal — controlled, no trigger button rendered */}
-          <MeasuresTableModal open={modalOpen} onOpenChange={setModalOpen} />
+          <MeasuresTableModal
+            open={modalOpen}
+            onOpenChange={setModalOpen}
+            title='Approved Measures Covered by the IBG Facility'
+            subtitle='All measures listed below are covered across: ECO, Part Funded, and ATP'
+            headerImageSrc='/insurance/bluedrop.png'
+            headerImageAlt='Bluedrop'
+          />
         </div>
       </div>
       <div className='flex flex-col gap-y-6 text-base font-medium pt-12 mx-6 lg:mx-35 px-4 py-16'>
