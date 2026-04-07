@@ -106,13 +106,13 @@ export default function ExploreSchema() {
             View All Funding Schemes
             <ArrowRight color='#FFFFFF' className='ml-2' />
           </Button>
-          <Button
+          {/* <Button
             onClick={() => setModalOpen(true)}
             className='bg-white text-(--text-primary) font-medium border-[#E5E7EB] hover:border-[#83878d] rounded-[6px] px-6 py-8 sm:py-5 cursor-pointer text-base w-full max-w-78 md:max-w-120 whitespace-normal'>
             <Search color='#1e293b' className='ml-2' />
             Search Funding Schemes for My Measures
             <ArrowRight color='#FFFFFF' className='ml-2' />
-          </Button>
+          </Button> */}
         </div>
         <p className='text-(--text-muted) text-center'>
           Browse all schemes or filter by the measures you’re approved to
