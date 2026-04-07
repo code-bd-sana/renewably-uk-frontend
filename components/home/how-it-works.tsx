@@ -35,7 +35,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className='w-full bg-white py-15'>
+    <section className='w-full bg-white py-15' id='how-it-works'>
       <div className='mx-auto w-full max-w-350 px-6 lg:px-10'>
         {/* Heading (UNCHANGED) */}
         <motion.div

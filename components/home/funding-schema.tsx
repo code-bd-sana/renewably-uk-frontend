@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowRight,
   CircleCheck,
@@ -5,10 +7,14 @@ import {
   PoundSterling,
   Search,
 } from "lucide-react";
+import { useState } from "react";
+import { MeasuresTableModal } from "../insurance/measures-table-modal";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
 
 export default function FundingSchema() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   const schemaInfo = [
     {
       icon: <PoundSterling color='#FFFFFF' size={20} />,
@@ -41,11 +47,20 @@ export default function FundingSchema() {
         ))}
       </div>
       <div className='flex items-center justify-center pt-6'>
-        <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) cursor-pointer'>
+        <Button
+          className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) cursor-pointer'
+          onClick={() => setModalOpen(true)}>
           <Search color='#0F47A8' /> Search Funding Schemes{" "}
           <ArrowRight color='#0F47A8' className='ml-2' />
         </Button>
       </div>
+      <MeasuresTableModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        viewMode='selection-checkbox'
+        title='Select Your Approved Measures'
+        subtitle="Choose all the measures you're accredited to install"
+      />
     </div>
   );
 }

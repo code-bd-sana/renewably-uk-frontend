@@ -7,9 +7,11 @@ import { Button } from "../ui/button";
 import { ArrowRight, FileText, Search } from "lucide-react";
 import Link from "next/link";
 import { FundingSchemesModal } from "./funding-schemes-modal";
+import { MeasuresTableModal } from "../insurance/measures-table-modal";
 
 export default function ExploreSchema() {
   const [schemesModalOpen, setSchemesModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const statsCards = [
     {
@@ -104,7 +106,9 @@ export default function ExploreSchema() {
             View All Funding Schemes
             <ArrowRight color='#FFFFFF' className='ml-2' />
           </Button>
-          <Button className='bg-white text-(--text-primary) font-medium border-[#E5E7EB] hover:border-[#83878d] rounded-[6px] px-6 py-8 sm:py-5 cursor-pointer text-base w-full max-w-78 md:max-w-120 whitespace-normal'>
+          <Button
+            onClick={() => setModalOpen(true)}
+            className='bg-white text-(--text-primary) font-medium border-[#E5E7EB] hover:border-[#83878d] rounded-[6px] px-6 py-8 sm:py-5 cursor-pointer text-base w-full max-w-78 md:max-w-120 whitespace-normal'>
             <Search color='#1e293b' className='ml-2' />
             Search Funding Schemes for My Measures
             <ArrowRight color='#FFFFFF' className='ml-2' />
@@ -136,6 +140,13 @@ export default function ExploreSchema() {
           onOpenChange={setSchemesModalOpen}
         />
       </div>
+      <MeasuresTableModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        viewMode='selection-checkbox'
+        title='Select Your Approved Measures'
+        subtitle="Choose all the measures you're accredited to install"
+      />
     </section>
   );
 }

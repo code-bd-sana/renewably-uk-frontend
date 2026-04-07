@@ -9,28 +9,28 @@ export default function Installers() {
       description:
         "FCA-regulated insurance protection that continues even if you cease trading. Built on regulated frameworks, aligned with TrustMark standards.",
       icon: <FileCheck color='#0F47A8' />,
-      learnMoreHref: "/insurance-backed-guarantees",
+      learnMoreHref: "/insurance",
     },
     {
       title: "Secure ICO-Compliant Platform",
       description:
         "ICO-compliant document management, instant IBG generation, structured audit trails, and centralised compliance workflows.",
       icon: <FolderLock color='#0F47A8' />,
-      learnMoreHref: "/data-protection",
+      learnMoreHref: "/platform",
     },
     {
       title: "Compliance & Accreditation",
       description:
         "Structured onboarding, data control, and audit-ready documentation that strengthens your position with funders and managing agents.",
       icon: <BadgeCheck color='#0F47A8' />,
-      learnMoreHref: "/analytics-reporting",
+      learnMoreHref: "/accreditation",
     },
     {
       title: "Funding Opportunities",
       description:
         "Navigate £24B+ in government funding matched to your certifications. Access real-time scheme data across ECO4, BUS, and emerging programs to strengthen customer offerings.",
       icon: <Search color='#0F47A8' />,
-      learnMoreHref: "/funding-opportunities",
+      learnMoreHref: "/funding",
     },
   ];
 

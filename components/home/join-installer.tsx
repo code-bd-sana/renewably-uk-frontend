@@ -1,6 +1,7 @@
 import { CircleCheck } from "lucide-react";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function JoinInstaller() {
   const schemaInfo = [
@@ -44,9 +45,11 @@ export default function JoinInstaller() {
         ))}
       </div>
       <div className='flex items-center justify-center pt-6'>
-        <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) cursor-pointer'>
-          Begin your onboarding today.
-        </Button>
+        <Link href='/sign-up'>
+          <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) cursor-pointer'>
+            Begin your onboarding today.
+          </Button>
+        </Link>
       </div>
     </div>
   );

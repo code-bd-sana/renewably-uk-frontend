@@ -2,6 +2,7 @@ import Image from "next/image";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function TrustedPartners() {
   const partnerImages = [
@@ -38,13 +39,18 @@ export default function TrustedPartners() {
         />
       </div>
       <div className='flex gap-x-4 md:my-9 my-3 text-base justify-center items-center'>
-        <Button className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
-          Get Started with IBG
-          <ArrowRight color='#FFFFFF' className='ml-2' />
-        </Button>
-        <Button className='bg-white text-(--text-primary) font-medium border-[#E5E7EB] hover:border-[#83878d] rounded-[6px] px-6 py-5 cursor-pointer'>
-          Contact Us
-        </Button>
+        <Link href='/sign-up'>
+          <Button className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
+            Get Started with IBG
+            <ArrowRight color='#FFFFFF' className='ml-2' />
+          </Button>
+        </Link>
+        <Link href='/contact'>
+          {" "}
+          <Button className='bg-white text-(--text-primary) font-medium border-[#E5E7EB] hover:border-[#83878d] rounded-[6px] px-6 py-5 cursor-pointer'>
+            Contact Us
+          </Button>
+        </Link>
       </div>
     </section>
   );

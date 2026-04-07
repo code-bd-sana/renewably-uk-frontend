@@ -1,10 +1,15 @@
+"use client";
+
 import { ArrowRight, Tablet, CircleCheckBig } from "lucide-react";
 import Image from "next/image";
 import { InfoCard } from "../shared/info-card";
 import Mobile from "../../public/portal/mobile.png";
 import { Button } from "../ui/button";
+import { useState } from "react";
+import { MobileAppModal } from "../shared/mobile-app-modal";
 
 export default function MobileDesign() {
+  const [mobileAppModalOpen, setMobileAppModalOpen] = useState(false);
   const platformItems = [
     { label: "iOS", sub: "iPhone & iPad" },
     { label: "Android", sub: "Phone & Tablet" },
@@ -51,7 +56,9 @@ export default function MobileDesign() {
                 descriptionClassName='text-xs sm:text-sm md:text-base text-white max-w-100 font-medium'
                 className='bg-background rounded-2xl border border-gray-200 shadow-sm h-full [&>div]:p-3 sm:[&>div]:p-4'
                 footer={
-                  <Button className='bg-transparent h-auto w-full justify-center text-center text-blue-200 underline text-sm hover:text-white transition-colors px-0'>
+                  <Button
+                    onClick={() => setMobileAppModalOpen(true)}
+                    className='bg-transparent h-auto w-full justify-center text-center text-blue-200 underline text-sm hover:text-white transition-colors px-0 cursor-pointer'>
                     Click to learn more{" "}
                     <ArrowRight color='#B4CDF7' className='ml-1' />
                   </Button>
@@ -108,7 +115,9 @@ export default function MobileDesign() {
                     />
                   </span>
 
-                  <div className='min-w-0'>
+                  <div
+                    className='min-w-0 cursor-pointer'
+                    onClick={() => setMobileAppModalOpen(true)}>
                     <p className='text-lg md:text-2xl font-bold text-white leading-tight'>
                       Coming Soon: Dedicated Mobile App
                     </p>
@@ -143,6 +152,10 @@ export default function MobileDesign() {
           footerClassName='border-0 pt-2 mt-2 text-inherit'
         />
       </div>
+      <MobileAppModal
+        open={mobileAppModalOpen}
+        onOpenChange={setMobileAppModalOpen}
+      />
     </section>
   );
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
 
@@ -32,9 +33,11 @@ export default function OurCommitment() {
         </p>
       </div>
       <div className='flex items-center justify-center'>
-        <Button className='mt-9 bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer'>
-          Join Renewably UK Today
-        </Button>
+        <Link href='/sign-up'>
+          <Button className='mt-9 bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer'>
+            Join Renewably UK Today
+          </Button>
+        </Link>
       </div>
     </section>
   );

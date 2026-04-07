@@ -74,9 +74,11 @@ const HomeBanner = () => {
                 Get Started Today
               </Button>
             </Link>
-            <Button className='bg-white text-(--text-primary) rounded-[6px] px-6 py-5 cursor-pointer'>
-              How It Works
-            </Button>
+            <Link href='#how-it-works'>
+              <Button className='bg-white text-(--text-primary) rounded-[6px] px-6 py-5 cursor-pointer'>
+                How It Works
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
