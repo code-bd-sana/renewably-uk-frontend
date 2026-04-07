@@ -8,7 +8,7 @@ export default function ProfessionAccreditation() {
         align='start'
         titleClassName='text-[#030712]'
       />
-      <div className='flex flex-col gap-y-6 text-base font-medium max-w-315'>
+      <div className='flex flex-col gap-y-6 text-base font-medium '>
         <p className='text-(--text-muted)'>
           Renewably UK supports renewable energy installers in achieving and
           maintaining the highest industry standards through professional
