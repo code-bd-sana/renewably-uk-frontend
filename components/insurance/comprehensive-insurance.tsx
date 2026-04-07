@@ -2,6 +2,7 @@ import { InfoCard } from "../shared/info-card";
 import SectionHeader from "../shared/section-header";
 import { ArrowRight, ClipboardList, Shield, Users } from "lucide-react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function ComprehensiveInsurance() {
   const comprehensiveData = [
@@ -70,10 +71,13 @@ export default function ComprehensiveInsurance() {
       </div>
 
       <div className='flex items-center justify-center pt-6'>
-        <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
-          Get a Non-Obligation Quote{" "}
-          <ArrowRight color='#FFFFFF' className='ml-2' />
-        </Button>
+        <Link href='/sign-up'>
+          {" "}
+          <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
+            Get a Non-Obligation Quote{" "}
+            <ArrowRight color='#FFFFFF' className='ml-2' />
+          </Button>
+        </Link>
       </div>
     </section>
   );

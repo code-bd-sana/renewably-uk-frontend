@@ -11,6 +11,7 @@ import {
 import { InfoCard } from "../shared/info-card";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function BenefitsForInstallers() {
   const benefitData = [
@@ -89,10 +90,12 @@ export default function BenefitsForInstallers() {
         </div>
       </div>
       <div className='flex items-center justify-center pt-8'>
-        <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) font-medium cursor-pointer'>
-          Get Started with IBG
-          <ArrowRight color='#0F47A8' className='ml-2' />
-        </Button>
+        <Link href='/sign-up'>
+          <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) font-medium cursor-pointer'>
+            Get Started with IBG
+            <ArrowRight color='#0F47A8' className='ml-2' />
+          </Button>
+        </Link>
       </div>
     </section>
   );

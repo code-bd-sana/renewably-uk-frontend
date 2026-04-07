@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function ProjectManagement() {
   return (
@@ -12,9 +13,13 @@ export default function ProjectManagement() {
         subTitleClassName='text-(--text-muted) font-medium text-[16px] max-w-220 mx-auto text-center'
       />
       <div className='flex items-center justify-center pt-6'>
-        <Button className='mt-9 bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer'>
-          Start Your Onboarding <ArrowRight color='#FFFFFF' className='ml-2' />
-        </Button>
+        <Link href='/sign-up'>
+          {" "}
+          <Button className='mt-9 bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer'>
+            Start Your Onboarding{" "}
+            <ArrowRight color='#FFFFFF' className='ml-2' />
+          </Button>
+        </Link>
       </div>
       <p className='text-[14px] text-center text-[#6B7280] mt-4'>
         Platform access included with all Renewably UK memberships

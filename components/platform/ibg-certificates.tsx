@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   ArrowRight,
   CircleCheckBig,
@@ -9,8 +12,10 @@ import {
 import { InfoCard } from "../shared/info-card";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
+import { MobileAppModal } from "../shared/mobile-app-modal";
 
 export default function IBGCertificates() {
+  const [mobileAppModalOpen, setMobileAppModalOpen] = useState(false);
   const compliantData = [
     {
       title: "During PAS Audits",
@@ -102,7 +107,7 @@ export default function IBGCertificates() {
   ];
 
   return (
-    <section className='mx-6 lg:mx-35 px-4 pt-20'>
+    <section className='mx-6 lg:mx-35 px-4 pt-20' id="generate-ibg-cert">
       <SectionHeader
         title='Generate IBG Certificates On-Site in Seconds'
         subTitle='Never face delays during PAS audits or customer handovers. Create and deliver Insurance Backed Guarantee certificates instantly from your mobile device or laptop.'
@@ -139,11 +144,18 @@ export default function IBGCertificates() {
         })}
       </div>
       <div className='flex items-center justify-center pt-6'>
-        <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
+        <Button
+          onClick={() => setMobileAppModalOpen(true)}
+          className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
           <Tablet color='#FFFFFF' /> Learn About Upcoming Mobile App Features{" "}
           <ArrowRight color='#FFFFFF' className='ml-2' />
         </Button>
       </div>
+
+      <MobileAppModal
+        open={mobileAppModalOpen}
+        onOpenChange={setMobileAppModalOpen}
+      />
     </section>
   );
 }

@@ -12,6 +12,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import {
   Dialog,
   DialogContent,
@@ -24,8 +25,6 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-  SelectGroup,
-  SelectLabel,
 } from "@/components/ui/select";
 import {
   Table,
@@ -41,11 +40,10 @@ import {
   Flame,
   Thermometer,
   Layers,
-  AppWindow,
   Sun,
   Check,
   Minus,
-  DoorOpen
+  DoorOpen,
 } from "lucide-react";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -523,7 +521,74 @@ function CategoryTable({ category }: { category: Category }) {
   );
 }
 
+function CategorySelectionGrid({ category }: { category: Category }) {
+  return (
+    <div className='mb-8 last:mb-0'>
+      <div className='flex items-center gap-2 mb-3'>
+        <span>{category.icon}</span>
+        <h3 className='text-[#0F47A8] font-semibold text-sm sm:text-base'>
+          {category.label}
+        </h3>
+      </div>
+
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+        {category.measures.map((measure) => (
+          <div
+            key={measure.label}
+            className='rounded-[10px] border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700'>
+            {measure.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CategoryCheckboxGrid({
+  category,
+  selectedMeasures,
+  onToggle,
+}: {
+  category: Category;
+  selectedMeasures: Set<string>;
+  onToggle: (measureKey: string) => void;
+}) {
+  return (
+    <div className='mb-8 last:mb-0'>
+      <div className='flex items-center gap-2 mb-3'>
+        <span>{category.icon}</span>
+        <h3 className='text-[#0F47A8] font-semibold text-sm sm:text-base'>
+          {category.label}
+        </h3>
+      </div>
+
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+        {category.measures.map((measure) => {
+          const measureKey = `${category.id}:${measure.label}`;
+          const isChecked = selectedMeasures.has(measureKey);
+
+          return (
+            <label
+              key={measureKey}
+              className='flex items-start gap-3 rounded-[10px] border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 cursor-pointer hover:border-[#0F47A8]/40'>
+              <input
+                type='checkbox'
+                className='mt-0.5 h-4 w-4 accent-[#0F47A8]'
+                checked={isChecked}
+                onChange={() => onToggle(measureKey)}
+              />
+              <span>{measure.label}</span>
+            </label>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── Main component ────────────────────────────────────────────────────────────
+
+type MeasuresModalViewMode = "table" | "selection-grid" | "selection-checkbox";
 
 export interface MeasuresTableModalProps {
   /** Controlled open state — omit to use the built-in trigger button */
@@ -531,15 +596,32 @@ export interface MeasuresTableModalProps {
   onOpenChange?: (open: boolean) => void;
   /** Label for the built-in trigger button */
   triggerLabel?: string;
+  /** Display style for content body */
+  viewMode?: MeasuresModalViewMode;
+  /** Header title */
+  title?: string;
+  /** Header subtitle */
+  subtitle?: string;
+  /** Optional left image in header */
+  headerImageSrc?: string;
+  headerImageAlt?: string;
 }
 
 export function MeasuresTableModal({
   open: controlledOpen,
   onOpenChange,
   triggerLabel = "Browse all Categories",
+  viewMode = "table",
+  title = "Check Type Field",
+  subtitle = "Select a category to view available measures.",
+  headerImageSrc,
+  headerImageAlt = "Header image",
 }: MeasuresTableModalProps) {
   const [internalOpen, setInternalOpen] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState<string>("all");
+  const [selectedMeasures, setSelectedMeasures] = React.useState<Set<string>>(
+    () => new Set(),
+  );
 
   const isControlled = controlledOpen !== undefined;
   const open = isControlled ? controlledOpen : internalOpen;
@@ -549,6 +631,18 @@ export function MeasuresTableModal({
     selectedCategory === "all"
       ? CATEGORIES
       : CATEGORIES.filter((c) => c.id === selectedCategory);
+
+  const handleToggleMeasure = (measureKey: string) => {
+    setSelectedMeasures((prev) => {
+      const next = new Set(prev);
+      if (next.has(measureKey)) {
+        next.delete(measureKey);
+      } else {
+        next.add(measureKey);
+      }
+      return next;
+    });
+  };
 
   return (
     <>
@@ -584,44 +678,77 @@ export function MeasuresTableModal({
             "max-h-[90vh] flex flex-col",
             // Reset padding/gap, force white background
             "p-0 gap-0 overflow-hidden",
-            "bg-white text-slate-900",
-            "rounded-2xl shadow-xl",
+            "bg-background text-slate-900",
+            "rounded-[10px] shadow-xl",
           )}>
           {/* ── Sticky header ── */}
-          <DialogHeader className='shrink-0 bg-white px-4 sm:px-6 pt-5 pb-4 border-b border-slate-100'>
-            <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-3'>
-              <DialogTitle className='text-base sm:text-lg font-semibold text-slate-800'>
-                Measures &amp; Eligibility
-              </DialogTitle>
+          <DialogHeader className='shrink-0 bg-background px-4 sm:px-6 pt-5 pb-4'>
+            <div className='flex items-center gap-4 '>
+              {headerImageSrc && (
+                <Image
+                  src={headerImageSrc}
+                  alt={headerImageAlt}
+                  width={188}
+                  height={96}
+                  quality={90}
+                  priority
+                  className='h-10 w-auto object-contain bg-white rounded-[4px]'
+                />
+              )}
 
-              {/* Category filter */}
-              <div className='w-full sm:w-56 sm:ml-auto'>
-                <Select
-
-                  value={selectedCategory}
-                  onValueChange={setSelectedCategory}
-                >
-                  <SelectTrigger className="w-full max-w-48 bg-white">
-                    <SelectValue placeholder="Browse all Category" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white">
-                    <SelectItem value="all">Browse all Category</SelectItem>
-                    {CATEGORIES.map((c) => (
-                      <SelectItem key={c.id} value={c.id}>
-                        {c.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              <div>
+                <DialogTitle className='text-[22px] text-white'>
+                  {title}
+                </DialogTitle>
+                <p className='text-[#F3F4F6] text-[14px] font-extralight'>
+                  {subtitle}
+                </p>
               </div>
             </div>
           </DialogHeader>
 
           {/* ── Scrollable body ── */}
           <div className='flex-1 overflow-y-auto bg-white px-3 sm:px-6 py-5'>
-            {visibleCategories.map((cat) => (
-              <CategoryTable key={cat.id} category={cat} />
-            ))}
+            <div className='w-full sm:w-72 mb-5'>
+              <Select
+                value={selectedCategory}
+                onValueChange={setSelectedCategory}>
+                <SelectTrigger className='w-full bg-white'>
+                  <SelectValue placeholder='Check type field' />
+                </SelectTrigger>
+                <SelectContent className='bg-white'>
+                  <SelectItem value='all'>Check type field</SelectItem>
+                  {CATEGORIES.map((c) => (
+                    <SelectItem key={c.id} value={c.id}>
+                      {c.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {viewMode === "selection-checkbox" && (
+              <p className='mb-4 text-xs text-[#6B7280]'>
+                Selected measures: {selectedMeasures.size}
+              </p>
+            )}
+
+            {viewMode === "selection-checkbox"
+              ? visibleCategories.map((cat) => (
+                  <CategoryCheckboxGrid
+                    key={cat.id}
+                    category={cat}
+                    selectedMeasures={selectedMeasures}
+                    onToggle={handleToggleMeasure}
+                  />
+                ))
+              : viewMode === "selection-grid"
+                ? visibleCategories.map((cat) => (
+                    <CategorySelectionGrid key={cat.id} category={cat} />
+                  ))
+                : visibleCategories.map((cat) => (
+                    <CategoryTable key={cat.id} category={cat} />
+                  ))}
           </div>
         </DialogContent>
       </Dialog>

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import SectionHeader from "../shared/section-header";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function FCAInsurance() {
   return (
@@ -12,13 +13,17 @@ export default function FCAInsurance() {
         subTitleClassName='text-(--text-muted) font-medium text-[16px] mx-auto text-center max-w-220'
       />
       <div className='flex flex-col md:flex-row gap-4 md:my-9 my-3 text-base justify-center items-center'>
-        <Button className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
-          Explore Insurance Solutions
-          <ArrowRight className='size-4 ml-2' color='#FFFFFF' />
-        </Button>
-        <Button className='bg-white text-(--text-primary) font-medium border-[#E5E7EB] hover:border-[#83878d] rounded-[6px] px-6 py-5 cursor-pointer'>
-          Get in Touch
-        </Button>
+        <Link href='/insurance'>
+          <Button className='bg-background text-white rounded-[6px] border border-(--text-muted) px-6 py-5 cursor-pointer'>
+            Explore Insurance Solutions
+            <ArrowRight className='size-4 ml-2' color='#FFFFFF' />
+          </Button>
+        </Link>
+        <Link href='/contact'>
+          <Button className='bg-white text-(--text-primary) font-medium border-[#E5E7EB] hover:border-[#83878d] rounded-[6px] px-6 py-5 cursor-pointer'>
+            Get in Touch
+          </Button>
+        </Link>
       </div>
     </section>
   );
