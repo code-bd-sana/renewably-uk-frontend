@@ -56,7 +56,7 @@ export function PrivacyPolicyModalProvider({
                 icon={<Lock size={16} color='#0F47A8' />}
                 title='Privacy Policy'
                 titleClassName='text-[22px] text-white'
-                subtitle='Your Privacy Matters to Us | Last Updated: March 2025'
+                subtitle='Your Privacy Matters to Us | Last Updated: March 2026'
                 subtitleClassName='text-[#F3F4F6] text-[14px] font-extralight'
                 iconBgClassName='bg-white'
                 className='bg-transparent cursor-pointer -p-24! -px-16'

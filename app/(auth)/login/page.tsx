@@ -72,7 +72,7 @@ function InputField({
         <input
           type={type}
           placeholder={placeholder}
-          className='w-full pl-10 pr-12 py-2.5 border border-[#D1D5DB] rounded-[4px] text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all bg-white'
+          className='w-full rounded-lg border border-[#D1D5DB] py-2.5 pl-10 pr-12 text-sm text-gray-800 placeholder:text-gray-400 transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white'
         />
         {rightElement && (
           <span className='absolute right-3 top-1/2 -translate-y-1/2'>
@@ -109,7 +109,7 @@ function PasswordField({
         <input
           type={show ? "text" : "password"}
           placeholder={placeholder}
-          className='w-full pl-10 pr-12 py-2.5 border border-[#D1D5DB] rounded-[4px] text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all bg-white'
+          className='w-full rounded-lg border border-[#D1D5DB] py-2.5 pl-10 pr-12 text-sm text-gray-800 placeholder:text-gray-400 transition-all focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100 bg-white'
         />
         <button
           type='button'
@@ -158,9 +158,9 @@ export default function Login() {
       </div>
 
       {/* Layout */}
-      <div className='mx-3 lg:mx-45 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start'>
+      <div className='mx-3 my-12 grid grid-cols-1 gap-6 lg:mx-25 xl:mx-65 lg:grid-cols-2 lg:items-stretch'>
         {/* ─── LEFT: Form ─── */}
-        <div className=' rounded-[10px] border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm p-4 md:p-7'>
+        <div className='flex h-full flex-col justify-center rounded-[10px] border border-[#E5E7EB] p-4 shadow-sm hover:border-[#D1D5DB] md:p-7 lg:min-h-full lg:py-10'>
           <SectionHeader
             title='Sign In to Your Account'
             titleClassName='text-[36px]'
@@ -168,7 +168,7 @@ export default function Login() {
             subTitleClassName='text-(--text-muted) font-medium text-base text-center max-w-130 mx-auto'
           />
 
-          <div className='flex flex-col gap-4 mt-8'>
+          <div className='mt-8 flex flex-col gap-4'>
             <InputField
               label='Email Address'
               required
@@ -218,7 +218,7 @@ export default function Login() {
         </div>
 
         {/* ─── RIGHT: Info Panel ─── */}
-        <div className='flex flex-col gap-4'>
+        <div className='flex h-full flex-col gap-4'>
           {/* <InfoCard
             align='center'
             title='Trusted & Compliant'
@@ -246,11 +246,11 @@ export default function Login() {
             }
             footerClassName='pt-2 mt-0 border-0'
           /> */}
-          <div className='border border-[#E5E7EB] hover:border-[#D1D5DB] rounded-[10px]'>
-            <div className='mx-4 md:mx-8 lg:mx-12 xl:mx-16 '>
-              <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-center items-center'>
+          <div className='h-full rounded-[10px] border border-[#E5E7EB] hover:border-[#D1D5DB]'>
+            <div className='mx-4 flex h-full flex-col justify-center md:mx-8 lg:mx-12 xl:mx-16'>
+              <div className='grid grid-cols-2 items-center justify-center gap-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4'>
                 {partnerImages.map((src, index) => (
-                  <div key={index} className='mx-4 md:mx-6 my-3'>
+                  <div key={index} className='my-3 flex justify-center'>
                     <Image
                       src={src}
                       alt={`Partner ${index + 1}`}
@@ -272,7 +272,7 @@ export default function Login() {
           <div className=''>
             <InfoCard
               title='Your Installer Portal'
-              className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] shadow-sm border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]! px-5 cursor-pointer '
+              className='h-full rounded-[10px]! border border-[#E5E7EB] bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] px-5 shadow-sm hover:border-[#b0b1b6] cursor-pointer '
               contentClassName='p-4 space-y-5'
               titleClassName='text-[22px] font-medium text-(--text-primary)'
               description={

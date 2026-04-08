@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Cookie } from "lucide-react";
+import { Cookie, X } from "lucide-react";
 import { usePrivacyPolicyModal } from "./privacy-policy-modal-provider";
 
 type ConsentState = "accepted" | "rejected" | null;
@@ -95,7 +95,15 @@ export default function CookieConsentBanner({
 
   return (
     <div className='fixed inset-x-0 bottom-0 z-1111 pointer-events-none px-4 pb-4 sm:px-6 lg:px-8'>
-      <div className='mx-auto flex w-full flex-col gap-4 rounded-2xl border border-white/10 bg-white px-5 py-4 text-white shadow-[0_30px_80px_rgba(7,22,47,0.42)] backdrop-blur-xl sm:px-6 md:flex-row md:items-center md:justify-between'>
+      <div className='mx-auto relative flex w-full flex-col gap-4 rounded-2xl border border-white/10 bg-white px-5 py-4 text-white shadow-[0_30px_80px_rgba(7,22,47,0.42)] backdrop-blur-xl sm:px-6'>
+        <button
+          type='button'
+          onClick={() => handleChoice("rejected")}
+          aria-label='Close cookie banner'
+          className='absolute top-3 right-3 pointer-events-auto inline-flex h-8 w-8 items-center justify-center rounded-full text-[#6B7280] hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50'>
+          <X className='h-4 w-4' />
+        </button>
+
         <div className='pointer-events-auto flex items-center gap-4'>
           <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-background text-[#8FB4FF] ring-1 ring-inset ring-[#0F47A8]/20'>
             <Cookie className='h-6 w-6' aria-hidden='true' color='#FFFFFF' />
@@ -104,7 +112,7 @@ export default function CookieConsentBanner({
             <h2 className='text-[22px] font-semibold tracking-tight sm:text-lg'>
               We Value Your Privacy
             </h2>
-            <p className='text-sm max-w-340 leading-6 text-[#6B7280]'>
+            <p className='text-sm leading-6 text-[#6B7280]'>
               We use cookies to enhance your browsing experience, analyze site
               traffic, and provide personalized content. By clicking
               &quot;Accept All&quot;, you consent to our use of cookies. You can
@@ -123,19 +131,21 @@ export default function CookieConsentBanner({
           </div>
         </div>
 
-        <div className='pointer-events-auto flex flex-col gap-3 sm:flex-row sm:items-center'>
-          <button
-            type='button'
-            onClick={() => handleChoice("rejected")}
-            className='inline-flex h-11 items-center justify-center rounded-[8px] border border-[#E5E7EB] px-5 text-base font-semibold text-[#030712] transition hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#07162F] cursor-pointer'>
-            Reject all
-          </button>
-          <button
-            type='button'
-            onClick={() => handleChoice("accepted")}
-            className='inline-flex h-11 items-center justify-center rounded-[8px] bg-[#16A34A] px-5 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-[#07162F] cursor-pointer'>
-            Accept all
-          </button>
+        <div className='pointer-events-auto w-full flex justify-end -mt-2'>
+          <div className='flex gap-3'>
+            <button
+              type='button'
+              onClick={() => handleChoice("rejected")}
+              className='inline-flex h-10 items-center justify-center rounded-[8px] border border-[#E5E7EB] px-5 text-base font-semibold text-[#030712] transition hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[#07162F] cursor-pointer'>
+              Reject all
+            </button>
+            <button
+              type='button'
+              onClick={() => handleChoice("accepted")}
+              className='inline-flex h-10 items-center justify-center rounded-[8px] bg-[#16A34A] px-5 text-sm font-semibold text-white transition hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-white/70 focus:ring-offset-2 focus:ring-offset-[#07162F] cursor-pointer'>
+              Accept all
+            </button>
+          </div>
         </div>
       </div>
     </div>

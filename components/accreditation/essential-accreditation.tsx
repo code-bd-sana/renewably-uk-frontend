@@ -117,25 +117,28 @@ export default function EssentialAccreditation() {
       ],
     },
     {
-      title: "HIES Membership",
+      title: "NVQ Certification",
       description:
-        "Home Insulation & Energy Systems Quality Assured Contractors Scheme.",
+        " National Vocational Qualifications aligned to industry standards.",
       icon: <Users color='#0F47A8' />,
       points: [
         {
-          label: "Consumer protection and dispute resolution",
+          label:
+            "Demonstrates verified competence in role-specific installation and technical activities",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "Insurance Backed Guarantee requirements",
+          label:
+            "Supports compliance with PAS standards and scheme eligibility requirements",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
         },
         {
-          label: "Code of Practice compliance",
+          label:
+            "Provides auditable evidence of workforce capability for TrustMark and regulatory frameworks",
           icon: (
             <CircleCheckBig color='var(--text-primary)' className='w-4 h-4' />
           ),
