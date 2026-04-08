@@ -2,16 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
-import { newsItems } from "./news-data";
+import { newsBlogs } from "./news-blogs";
 import NewsCard from "./news-card";
 import { useState, useRef, useEffect } from "react";
 
 const categories = [
   "All Categories",
-  "Government & Policy",
-  "Industry Standards",
-  "Market Insights",
-  "Company News",
+  ...Array.from(new Set(newsBlogs.map((item) => item.category))),
 ];
 
 export default function RecentNews() {
@@ -36,8 +33,8 @@ export default function RecentNews() {
 
   const filteredNews =
     selectedCategory === "All Categories"
-      ? newsItems
-      : newsItems.filter((item) => item.category === selectedCategory);
+      ? newsBlogs
+      : newsBlogs.filter((item) => item.category === selectedCategory);
 
   const selectedCategoryLabel =
     selectedCategory === "All Categories"
@@ -105,7 +102,7 @@ export default function RecentNews() {
               title={item.title}
               excerpt={item.excerpt}
               ctaLabel='Read more'
-              ctaHref={`/news/${item.slug}`}
+              ctaHref={`/news/${item.subId}`}
             />
           ))}
         </div>
@@ -115,7 +112,7 @@ export default function RecentNews() {
             <ChevronLeft className='size-4' />
           </Button>
 
-          <Button className='h-8 min-w-8 px-3 bg-white rounded-[8px] cursor-pointer'>
+          <Button className='h-8 min-w-8 bg-white px-3 rounded-xl cursor-pointer'>
             1
           </Button>
           <Button className='h-8 min-w-8 px-3 bg-transparent cursor-pointer'>

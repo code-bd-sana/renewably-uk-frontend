@@ -221,16 +221,16 @@ export function MobileAppModal({
 
         {/* Scrollable body */}
         <div className='flex-1 overflow-y-auto'>
-          {/* ── COMING 2025 BANNER ── */}
+          {/* ── COMING 2026 BANNER ── */}
           <div className='mx-4 mt-4 mb-0 py-3 bg-white'>
             <div className='flex items-center gap-2 mb-1'>
               <Sparkles className='w-6 h-6' color='#0F47A8' />
               <span className='text-[22px] font-medium text-[#030712]'>
-                Coming 2025
+                Coming 2026
               </span>
             </div>
             <p className='text-base text-[#6B7280] leading-snug'>
-              Native iOS &amp; Android applications launching throughout 2025.
+              Native iOS &amp; Android applications launching throughout 2026.
               Early access available for Renewably UK members.
             </p>
           </div>

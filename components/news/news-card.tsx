@@ -1,11 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,29 +39,29 @@ export default function NewsCard({
   ctaHref,
   className,
 }: NewsCardProps) {
+  const titlePreview = truncateText(title, 60);
+  const subtitle = excerpt ? truncateText(excerpt, 140) : "";
+
   return (
-    <Card
+    <article
       className={cn(
-        "w-full h-full flex flex-col overflow-hidden rounded-[10px] border border-[#E5E7EB] bg-white shadow-none transition-colors hover:border-[#b0b1b6] p-0 gap-0",
+        "flex h-full flex-col overflow-hidden rounded-[14px] border border-[#EEF2F7] bg-white transition hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)]",
         className,
       )}>
-      {/* Cover Image */}
-      {coverImageSrc && (
-        <div className='relative aspect-video w-full overflow-hidden bg-white'>
+      {coverImageSrc ? (
+        <div className='relative h-80 w-full overflow-hidden bg-[#F8FAFC] sm:h-72 lg:h-80'>
           <Image
             src={coverImageSrc}
             alt={coverImageAlt}
             fill
-            className='object-cover'
-            sizes='(min-width: 1280px) 360px, (min-width: 768px) 50vw, 100vw'
+            quality={95}
+            className='object-cover object-center'
+            sizes='(min-width: 1536px) 420px, (min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw'
           />
         </div>
-      )}
-
-      {/* Banner */}
-      {!coverImageSrc && (logoSrc || brandName) && (
+      ) : logoSrc || brandName ? (
         <div
-          className='flex flex-col items-center justify-center gap-2 px-6 py-4'
+          className='flex min-h-72 flex-col items-center justify-center gap-2 px-6 py-4'
           style={{ backgroundColor: bannerColor }}>
           {logoSrc && (
             <div className='relative h-16 w-16'>
@@ -91,59 +85,63 @@ export default function NewsCard({
             </p>
           )}
         </div>
-      )}
+      ) : null}
 
-      {/* Body */}
-      <CardHeader className='space-y-1 pb-2 pt-4'>
-        <div className='flex items-center justify-between gap-2'>
+      <div className='flex flex-1 flex-col p-5'>
+        <div className='mb-2 flex items-center gap-2.5'>
           {badgeLabel && (
             <Badge
               variant='secondary'
-              className='rounded-full bg-[#0F47A8]/10 px-3 py-0.5 text-xs font-medium text-(--text-primary)'>
+              className='rounded-full bg-[#EAF2FF] px-2 py-1 text-[11px] font-medium text-[#2563EB]'>
               {badgeLabel}
             </Badge>
           )}
-          {date && (
-            <span className='ml-auto text-xs text-(--text-muted)'>{date}</span>
-          )}
+          {date && <span className='text-[11px] text-[#6B7280]'>{date}</span>}
         </div>
 
-        <h3 className='text-[22px] leading-snug tracking-tight'>{title}</h3>
-      </CardHeader>
+        <h3 className='mb-1.5 text-[22px] font-semibold leading-[1.45] text-[#0F172A]'>
+          {titlePreview}
+        </h3>
 
-      {/* Footer pinned bottom */}
-      <CardFooter className='pb-5 pt-2 border-0 mt-auto flex flex-col items-start'>
-        {/* Content grows */}
-        {excerpt && (
-          <CardContent className='pb-3 pt-0 grow px-0'>
-            <p className='line-clamp-3 text-sm text-(--text-muted)'>
-              {excerpt}
+        <div className='mt-auto pt-1'>
+          {excerpt && (
+            <p className='mb-4 flex-1 text-[14px] leading-[1.7] text-[#6B7280]'>
+              {subtitle}
             </p>
-          </CardContent>
-        )}
-
-        {ctaHref ? (
-          <Button
-            asChild
-            className='rounded-[8px] px-5 py-2 text-sm font-semibold text-white'
-            style={{ backgroundColor: bannerColor }}>
-            {ctaHref.startsWith("/") ? (
-              <Link href={ctaHref}>{ctaLabel}</Link>
-            ) : (
-              <a href={ctaHref} target='_blank' rel='noopener noreferrer'>
-                {ctaLabel}
-              </a>
-            )}
-          </Button>
-        ) : (
-          <Button
-            onClick={onCtaClick}
-            className='rounded-[8px] px-5 py-2 text-sm font-semibold text-white'
-            style={{ backgroundColor: bannerColor }}>
-            {ctaLabel}
-          </Button>
-        )}
-      </CardFooter>
-    </Card>
+          )}
+          {ctaHref ? (
+            <Button
+              asChild
+              className='inline-flex h-10 rounded-[8px] px-5 text-base font-medium text-white'
+              style={{ backgroundColor: bannerColor }}>
+              {ctaHref.startsWith("/") ? (
+                <Link href={ctaHref}>{ctaLabel}</Link>
+              ) : (
+                <a href={ctaHref} target='_blank' rel='noopener noreferrer'>
+                  {ctaLabel}
+                </a>
+              )}
+            </Button>
+          ) : (
+            <Button
+              onClick={onCtaClick}
+              className='inline-flex h-10 rounded-[8px] px-5 text-base font-medium text-white'
+              style={{ backgroundColor: bannerColor }}>
+              {ctaLabel}
+            </Button>
+          )}
+        </div>
+      </div>
+    </article>
   );
+}
+
+function truncateText(text: string, maxCharacters: number) {
+  const trimmed = text.trim();
+
+  if (trimmed.length <= maxCharacters) {
+    return trimmed;
+  }
+
+  return `${trimmed.slice(0, maxCharacters).trimEnd()}...`;
 }

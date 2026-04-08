@@ -71,7 +71,7 @@ export default function ComprehensiveInsurance() {
       </div>
 
       <div className='flex items-center justify-center pt-6'>
-        <Link href='/sign-up'>
+        <Link href='/contact'>
           {" "}
           <Button className='bg-background text-white rounded-[6px] px-6 py-5 cursor-pointer text-base'>
             Get a Non-Obligation Quote{" "}

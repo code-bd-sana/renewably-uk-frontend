@@ -894,7 +894,7 @@ export default function PrivacyPolicy() {
             you directly (for example, by sending you an email notification).
           </p>
           <p className='text-white text-[15px] sm:text-base mt-2'>
-            Last Updated: March 2025
+            Last Updated: March 2026
           </p>
         </div>
       </div>
