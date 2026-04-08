@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { newsItems } from "./news-data";
+import { newsBlogs } from "./news-blogs";
 import {
   Share2,
   Users,
@@ -53,7 +53,7 @@ export default function NewsDetails({ slug }: NewsDetailsProps) {
   const normalizedSlug = slug.replace(/^\/+news\//, "");
 
   // Resolve by slug (route id name)
-  const newsOrBlog = newsItems.find((item) => item.slug === normalizedSlug);
+  const newsOrBlog = newsBlogs.find((item) => item.subId === normalizedSlug);
 
   if (!newsOrBlog) {
     return (

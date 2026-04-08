@@ -2,16 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { newsItems } from "./news-data";
+import { newsBlogs } from "./news-blogs";
 import NewsCard from "./news-card";
 import { useState, useRef, useEffect } from "react";
 
 const categories = [
   "All Categories",
-  "Government & Policy",
-  "Industry Standards",
-  "Market Insights",
-  "Company News",
+  ...Array.from(new Set(newsBlogs.map((item) => item.category))),
 ];
 
 export default function FeaturedNews() {
@@ -36,8 +33,8 @@ export default function FeaturedNews() {
 
   const filteredNews =
     selectedCategory === "All Categories"
-      ? newsItems
-      : newsItems.filter((item) => item.category === selectedCategory);
+      ? newsBlogs
+      : newsBlogs.filter((item) => item.category === selectedCategory);
 
   const selectedCategoryLabel =
     selectedCategory === "All Categories"
@@ -104,7 +101,7 @@ export default function FeaturedNews() {
             title={item.title}
             excerpt={item.excerpt}
             ctaLabel='Read more'
-            ctaHref={`/news/${item.slug}`}
+            ctaHref={`/news/${item.subId}`}
           />
         ))}
       </div>
