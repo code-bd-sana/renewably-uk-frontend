@@ -6,31 +6,60 @@ import Link from "next/link";
 
 export default function TrustedPartners() {
   const partnerImages = [
-    "/home/banner-partner/bluedrop.png",
-    "/home/banner-partner/ico.png",
-    "/home/banner-partner/cyber.png",
-    "/home/banner-partner/aws.png",
+    { src: "/home/banner-partner/bluedrop.png" },
+    { src: "/home/banner-partner/ico.png" },
+    { src: "/home/banner-partner/cyber.png" },
+    { src: "/home/banner-partner/aws.png" },
+    {
+      src: "/home/banner-partner/stripei.png",
+      href: "https://climate.stripe.com/giN6qL",
+    },
   ];
   return (
     <section className='mx-6 lg:mx-35 px-4 pt-15'>
       <SectionHeader title='Trusted Partners & Accreditations' />
       <div>
-        <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 justify-center items-center'>
-          {partnerImages.map((src, index) => (
-            <div key={index} className='mx-4 md:mx-6 my-3'>
-              <Image
-                src={src}
-                alt={`Partner ${index + 1}`}
-                width={140}
-                height={72}
-                className='w-40 h-22 object-contain'
-              />
-            </div>
-          ))}
+        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 justify-center items-center'>
+          {partnerImages.map((partner, index) => {
+            const isLast = index === partnerImages.length - 1;
+            const isOdd = partnerImages.length % 2 === 1;
+            const wrapperClassName =
+              isLast && isOdd
+                ? "col-span-2 lg:col-auto flex justify-center mx-2 md:mx-3 my-3"
+                : "flex justify-center mx-2 md:mx-3 my-3";
+
+            return (
+              <div key={index} className={wrapperClassName}>
+                {partner.href ? (
+                  <a
+                    href={partner.href}
+                    target='_blank'
+                    rel='noreferrer'
+                    aria-label={`Open partner link for Partner ${index + 1}`}>
+                    <Image
+                      src={partner.src}
+                      alt={`Partner ${index + 1}`}
+                      width={140}
+                      height={72}
+                      className='w-40 h-22 object-contain'
+                    />
+                  </a>
+                ) : (
+                  <Image
+                    src={partner.src}
+                    alt={`Partner ${index + 1}`}
+                    width={140}
+                    height={72}
+                    className='w-40 h-22 object-contain'
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      <div className='pt-15'>
+      <div className='pt-20'>
         <SectionHeader
           title='Ready to Access FCA-Regulated IBGs Within UK Compliance Infrastructure?'
           titleClassName='max-w-220 mx-auto'
