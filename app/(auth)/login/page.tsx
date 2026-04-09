@@ -128,10 +128,14 @@ function PasswordField({
 
 export default function Login() {
   const partnerImages = [
-    "/home/banner-partner/ico.png",
-    "/home/banner-partner/cyber.png",
-    "/home/banner-partner/aws.png",
-    "/home/banner-partner/bluedrop.png",
+    { src: "/home/banner-partner/ico.png" },
+    { src: "/home/banner-partner/cyber.png" },
+    { src: "/home/banner-partner/aws.png" },
+    { src: "/home/banner-partner/bluedrop.png" },
+    {
+      src: "/home/banner-partner/stripei.png",
+      href: "https://climate.stripe.com/giN6qL",
+    },
   ];
   const [showPassword, setShowPassword] = useState(false);
   const [consent, setConsent] = useState(false);
@@ -158,7 +162,7 @@ export default function Login() {
       </div>
 
       {/* Layout */}
-      <div className='mx-3 my-12 grid grid-cols-1 gap-6 lg:mx-25 xl:mx-65 lg:grid-cols-2 lg:items-stretch'>
+      <div className='mx-3 my-12 grid grid-cols-1 gap-6 lg:mx-25 2xl:mx-65 xl:grid-cols-2 lg:items-stretch'>
         {/* ─── LEFT: Form ─── */}
         <div className='flex h-full flex-col justify-center rounded-[10px] border border-[#E5E7EB] p-4 shadow-sm hover:border-[#D1D5DB] md:p-7 lg:min-h-full lg:py-10'>
           <SectionHeader
@@ -248,18 +252,41 @@ export default function Login() {
           /> */}
           <div className='h-full rounded-[10px] border border-[#E5E7EB] hover:border-[#D1D5DB]'>
             <div className='mx-4 flex h-full flex-col justify-center md:mx-8 lg:mx-12 xl:mx-16'>
-              <div className='grid grid-cols-2 items-center justify-center gap-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4'>
-                {partnerImages.map((src, index) => (
-                  <div key={index} className='my-3 flex justify-center'>
+              <div className='grid grid-cols-2 items-center justify-center gap-2 md:grid-cols-2 lg:grid-cols-5'>
+                {partnerImages.map((partner, index) => {
+                  const isLast = index === partnerImages.length - 1;
+                  const isOdd = partnerImages.length % 2 === 1;
+                  const wrapperClassName =
+                    isLast && isOdd
+                      ? "col-span-2 lg:col-auto flex justify-center mx-2 my-3"
+                      : "flex justify-center mx-2 my-3";
+
+                  const image = (
                     <Image
-                      src={src}
+                      src={partner.src}
                       alt={`Partner ${index + 1}`}
                       width={140}
                       height={72}
                       className='w-40 h-22 object-contain'
                     />
-                  </div>
-                ))}
+                  );
+
+                  return (
+                    <div key={index} className={wrapperClassName}>
+                      {partner.href ? (
+                        <a
+                          href={partner.href}
+                          target='_blank'
+                          rel='noreferrer'
+                          aria-label={`Open partner link for Partner ${index + 1}`}>
+                          {image}
+                        </a>
+                      ) : (
+                        image
+                      )}
+                    </div>
+                  );
+                })}
               </div>
               <SectionHeader
                 title='Trusted & Compliant'
