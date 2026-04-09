@@ -10,7 +10,7 @@ export interface InfoCardPoint {
 
 export interface InfoCardProps {
   icon?: React.ReactNode;
-  title?: string;
+  title?: React.ReactNode;
   subtitle?: string;
   description?: string | React.ReactNode;
   learnMoreHref?: string;
