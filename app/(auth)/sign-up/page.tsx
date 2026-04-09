@@ -196,10 +196,14 @@ function PasswordField({
 
 export default function SignUp() {
   const partnerImages = [
-    "/home/banner-partner/ico.png",
-    "/home/banner-partner/cyber.png",
-    "/home/banner-partner/aws.png",
-    "/home/banner-partner/bluedrop.png",
+    { src: "/home/banner-partner/ico.png" },
+    { src: "/home/banner-partner/cyber.png" },
+    { src: "/home/banner-partner/aws.png" },
+    { src: "/home/banner-partner/bluedrop.png" },
+    {
+      src: "/home/banner-partner/stripei.png",
+      href: "https://climate.stripe.com/giN6qL",
+    },
   ];
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [showPassword, setShowPassword] = useState(false);
@@ -278,7 +282,7 @@ export default function SignUp() {
       </div>
 
       {/* Layout */}
-      <div className='mx-3 lg:mx-45 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start'>
+      <div className='mx-3 lg:mx-45 grid grid-cols-1 xl:grid-cols-2 gap-6 items-start'>
         {/* ─── LEFT: Form ─── */}
         <div className=' rounded-[10px] border border-[#E5E7EB] hover:border-[#D1D5DB] shadow-sm p-4 md:p-7'>
           <SectionHeader
@@ -391,13 +395,14 @@ export default function SignUp() {
                 Select your business type(s) to help us tailor your onboarding
                 experience
               </p>
-              <div className='grid grid-cols-1 xl:grid-cols-2 gap-2'>
+              <div className='grid grid-cols-1 gap-2'>
                 {userTypes.map((type) => {
-                  // const active = selectedTypes.includes(type.id);
+                  const active = selectedTypes.includes(type.id);
                   return (
                     <button
                       key={type.id}
                       type='button'
+                      aria-pressed={active}
                       onClick={() => toggleType(type.id)}
                       className='text-left rounded-lg transition-all'>
                       {/* <InfoCard
@@ -427,7 +432,11 @@ export default function SignUp() {
                         subtitle={type.description}
                         subtitleClassName='text-[#9CA3AF] text-[10px]'
                         iconBgClassName='bg-[#B4CDF7]'
-                        className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]! -py-20 cursor-pointer'
+                        className={`bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] rounded-[10px]! -py-20 cursor-pointer ${
+                          active
+                            ? "border-blue-500 ring-2 ring-blue-100"
+                            : "hover:border-[#b0b1b6]"
+                        }`}
                       />
                     </button>
                   );
@@ -538,18 +547,41 @@ export default function SignUp() {
           /> */}
           <div className='border border-[#E5E7EB] hover:border-[#D1D5DB] rounded-[10px]'>
             <div className='mx-4 md:mx-8 lg:mx-12 xl:mx-16 '>
-              <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-center items-center'>
-                {partnerImages.map((src, index) => (
-                  <div key={index} className='mx-4 md:mx-6 my-3'>
+              <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 justify-center items-center'>
+                {partnerImages.map((partner, index) => {
+                  const isLast = index === partnerImages.length - 1;
+                  const isOdd = partnerImages.length % 2 === 1;
+                  const wrapperClassName =
+                    isLast && isOdd
+                      ? "col-span-2 lg:col-auto flex justify-center mx-2 md:mx-3 my-3"
+                      : "flex justify-center mx-2 md:mx-3 my-3";
+
+                  const image = (
                     <Image
-                      src={src}
+                      src={partner.src}
                       alt={`Partner ${index + 1}`}
                       width={140}
                       height={72}
                       className='w-40 h-22 object-contain'
                     />
-                  </div>
-                ))}
+                  );
+
+                  return (
+                    <div key={index} className={wrapperClassName}>
+                      {partner.href ? (
+                        <a
+                          href={partner.href}
+                          target='_blank'
+                          rel='noreferrer'
+                          aria-label={`Open partner link for Partner ${index + 1}`}>
+                          {image}
+                        </a>
+                      ) : (
+                        image
+                      )}
+                    </div>
+                  );
+                })}
               </div>
               <SectionHeader
                 title='Trusted & Compliant'
