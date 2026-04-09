@@ -187,7 +187,7 @@ export function MobileAppModal({
         className={cn(
           "max-w-350!",
           "max-h-[95vh] flex flex-col",
-          "p-0 gap-0 overflow-hidden",
+          "p-0 gap-0 overflow-hidden ",
           "bg-white text-slate-900",
           "rounded-[12px] shadow-2xl",
         )}>
@@ -237,7 +237,7 @@ export function MobileAppModal({
 
           {/* ── SEE IT IN ACTION (blue section) ── */}
           <div className='bg-[#0F47A8] mx-4 mt-4 rounded-[10px] px-6 py-6'>
-            <div className='grid grid-cols-2 gap-8 items-center'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
               {/* Left: Phone mockup - real screenshot style */}
               <div className='flex justify-center'>
                 <Image
@@ -276,7 +276,7 @@ export function MobileAppModal({
           </div>
 
           {/* ── DETAIL FEATURE CARDS (Smart Geo-Location + AI Measurement) ── */}
-          <div className='grid grid-cols-2 gap-4 px-4 mt-4'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 px-4 mt-4'>
             {detailFeatures.map((feature, idx) => (
               <InfoCard
                 key={idx}
@@ -318,7 +318,7 @@ export function MobileAppModal({
             </div>
 
             {/* 3-column grid of remaining workflow features */}
-            <div className='grid grid-cols-3 gap-3 mb-2'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 mb-2'>
               {/* Row 1: Instant IBG Generation explicitly shown in image */}
               <InfoCard
                 icon={<Zap color='#0F47A8' />}
@@ -342,7 +342,7 @@ export function MobileAppModal({
                 />
               ))}
             </div>
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
               {workflowFeatures.slice(2).map((feature, idx) => (
                 <InfoCard
                   key={idx}

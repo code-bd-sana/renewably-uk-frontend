@@ -107,7 +107,7 @@ export default function IBGCertificates() {
   ];
 
   return (
-    <section className='mx-6 lg:mx-35 px-4 pt-20' id="generate-ibg-cert">
+    <section className='mx-6 lg:mx-35 px-4 pt-20' id='generate-ibg-cert'>
       <SectionHeader
         title='Generate IBG Certificates On-Site in Seconds'
         subTitle='Never face delays during PAS audits or customer handovers. Create and deliver Insurance Backed Guarantee certificates instantly from your mobile device or laptop.'

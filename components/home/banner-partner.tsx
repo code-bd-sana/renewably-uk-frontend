@@ -8,7 +8,7 @@ export default function BannerPartner() {
     { src: "/home/banner-partner/ssl.jpg" },
     { src: "/home/banner-partner/aws.png" },
     {
-      src: "/home/banner-partner/stripei.png",
+      src: "/home/banner-partner/stripe-climate.png",
       href: "https://climate.stripe.com/giN6qL",
     },
   ];
