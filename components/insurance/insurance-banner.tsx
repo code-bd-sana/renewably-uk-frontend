@@ -2,7 +2,7 @@ import HeroBanner from "../shared/hero-banner";
 
 export default function InsuranceBanner() {
   return (
-    <div>
+    <section>
       <HeroBanner
         title='Insurance & Financial Protection Framework'
         titleWrapperClassName='max-w-200 pb-2'
@@ -12,6 +12,6 @@ export default function InsuranceBanner() {
           "Renewably UK Ltd hosts and administers access to the Insurance Backed Guarantee facility operated by Bluedrop Services Ltd, which is authorised and regulated by the Financial Conduct Authority.",
         ]}
       />
-    </div>
+    </section>
   );
 }

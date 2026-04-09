@@ -20,6 +20,7 @@ const navItems = [
   { label: "Accreditation", href: "/accreditation" },
   { label: "Funding", href: "/funding" },
   { label: "News", href: "/news" },
+  { label: "Membership", href: "/membership" },
   { label: "Contact us", href: "/contact" },
 ];
 
@@ -139,7 +140,7 @@ export default function Navbar() {
             </Link>
 
             {/* DESKTOP NAV */}
-            <nav className='hidden lg:flex items-center gap-8 ml-16'>
+            <nav className='hidden lg:flex items-center gap-8 lg:gap-4 ml-16 lg:ml-6'>
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
 
