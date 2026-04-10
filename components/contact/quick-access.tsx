@@ -65,7 +65,7 @@ export default function QuickAccess() {
               isAddress ? "px-4 py-3 space-y-1" : "px-4 -py-3 space-y-1"
             }
             cardBg='bg-blue-50 text-[#0f172a]'
-            iconWrapperClassName={`shrink-0 bg-blue-100 rounded-full w-12 h-12 [&>svg]:w-6 [&>svg]:h-6${isAddress ? " mt-0.5" : ""}`}
+            iconWrapperClassName={`shrink-0 bg-blue-100 hover:bg-blue-100 rounded-full w-12 h-12 [&>svg]:w-6 [&>svg]:h-6${isAddress ? " mt-0.5" : ""}`}
             titleClassName='text-base font-medium text-gray-900'
             descriptionClassName='text-sm leading-snug break-words text-gray-800'
           />
