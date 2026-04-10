@@ -73,13 +73,13 @@ export function InfoCard({
     {
       negative: inverted
         ? "bg-white/20 text-white group-hover/card:bg-white/30 group-hover/card:scale-105"
-        : "bg-red-100 text-red-500 group-hover/card:bg-red-500 group-hover/card:text-white group-hover/card:scale-105",
+        : "bg-red-100 text-red-500 group-hover/card:bg-red-100 group-hover/card:text-white group-hover/card:scale-105",
       positive: inverted
         ? "bg-white/20 text-white group-hover/card:bg-white/30 group-hover/card:scale-105"
-        : "bg-blue-100 text-blue-500 group-hover/card:bg-blue-500 group-hover/card:text-white group-hover/card:scale-105",
+        : "bg-blue-100 text-blue-500 group-hover/card:bg-blue-100 group-hover/card:text-white group-hover/card:scale-105",
       neutral: inverted
         ? "bg-white/20 text-white group-hover/card:bg-white/30 group-hover/card:scale-105"
-        : "bg-blue-100 text-blue-500 group-hover/card:bg-blue-500 group-hover/card:text-white group-hover/card:scale-105",
+        : "bg-blue-100 text-blue-500 group-hover/card:bg-blue-100 group-hover/card:text-white group-hover/card:scale-105",
     }[iconVariant];
 
   const defaultCardBg =
