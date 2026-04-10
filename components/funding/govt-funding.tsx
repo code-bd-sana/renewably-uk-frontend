@@ -18,7 +18,7 @@ export default function GovernmentFunding() {
             distributed and consumed across the UK. In particular, the
             decarbonisation of buildings, heating systems and local
             infrastructure is central to achieving long-term carbon reduction
-            objectives. objectives.
+            objectives.
           </p>
           <p className='text-(--text-muted)'>
             To support this transition, government-backed funding programmes

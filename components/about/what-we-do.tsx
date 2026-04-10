@@ -9,21 +9,21 @@ export default function WhatWeDo() {
       description:
         "We host FCA-regulated Insurance Backed Guarantees in partnership with Bluedrop Services, ensuring customers are protected even if the original installer ceases trading",
       icon: <Shield color='#0F47A8' />,
-      learnMoreHref: "/insurance-backed-guarantees",
+      learnMoreHref: "/insurance",
     },
     {
       title: "Digital Platform",
       description:
         "Our ICO-compliant platform delivers secure document management, instant IBG certificate generation, and audit-ready compliance trails—all in one centralized system.",
       icon: <Zap color='#0F47A8' />,
-      learnMoreHref: "/data-protection",
+      learnMoreHref: "/platform",
     },
     {
       title: "Compliance Support",
       description:
         "We guide installers through MCS accreditation, TrustMark registration, and ongoing compliance requirements, ensuring you meet—and exceed—industry standards.",
       icon: <Award color='#0F47A8' />,
-      learnMoreHref: "/analytics-reporting",
+      learnMoreHref: "/contact",
     },
   ];
 

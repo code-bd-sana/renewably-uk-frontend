@@ -204,6 +204,14 @@ const Footer = () => {
           </p>
         </div>
       </div>
+
+      <div className='px-8'>
+        <iframe
+          width={380}
+          height={38}
+          style={{ border: "0" }}
+          src='https://climate.stripe.com/badge/pQ16x2?theme=dark&size=small&locale=en-GB'></iframe>
+      </div>
     </footer>
   );
 };
