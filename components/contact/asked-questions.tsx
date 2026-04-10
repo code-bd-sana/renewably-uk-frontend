@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { InfoCard } from "../shared/info-card";
 import SectionHeader from "../shared/section-header";
 
@@ -20,8 +21,17 @@ export default function AskedQuestions() {
     },
     {
       title: "Is there a cost to join Renewably UK?",
-      description:
-        "Contact us to discuss your specific needs and we'll provide a transparent pricing structure tailored to your business.",
+
+      footer: (
+        <Link
+          href='/membership'
+          className='inline-flex cursor-pointer font-medium text-(--text-primary) '>
+          <span className='font-medium text-(--text-primary) underline text-[15px]!'>
+            Take Our Membership
+          </span>{" "}
+          -&gt;
+        </Link>
+      ),
     },
   ];
   return (
@@ -35,6 +45,7 @@ export default function AskedQuestions() {
             titleClassName='text-[20px] md:text-[22px] font-semibold text-gray-900 max-w-100'
             className='bg-[linear-gradient(110deg,#F5F8FF_0%,#DBEAFE_60%)] border border-[#E5E7EB] hover:border-[#b0b1b6] rounded-[10px]!'
             description={cardData.description}
+            footer={cardData.footer}
             descriptionClassName='max-w-162 text-[#4A5565] text-base'
           />
         ))}

@@ -278,7 +278,7 @@ export function InfoCard({
               learnMoreClassName,
             )}>
             Learn More
-            <ArrowRight className='w-4 h-4' />
+            <ArrowRight className='w-4 h-4' color='#0F47A8' />
           </Link>
         )}
 

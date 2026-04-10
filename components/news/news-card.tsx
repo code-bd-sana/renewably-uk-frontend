@@ -7,6 +7,7 @@ import Link from "next/link";
 export interface NewsCardProps {
   coverImageSrc?: string;
   coverImageAlt?: string;
+  coverImageContainerClassName?: string;
   logoSrc?: string;
   logoAlt?: string;
   brandName?: string;
@@ -25,6 +26,7 @@ export interface NewsCardProps {
 export default function NewsCard({
   coverImageSrc,
   coverImageAlt = "News cover image",
+  coverImageContainerClassName,
   logoSrc,
   logoAlt = "Brand logo",
   brandName,
@@ -49,14 +51,18 @@ export default function NewsCard({
         className,
       )}>
       {coverImageSrc ? (
-        <div className='relative h-80 w-full overflow-hidden bg-[#F8FAFC] sm:h-72 lg:h-80'>
+        <div
+          className={cn(
+            "relative h-90 w-full overflow-hidden bg-[#F8FAFC] sm:h-72 lg:h-80",
+            coverImageContainerClassName,
+          )}>
           <Image
             src={coverImageSrc}
             alt={coverImageAlt}
             fill
             quality={95}
             className='object-cover object-center'
-            sizes='(min-width: 1536px) 420px, (min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw'
+            sizes='(min-width: 1536px) 400px, (min-width: 1280px) 30vw, (min-width: 768px) 50vw, 100vw'
           />
         </div>
       ) : logoSrc || brandName ? (

@@ -28,14 +28,13 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Renewably UK - Powering Renewable",
-  description:
-    "Bringing a Greener Future to the United Kingdom One Service at a Time",
+  title: "Renewably UK - Powering Renewables",
+  description: "Renewably UK - Powering Renewables",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Renewably UK - Powering Renewable",
+    title: "Renewably UK - Powering Renewables",
   },
 };
 
