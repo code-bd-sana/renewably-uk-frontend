@@ -71,13 +71,15 @@ export function InfoCard({
   const defaultIconBg: string =
     iconBgClassName ??
     {
-      negative: inverted ? "bg-white/20 text-white" : "bg-red-100 text-red-500",
+      negative: inverted
+        ? "bg-white/20 text-white group-hover/card:bg-white/30 group-hover/card:scale-105"
+        : "bg-red-100 text-red-500 group-hover/card:bg-red-500 group-hover/card:text-white group-hover/card:scale-105",
       positive: inverted
-        ? "bg-white/20 text-white"
-        : "bg-blue-100 text-blue-500",
+        ? "bg-white/20 text-white group-hover/card:bg-white/30 group-hover/card:scale-105"
+        : "bg-blue-100 text-blue-500 group-hover/card:bg-blue-500 group-hover/card:text-white group-hover/card:scale-105",
       neutral: inverted
-        ? "bg-white/20 text-white"
-        : "bg-blue-100 text-blue-500",
+        ? "bg-white/20 text-white group-hover/card:bg-white/30 group-hover/card:scale-105"
+        : "bg-blue-100 text-blue-500 group-hover/card:bg-blue-500 group-hover/card:text-white group-hover/card:scale-105",
     }[iconVariant];
 
   const defaultCardBg =
@@ -125,7 +127,7 @@ export function InfoCard({
   return (
     <Card
       className={cn(
-        "rounded border-0 shadow-sm h-full",
+        "rounded border-0 shadow-sm h-full transition-shadow duration-300 hover:shadow-md",
         defaultCardBg,
         className,
       )}>
@@ -141,7 +143,7 @@ export function InfoCard({
             {icon && (
               <span
                 className={cn(
-                  "flex items-center justify-center rounded-[10px] w-10 h-10 shrink-0 [&>svg]:w-5 [&>svg]:h-5",
+                  "flex items-center justify-center rounded-[10px] w-10 h-10 shrink-0 transition-all duration-300 ease-out group-hover/card:scale-105 [&>svg]:w-5 [&>svg]:h-5",
                   defaultIconBg,
                   iconWrapperClassName,
                 )}>
@@ -170,7 +172,7 @@ export function InfoCard({
         {isCenter && icon && (
           <div
             className={cn(
-              "flex items-center justify-center rounded-xl w-12 h-12 shrink-0 [&>svg]:w-6 [&>svg]:h-6",
+              "flex items-center justify-center rounded-xl w-12 h-12 shrink-0 transition-all duration-300 ease-out group-hover/card:scale-110 [&>svg]:w-6 [&>svg]:h-6",
               defaultIconBg,
               iconWrapperClassName,
             )}>
@@ -184,7 +186,7 @@ export function InfoCard({
             {icon && (
               <span
                 className={cn(
-                  "flex items-center justify-center rounded-[10px] w-10 h-10 shrink-0 [&>svg]:w-5 [&>svg]:h-5",
+                  "flex items-center justify-center rounded-[10px] w-10 h-10 shrink-0 transition-all duration-300 ease-out group-hover/card:scale-110 [&>svg]:w-5 [&>svg]:h-5",
                   defaultIconBg,
                   iconWrapperClassName,
                 )}>

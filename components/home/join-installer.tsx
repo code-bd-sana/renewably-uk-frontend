@@ -47,7 +47,7 @@ export default function JoinInstaller() {
       <div className='flex items-center justify-center pt-6'>
         <Link href='/sign-up'>
           <Button className='bg-white rounded-[10px] px-7 py-5.5 text-[16px] text-(--text-primary) cursor-pointer'>
-            Begin your onboarding today.
+            Begin Your Onboarding Today
           </Button>
         </Link>
       </div>

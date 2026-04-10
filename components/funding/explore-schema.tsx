@@ -51,7 +51,7 @@ export default function ExploreSchema() {
             allocated to bridge the gap between ECO4 and the implementation of
             the Warm Homes Plan.
           </p>
-          <p className='text-[#F3F4F6] bg-background mt-6 p-4 rounded-xl'>
+          <p className='text-[#F3F4F6] bg-background mt-6 p-4 rounded-[8px]'>
             Ed Miliband: This £1.5 billion investment will help families stay
             warm, cut energy bills and accelerate Britain’s transition to clean
             energy as part of our mission to deliver Net Zero.
