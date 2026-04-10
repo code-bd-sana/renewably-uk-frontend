@@ -50,10 +50,6 @@ export default function FeaturedNews() {
           <h2 className='mb-2 text-4xl font-semibold leading-[1.3] text-[#030712] sm:text-[2rem] lg:text-[2.5rem]'>
             Featured News
           </h2>
-          <p className='text-sm text-(--text-muted) lg:text-base'>
-            Latest updates across company milestones, policy changes, and market
-            opportunities.
-          </p>
         </div>
 
         <div className='relative' ref={dropdownRef}>
@@ -93,6 +89,7 @@ export default function FeaturedNews() {
             key={`${item.title}-${item.date}`}
             coverImageSrc={item.image}
             coverImageAlt={item.title}
+            coverImageContainerClassName='h-60 sm:h-56 lg:h-80'
             brandName='Renewably UK'
             tagline='Powering Renewables'
             bannerColor='#0F47A8'
